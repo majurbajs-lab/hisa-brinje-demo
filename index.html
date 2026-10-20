@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hiša Brinje Bohinj</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Dva apartmaja v Bohinju, 800 m od jezera. Demo stran.">
+<!-- Na pravi strani pisave gostimo sami (GDPR); tukaj zaradi demota iz Google Fonts. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: photo-led editorial page. Full-bleed hero photo with text bottom-left, then left-aligned asymmetric sections; units as alternating photo/text rows; sticky price bar on phones; guest helper "Brina" bottom-right */
+:root{
+  --paper:#f7f7f3;       /* snow on limestone */
+  --paper-2:#eceee7;
+  --ink:#1c2b27;         /* spruce shadow */
+  --ink-2:#4d5c57;
+  --moss:#3f6b4f;        /* accent: Bohinj meadow moss */
+  --moss-ink:#ffffff;
+  --wood:#9a6a3a;        /* larch, used only for small marks */
+  --rule:#d6dbd2;
+  --ph-a:#c9d3cb; --ph-b:#aebdb2;
+  --display:"Newsreader","Iowan Old Style",Palatino,Georgia,serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#141a18;--paper-2:#1b2320;--ink:#e8ece6;--ink-2:#a9b5ae;--moss:#8fbf9c;--moss-ink:#10241a;--wood:#cf9a63;--rule:#2c3632;--ph-a:#26322d;--ph-b:#31403a;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#141a18;--paper-2:#1b2320;--ink:#e8ece6;--ink-2:#a9b5ae;--moss:#8fbf9c;--moss-ink:#10241a;--wood:#cf9a63;--rule:#2c3632;--ph-a:#26322d;--ph-b:#31403a;color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.g{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.4vw,3.2rem)}
+h3{font-size:clamp(1.6rem,3vw,2.1rem)}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--moss);outline-offset:3px}
+.eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);font-weight:500}
+.btn{display:inline-flex;align-items:center;gap:.5em;border:0;border-radius:2px;padding:.85em 1.35em;font:500 .95rem var(--body);cursor:pointer;text-decoration:none;background:var(--moss);color:var(--moss-ink)}
+.btn.line{background:transparent;color:inherit;box-shadow:inset 0 0 0 1px currentColor}
+.demo-note{font-size:.8rem;text-align:center;padding:6px 16px;background:var(--ink);color:var(--paper)}
+
+/* photo slots */
+.ph{position:relative;background:linear-gradient(135deg,var(--ph-a),var(--ph-b));overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph.empty::after{content:attr(data-cap);position:absolute;left:12px;bottom:10px;right:12px;font:italic .9rem var(--display);color:var(--ink-2)}
+
+/* hero */
+.hero{position:relative;min-height:min(88vh,820px);display:grid;align-items:end;color:#fff;isolation:isolate}
+.hero .ph{position:absolute;inset:0;z-index:-2}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,20,16,.45) 0%,rgba(10,20,16,0) 28%,rgba(10,20,16,0) 50%,rgba(10,20,16,.62) 100%)}
+.hero.noimg{color:var(--ink)}
+.hero.noimg::before{display:none}
+.topbar{position:absolute;top:0;left:0;right:0;padding-top:calc(14px + env(safe-area-inset-top,0px))}
+.topbar .g{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.mark{font-family:var(--display);font-size:1.35rem;text-decoration:none}
+nav.links{display:flex;gap:22px;font-size:.92rem}
+nav.links a{text-decoration:none;opacity:.92}
+nav.links a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.lang{display:flex;gap:2px;font-size:.8rem}
+.lang button{background:none;border:0;color:inherit;font:500 .8rem var(--body);padding:4px 6px;cursor:pointer;opacity:.7;letter-spacing:.08em}
+.lang button[aria-pressed="true"]{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.hero-copy{padding-block:0 clamp(28px,6vh,64px);display:grid;gap:18px;max-width:720px}
+.hero h1{font-size:clamp(3.2rem,9vw,6.6rem);line-height:.95}
+.hero .sub{font-size:1.12rem;max-width:34em}
+.hero:not(.noimg) .hero-copy{text-shadow:0 1px 14px rgba(0,0,0,.45)}
+.hero .btn.line{color:inherit}
+@media (max-width:760px){nav.links{display:none}}
+
+/* host intro */
+.intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,6vw,90px);padding-block:clamp(56px,9vw,120px);align-items:start}
+.intro .lead{font-family:var(--display);font-size:clamp(1.45rem,2.6vw,1.95rem);line-height:1.35}
+.intro .body{display:grid;gap:14px;color:var(--ink-2);max-width:34em}
+.sig{font-family:var(--display);font-style:italic;font-size:1.3rem;color:var(--ink)}
+.intro .ph{aspect-ratio:4/5}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.facts div{padding:18px 16px 18px 0;display:grid;gap:2px}
+.facts b{font-family:var(--display);font-weight:400;font-size:1.9rem;font-variant-numeric:tabular-nums;line-height:1.1}
+.facts span{font-size:.88rem;color:var(--ink-2)}
+@media (max-width:760px){.intro{grid-template-columns:1fr}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.facts div:nth-child(-n+2){border-bottom:1px solid var(--rule)}}
+
+/* units */
+section.block{padding-block:clamp(56px,8vw,110px)}
+.head{display:grid;gap:10px;margin-bottom:clamp(28px,4vw,48px);max-width:640px}
+.head p{color:var(--ink-2)}
+.unit{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:start}
+.unit + .unit{margin-top:clamp(56px,8vw,96px)}
+.unit.flip .pics{order:2}
+.pics{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:8px;aspect-ratio:3/2}
+.pics > :first-child{grid-row:1/3}
+.pics button .ph{width:100%;height:100%}
+.pics button{all:unset;cursor:zoom-in;display:block}
+.pics button:focus-visible{outline:2px solid var(--moss);outline-offset:2px}
+.utext{display:grid;gap:16px;padding-top:6px}
+.utext .story{color:var(--ink-2)}
+dl.spec{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0;font-size:.95rem}
+dl.spec dt{color:var(--ink-2)}
+dl.spec dd{margin:0}
+.from{font-family:var(--display);font-size:1.4rem}
+.from small{font-family:var(--body);font-size:.85rem;color:var(--ink-2)}
+@media (max-width:760px){.unit,.unit.flip{grid-template-columns:1fr}.unit.flip .pics{order:0}}
+
+/* gallery strip */
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(240px,32%);gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+.strip .ph{aspect-ratio:4/5;scroll-snap-align:start}
+.strip button{all:unset;cursor:zoom-in;display:block}
+
+/* seasons */
+.seasons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,4vw,48px)}
+.season{display:grid;gap:14px}
+.season .ph{aspect-ratio:16/10}
+.season ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.season li{padding-left:18px;position:relative;color:var(--ink-2)}
+.season li::before{content:"";position:absolute;left:0;top:.75em;width:8px;height:1px;background:var(--wood)}
+@media (max-width:760px){.seasons{grid-template-columns:1fr}}
+
+/* area map */
+.area{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:start}
+.map{background:var(--paper-2);border-radius:2px;overflow-x:auto}
+.map svg{display:block;width:100%;min-width:520px;height:auto}
+.map text{font-family:var(--body);font-size:13px;fill:var(--ink-2)}
+.map .big{font-family:var(--display);font-size:18px;font-style:italic;fill:var(--ink)}
+.dist{margin:0;padding:0;list-style:none}
+.dist li{display:grid;grid-template-columns:5.5em 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.dist b{font-family:var(--display);font-weight:400;font-size:1.25rem;font-variant-numeric:tabular-nums}
+@media (max-width:760px){.area{grid-template-columns:1fr}}
+
+/* prices */
+.tablebox{overflow-x:auto}
+table.prices{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+table.prices th,table.prices td{text-align:left;padding:14px 18px 14px 0;border-bottom:1px solid var(--rule);white-space:nowrap}
+table.prices th{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);font-weight:500}
+table.prices td.n{font-family:var(--display);font-size:1.25rem}
+.pnote{color:var(--ink-2);font-size:.92rem;margin-top:14px;max-width:46em}
+.know{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 40px;margin-top:40px}
+.know p{padding:14px 0;border-top:1px solid var(--rule);color:var(--ink-2)}
+.know b{color:var(--ink);font-weight:500}
+
+/* inquiry */
+.inq-wrap > *{align-self:start;align-content:start}
+.inq-wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,72px)}
+form.inq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 18px}
+form.inq label{display:grid;gap:6px;font-size:.85rem;color:var(--ink-2)}
+form.inq .full{grid-column:1/-1}
+input,select,textarea{font:1rem var(--body);padding:11px 0;border:0;border-bottom:1px solid var(--ink-2);background:transparent;color:var(--ink);width:100%;min-width:0;border-radius:0}
+select{padding-right:8px}
+textarea{min-height:86px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--moss);box-shadow:0 1px 0 var(--moss)}
+.consent{display:flex!important;gap:10px;align-items:flex-start;font-size:.88rem}
+.consent input{width:auto;margin-top:5px}
+.out{grid-column:1/-1;background:var(--paper-2);padding:14px 16px;display:grid;gap:10px;font-size:.95rem}
+.out pre{white-space:pre-wrap;margin:0;font:.88rem/1.5 ui-monospace,Menlo,Consolas,monospace}
+@media (max-width:760px){.inq-wrap,form.inq{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--rule);padding-block:36px 120px;font-size:.88rem;color:var(--ink-2)}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+footer b{color:var(--ink);font-weight:500}
+
+/* sticky price bar (phones) */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:15;background:var(--paper);border-top:1px solid var(--rule);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:none;justify-content:space-between;align-items:center;gap:12px}
+.bar span{font-family:var(--display);font-size:1.15rem}
+@media (max-width:760px){.bar{display:flex}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:40;background:rgba(8,12,10,.92);display:grid;place-items:center;padding:calc(24px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb img{max-height:82vh;width:auto;max-width:100%}
+.lb p{color:#e8ece6;font:italic 1rem var(--display);margin-top:10px;text-align:center}
+.lb button{position:absolute;background:none;border:0;color:#fff;font-size:2rem;cursor:pointer;padding:10px}
+.lb .x{top:calc(8px + env(safe-area-inset-top,0px));right:calc(8px + env(safe-area-inset-right,0px))}
+.lb .pv{left:calc(4px + env(safe-area-inset-left,0px));top:50%}
+.lb .nx{right:calc(4px + env(safe-area-inset-right,0px));top:50%}
+
+/* guest helper */
+.ask{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);border:0;border-radius:999px;padding:8px 18px 8px 8px;font:500 .95rem var(--body);cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.ask .av{width:34px;height:34px;border-radius:50%;background:var(--moss);color:var(--moss-ink);display:grid;place-items:center;font:italic 1.1rem var(--display)}
+@media (max-width:760px){.ask{bottom:calc(74px + env(safe-area-inset-bottom,0px))}}
+.chat{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(80px + env(safe-area-inset-bottom,0px));z-index:30;width:min(390px,calc(100vw - 32px));height:min(600px,calc(100vh - 120px));background:var(--paper);border:1px solid var(--rule);box-shadow:0 18px 48px rgba(0,0,0,.25);display:flex;flex-direction:column;overflow:hidden;border-radius:6px}
+@media (max-width:760px){.chat{right:0;left:0;bottom:0;width:auto;height:calc(100% - 40px - env(safe-area-inset-top,0px));border-radius:12px 12px 0 0;padding-bottom:env(safe-area-inset-bottom,0px)}}
+.chat header{display:flex;gap:12px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--rule)}
+.chat header .av{width:40px;height:40px;border-radius:50%;background:var(--moss);color:var(--moss-ink);display:grid;place-items:center;font:italic 1.3rem var(--display);flex:none}
+.chat header div{flex:1;min-width:0}
+.chat header b{font-family:var(--display);font-weight:400;font-size:1.2rem;display:block;line-height:1.2}
+.chat header small{color:var(--ink-2);font-size:.78rem}
+.chat .x{background:none;border:0;color:var(--ink-2);font-size:1.6rem;cursor:pointer;line-height:1}
+.msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.m{max-width:88%;font-size:.95rem;line-height:1.5;white-space:pre-line}
+.m.bot{align-self:flex-start}
+.m.bot .txt{background:var(--paper-2);padding:10px 13px;border-radius:2px 14px 14px 14px}
+.m.me{align-self:flex-end;background:var(--moss);color:var(--moss-ink);padding:9px 13px;border-radius:14px 2px 14px 14px}
+.m .acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.m .acts button{background:none;border:1px solid var(--moss);color:var(--moss);border-radius:999px;padding:5px 12px;font:500 .82rem var(--body);cursor:pointer}
+.quote{margin-top:8px;border-top:1px solid var(--rule);padding-top:8px;display:grid;gap:3px;font-variant-numeric:tabular-nums}
+.quote div{display:flex;justify-content:space-between;gap:12px}
+.typing{display:inline-flex;gap:4px;padding:12px 14px;background:var(--paper-2);border-radius:2px 14px 14px 14px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--ink-2);opacity:.4}
+@media (prefers-reduced-motion:no-preference){.typing i{animation:bl 1s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}@keyframes bl{50%{opacity:1}}}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:0 16px 10px}
+.chips button{flex:none;background:var(--paper-2);border:0;color:var(--ink);border-radius:999px;padding:7px 12px;font:.84rem var(--body);cursor:pointer}
+.chat form{display:flex;gap:8px;padding:10px 12px 12px;border-top:1px solid var(--rule)}
+.chat form input{border:1px solid var(--rule);border-radius:999px;padding:10px 14px;background:var(--paper)}
+.chat form button{background:var(--moss);color:var(--moss-ink);border:0;border-radius:999px;padding:0 16px;font:500 .9rem var(--body);cursor:pointer}
+.ainote{font-size:.72rem;color:var(--ink-2);padding:0 16px 8px}
+</style>
+</head>
+<body>
+
+<div class="demo-note" data-t="demo"></div>
+
+<header class="hero" id="top">
+  <div class="ph" data-img="hero"></div>
+  <div class="topbar"><div class="g">
+    <a class="mark" href="#top" data-c="name"></a>
+    <nav class="links" aria-label="Navigacija">
+      <a href="#apartmaji" data-t="navUnits"></a><a href="#okolica" data-t="navArea"></a><a href="#cene" data-t="navPrices"></a><a href="#povprasevanje" data-t="navInq"></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Jezik / Language"><button type="button" data-lang="sl">SL</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button></div>
+  </div></div>
+  <div class="g"><div class="hero-copy">
+    <p class="eyebrow" data-c="place"></p>
+    <h1 data-c="name"></h1>
+    <p class="sub" data-c="tagline"></p>
+    <div><a class="btn" href="#povprasevanje" data-t="ctaCheck"></a></div>
+  </div></div>
+</header>
+
+<main>
+  <div class="g">
+    <section class="intro">
+      <div style="display:grid;gap:22px">
+        <p class="lead" data-c="hostLead"></p>
+        <div class="body" id="hostBody"></div>
+        <p class="sig" data-c="hostSig"></p>
+      </div>
+      <div class="ph" data-img="hosts"></div>
+    </section>
+    <div class="facts" id="facts"></div>
+  </div>
+
+  <section class="block" id="apartmaji"><div class="g">
+    <div class="head"><p class="eyebrow" data-t="unitsEyebrow"></p><h2 data-t="unitsTitle"></h2></div>
+    <div id="units"></div>
+  </div></section>
+
+  <section class="block" style="padding-top:0"><div class="g">
+    <div class="strip" id="strip" aria-label="Galerija"></div>
+  </div></section>
+
+  <section class="block" style="background:var(--paper-2)"><div class="g">
+    <div class="head"><p class="eyebrow" data-t="seasonEyebrow"></p><h2 data-t="seasonTitle"></h2></div>
+    <div class="seasons" id="seasons"></div>
+  </div></section>
+
+  <section class="block" id="okolica"><div class="g">
+    <div class="head"><p class="eyebrow" data-t="areaEyebrow"></p><h2 data-t="areaTitle"></h2><p data-c="areaIntro"></p></div>
+    <div class="area">
+      <div class="map" id="map"></div>
+      <ul class="dist" id="dist"></ul>
+    </div>
+  </div></section>
+
+  <section class="block" id="cene" style="padding-top:0"><div class="g">
+    <div class="head"><p class="eyebrow" data-t="pricesEyebrow"></p><h2 data-t="pricesTitle"></h2></div>
+    <div class="tablebox"><table class="prices" id="prices"></table></div>
+    <p class="pnote" id="pnote"></p>
+    <div class="know" id="know"></div>
+  </div></section>
+
+  <section class="block" id="povprasevanje" style="background:var(--paper-2)"><div class="g inq-wrap">
+    <div class="head" style="margin:0"><p class="eyebrow" data-t="inqEyebrow"></p><h2 data-t="inqTitle"></h2><p data-t="inqSub"></p></div>
+    <form class="inq" id="inq" novalidate>
+      <label><span data-t="fName"></span><input id="fName" autocomplete="name"></label>
+      <label><span data-t="fEmail"></span><input id="fEmail" type="email" autocomplete="email"></label>
+      <label><span data-t="fFrom"></span><input id="fFrom" type="date"></label>
+      <label><span data-t="fTo"></span><input id="fTo" type="date"></label>
+      <label><span data-t="fUnit"></span><select id="fUnit"></select></label>
+      <label><span data-t="fGuests"></span><input id="fGuests" type="number" min="1" max="6" value="2"></label>
+      <label class="full"><span data-t="fMsg"></span><textarea id="fMsg"></textarea></label>
+      <label class="full consent"><input id="fConsent" type="checkbox"><span data-t="fConsent"></span></label>
+      <div class="full"><button class="btn" type="submit" data-t="fSend"></button></div>
+      <div class="out" id="inqOut" hidden></div>
+    </form>
+  </div></section>
+</main>
+
+<footer><div class="g cols">
+  <div><b data-c="name"></b><br><span data-c="place"></span><br><span id="contact"></span></div>
+  <div id="legal"></div>
+  <div><b data-t="privTitle"></b><br><span data-t="privText"></span><br><a href="vodic.html" data-t="guideLink"></a></div>
+</div></footer>
+
+<div class="bar"><span id="barPrice"></span><a class="btn" href="#povprasevanje" data-t="ctaCheck"></a></div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Fotografija">
+  <button class="x" type="button" id="lbX" aria-label="Zapri">×</button>
+  <button class="pv" type="button" id="lbP" aria-label="Prejšnja">‹</button>
+  <figure style="margin:0"><img id="lbImg" alt=""><p id="lbCap"></p></figure>
+  <button class="nx" type="button" id="lbN" aria-label="Naslednja">›</button>
+</div>
+
+<button class="ask" type="button" id="askBtn" aria-expanded="false" aria-controls="chat"><span class="av">B</span><span data-t="askBtn"></span></button>
+<div class="chat" id="chat" role="dialog" aria-label="Brina" hidden>
+  <header><span class="av">B</span><div><b>Brina</b><small data-t="chatSub"></small></div><button class="x" type="button" id="chatX" aria-label="Zapri">×</button></header>
+  <div class="msgs" id="msgs" aria-live="polite"></div>
+  <div class="chips" id="chips"></div>
+  <p class="ainote" data-t="aiNote"></p>
+  <form id="chatForm"><input id="chatIn" autocomplete="off" aria-label="Vprašanje"><button type="submit" data-t="send"></button></form>
+</div>
+
+<!-- ======= PODATKI NASTANITVE: za novo stranko zamenjaj ta blok in slike v mapi slike/ ======= -->
+<script id="site-data" type="application/json">
+{
+  "aiEndpoint": "",
+  "formEndpoint": "",
+  "email": "info@primer-hisa-brinje.si",
+  "name": {"sl":"Hiša Brinje","en":"Hiša Brinje","de":"Hiša Brinje"},
+  "place": {"sl":"Bohinj · Julijske Alpe","en":"Bohinj · Julian Alps","de":"Bohinj · Julische Alpen"},
+  "tagline": {"sl":"Dva apartmaja v stari družinski hiši, 800 metrov od Bohinjskega jezera.","en":"Two apartments in an old family house, 800 metres from Lake Bohinj.","de":"Zwei Apartments in einem alten Familienhaus, 800 Meter vom Bohinjer See."},
+  "hostLead": {"sl":"Hišo je leta 1962 postavil Anin dedek. Midva sva jo prenovila tako, da so ostali lesen strop, kamnit prag in pogled na Vogel.","en":"Ana's grandfather built the house in 1962. We renovated it and kept the wooden ceilings, the stone doorstep and the view of Vogel.","de":"Annas Großvater baute das Haus 1962. Wir haben es renoviert und die Holzdecken, die steinerne Schwelle und den Blick auf den Vogel behalten."},
+  "hostBody": {
+    "sl":["Živiva v pritličju, zato sva blizu, če kaj potrebujete, in daleč, ko želite mir. Zjutraj dobite na vrata vrečko kruha iz pekarne v vasi, ob prvem večeru pa kozarec domačega borovničevca.","Rada svetujeva, kam brez gneče: kdaj na Savico pred avtobusi in katera pot na Pršivec je lepša od tiste z oznakami."],
+    "en":["We live on the ground floor, so we're close if you need anything and out of the way when you want quiet. Each morning a bag of bread from the village bakery hangs on your door, and on the first evening there's a glass of our blueberry liqueur.","We're happy to tell you where to go without the crowds: when to reach Savica before the coaches, and which path up Pršivec beats the signposted one."],
+    "de":["Wir wohnen im Erdgeschoss: nah, wenn Sie etwas brauchen, und weit genug, wenn Sie Ruhe wollen. Morgens hängt eine Tüte Brot aus der Dorfbäckerei an Ihrer Tür, am ersten Abend gibt es ein Glas hausgemachten Heidelbeerlikör.","Gern sagen wir Ihnen, wohin ohne Gedränge: wann man vor den Bussen an der Savica ist und welcher Weg auf den Pršivec schöner ist als der markierte."]},
+  "hostSig": {"sl":"Ana in Marko","en":"Ana and Marko","de":"Ana und Marko"},
+  "facts": [
+    {"v":"800 m","sl":"do jezera","en":"to the lake","de":"zum See"},
+    {"v":"2 + 5","sl":"postelj v dveh apartmajih","en":"beds in two apartments","de":"Betten in zwei Apartments"},
+    {"v":"1962","sl":"leto, ko je hiša nastala","en":"the year the house was built","de":"Baujahr des Hauses"},
+    {"v":"−10 %","sl":"pri neposredni rezervaciji","en":"when you book direct","de":"bei Direktbuchung"}
+  ],
+  "units": [
+    {"id":"studio","name":{"sl":"Studio Macesen","en":"Studio Macesen","de":"Studio Macesen"},
+     "story":{"sl":"Pritlični studio z macesnovim podom in vrati naravnost na vrt. Zjutraj sonce, zvečer senca orehovega drevesa. Za dva, ki večino dneva preživita zunaj.","en":"A ground-floor studio with larch floors and a door straight onto the garden. Morning sun, evening shade from the walnut tree. For two who spend most of the day outdoors.","de":"Ein Studio im Erdgeschoss mit Lärchenboden und Tür direkt in den Garten. Morgensonne, abends Schatten vom Walnussbaum. Für zwei, die den Tag draußen verbringen."},
+     "spec":{"sl":[["Velikost","28 m²"],["Postelja","zakonska, 160 × 200"],["Kuhinja","dve plošči, hladilnik, kavni aparat"],["Zunaj","terasa na vrt"],["Ljubljenčki","dobrodošli, 10 € na noč"]],
+             "en":[["Size","28 m²"],["Bed","double, 160 × 200"],["Kitchen","two-ring hob, fridge, coffee maker"],["Outside","garden terrace"],["Pets","welcome, €10 per night"]],
+             "de":[["Größe","28 m²"],["Bett","Doppelbett, 160 × 200"],["Küche","zwei Platten, Kühlschrank, Kaffeemaschine"],["Draußen","Gartenterrasse"],["Haustiere","willkommen, 10 € pro Nacht"]]},
+     "guests":2,"imgs":["studio1","studio2","studio3"]},
+    {"id":"druzinski","name":{"sl":"Apartma Bukev","en":"Apartment Bukev","de":"Apartment Bukev"},
+     "story":{"sl":"Celo podstrešje z dvema spalnicama in balkonom proti Voglu. Pod lesenim stropom je poleti hladno, pozimi pa greje lončena peč v dnevni sobi.","en":"The whole top floor, with two bedrooms and a balcony facing Vogel. The wooden ceiling keeps it cool in summer; in winter the tiled stove in the living room keeps it warm.","de":"Das ganze Dachgeschoss mit zwei Schlafzimmern und Balkon Richtung Vogel. Unter der Holzdecke bleibt es im Sommer kühl, im Winter wärmt der Kachelofen im Wohnzimmer."},
+     "spec":{"sl":[["Velikost","58 m²"],["Postelje","zakonska, dve ločeni, kavč za eno osebo"],["Kuhinja","polna, s pečico in pomivalnim strojem"],["Zunaj","balkon s pogledom na gore"],["Za otroke","posteljica in stolček brezplačno"]],
+             "en":[["Size","58 m²"],["Beds","one double, two singles, sofa bed for one"],["Kitchen","full, with oven and dishwasher"],["Outside","balcony with mountain view"],["For kids","cot and high chair free"]],
+             "de":[["Größe","58 m²"],["Betten","Doppelbett, zwei Einzelbetten, Schlafsofa für eine Person"],["Küche","komplett, mit Backofen und Spülmaschine"],["Draußen","Balkon mit Bergblick"],["Für Kinder","Babybett und Hochstuhl kostenlos"]]},
+     "guests":5,"imgs":["bukev1","bukev2","bukev3"]}
+  ],
+  "gallery":["gal1","gal2","gal3","gal4","gal5"],
+  "seasons":[
+    {"img":"poletje","t":{"sl":"Poleti","en":"Summer","de":"Sommer"},
+     "l":{"sl":["kopanje v jezeru, voda ima do 22 °C","zgodaj zjutraj na Savico, preden pridejo avtobusi","s kolesom po dolini do Ukanca","Noč kresnic v začetku julija"],"en":["swimming in the lake, up to 22 °C","Savica early in the morning, before the coaches","cycling through the valley to Ukanc","Night of the fireflies in early July"],"de":["Baden im See, bis 22 °C","früh morgens zur Savica, vor den Bussen","mit dem Rad durchs Tal nach Ukanc","Glühwürmchennacht Anfang Juli"]}},
+    {"img":"zima","t":{"sl":"Pozimi","en":"Winter","de":"Winter"},
+     "l":{"sl":["smučanje na Voglu, žičnica je 5 km od hiše","tek na smučeh po dolini","sprehod okoli zamrznjenega jezera","zvečer lončena peč v Bukvi"],"en":["skiing on Vogel, the cable car is 5 km away","cross-country skiing in the valley","a walk round the frozen lake","evenings by the tiled stove in Bukev"],"de":["Skifahren am Vogel, Seilbahn 5 km entfernt","Langlauf im Tal","Spaziergang um den gefrorenen See","abends am Kachelofen im Bukev"]}}
+  ],
+  "areaIntro":{"sl":"Shematski prikaz. Vse razdalje so od hiše.","en":"Schematic map. All distances are from the house.","de":"Schematische Karte. Alle Entfernungen ab Haus."},
+  "dist":[
+    {"v":"800 m","sl":"Bohinjsko jezero, Ribčev Laz","en":"Lake Bohinj, Ribčev Laz","de":"Bohinjer See, Ribčev Laz"},
+    {"v":"400 m","sl":"avtobusna postaja in trgovina","en":"bus stop and grocery","de":"Bushaltestelle und Laden"},
+    {"v":"2 km","sl":"korita Mostnice","en":"Mostnica gorge","de":"Mostnica-Klamm"},
+    {"v":"5 km","sl":"žičnica Vogel","en":"Vogel cable car","de":"Vogel-Seilbahn"},
+    {"v":"6 km","sl":"slap Savica","en":"Savica waterfall","de":"Savica-Wasserfall"},
+    {"v":"26 km","sl":"Bled","en":"Bled","de":"Bled"}
+  ],
+  "seasonsPrice":[
+    {"sl":"nizka · nov.–mar.","en":"low · Nov–Mar","de":"Nebensaison · Nov.–März","months":[11,12,1,2,3],"studio":65,"druzinski":105},
+    {"sl":"srednja · apr.–jun., sep.–okt.","en":"mid · Apr–Jun, Sep–Oct","de":"Zwischensaison · Apr.–Juni, Sep.–Okt.","months":[4,5,6,9,10],"studio":80,"druzinski":130},
+    {"sl":"visoka · jul.–avg.","en":"high · Jul–Aug","de":"Hauptsaison · Juli–Aug.","months":[7,8],"studio":95,"druzinski":160}
+  ],
+  "minNights":2,
+  "directDiscount":0.10,
+  "tax":3.13,
+  "know":[
+    {"b":{"sl":"Ni klime.","en":"No air conditioning.","de":"Keine Klimaanlage."},"t":{"sl":"Ponoči je v Bohinju tudi poleti sveže, odprto okno je dovolj.","en":"Bohinj nights are cool even in summer; an open window does the job.","de":"Die Nächte in Bohinj sind auch im Sommer kühl, ein offenes Fenster reicht."}},
+    {"b":{"sl":"Strme stopnice.","en":"Steep stairs.","de":"Steile Treppe."},"t":{"sl":"Do Bukve vodijo lesene stopnice, za majhne otroke imamo zaščitna vratca.","en":"Wooden stairs lead up to Bukev; we have a safety gate for small children.","de":"Eine Holztreppe führt zum Bukev, für Kleinkinder gibt es ein Schutzgitter."}},
+    {"b":{"sl":"Zvonovi.","en":"Church bells.","de":"Kirchenglocken."},"t":{"sl":"Cerkev je 200 m stran in zvoni ob 7. zjutraj.","en":"The church is 200 m away and rings at 7 am.","de":"Die Kirche ist 200 m entfernt und läutet um 7 Uhr."}}
+  ],
+  "rules":{"sl":"Prihod 15:00–20:00, odhod do 10:00. Kajenje samo zunaj. Brezplačna odpoved do 14 dni pred prihodom, nato 50 %. Predplačilo 30 %.","en":"Check-in 15:00–20:00, check-out by 10:00. Smoking outside only. Free cancellation up to 14 days before arrival, then 50%. 30% deposit.","de":"Anreise 15:00–20:00, Abreise bis 10:00. Rauchen nur draußen. Kostenlose Stornierung bis 14 Tage vor Anreise, danach 50 %. 30 % Anzahlung."},
+  "legal":{"provider":"[Ime in priimek ali naziv ponudnika]","address":"[Naslov]","taxId":"[Davčna številka]","rno":"[ID nastanitvenega obrata, AJPES]"},
+  "images":{
+    "hero":{"src":"slike/hero.jpg","sl":"Jutro ob jezeru","en":"Morning by the lake","de":"Morgen am See"},
+    "hosts":{"src":"slike/gostitelja.jpg","sl":"Hiša Brinje z vrta","en":"The house from the garden","de":"Das Haus vom Garten aus"},
+    "studio1":{"src":"slike/studio-1.jpg","sl":"Studio z vrati na vrt","en":"The studio with its garden door","de":"Das Studio mit Gartentür"},
+    "studio2":{"src":"slike/studio-2.jpg","sl":"Postelja pod oknom","en":"The bed under the window","de":"Das Bett unter dem Fenster"},
+    "studio3":{"src":"slike/studio-3.jpg","sl":"Čajna kuhinja","en":"The kitchenette","de":"Die Kochnische"},
+    "bukev1":{"src":"slike/bukev-1.jpg","sl":"Dnevna soba z lesenim stropom","en":"Living room under the wooden ceiling","de":"Wohnzimmer unter der Holzdecke"},
+    "bukev2":{"src":"slike/bukev-2.jpg","sl":"Spalnica","en":"Bedroom","de":"Schlafzimmer"},
+    "bukev3":{"src":"slike/bukev-3.jpg","sl":"Jedilni kot","en":"The dining corner","de":"Die Essecke"},
+    "gal1":{"src":"slike/galerija-1.jpg","sl":"Pot ob jezeru","en":"Lakeside path","de":"Uferweg"},
+    "gal2":{"src":"slike/galerija-2.jpg","sl":"Kruh iz vaške pekarne","en":"Bread from the village bakery","de":"Brot aus der Dorfbäckerei"},
+    "gal3":{"src":"slike/galerija-3.jpg","sl":"Korita Mostnice","en":"Mostnica gorge","de":"Mostnica-Klamm"},
+    "gal4":{"src":"slike/galerija-4.jpg","sl":"Gore nad dolino","en":"Mountains above the valley","de":"Berge über dem Tal"},
+    "gal5":{"src":"slike/galerija-5.jpg","sl":"Slap v gozdu","en":"Waterfall in the forest","de":"Wasserfall im Wald"},
+    "poletje":{"src":"slike/poletje.jpg","sl":"Poletje na jezeru","en":"Summer on the lake","de":"Sommer am See"},
+    "zima":{"src":"slike/zima.jpg","sl":"Zima v dolini","en":"Winter in the valley","de":"Winter im Tal"}
+  },
+  "faq":[
+    {"id":"checkin","k":"prihod odhod check in out ura kdaj prispem prijava kljuc arrive arrival leave key anreise abreise uhrzeit ankommen schlussel",
+     "a":{"sl":"Prihod je med 15:00 in 20:00, odhod do 10:00. Če pridete kasneje, nama napišite in ključ pustiva v skrinjici s kodo.","en":"Check-in is 15:00–20:00 and check-out by 10:00. Arriving later? Let us know and we'll leave the key in a code box.","de":"Anreise 15:00–20:00, Abreise bis 10:00. Später da? Schreiben Sie uns, dann liegt der Schlüssel in einer Codebox."}},
+    {"id":"parking","k":"parkiranje parkirisce avto parking park car garaza parken parkplatz auto",
+     "a":{"sl":"Vsak apartma ima brezplačno parkirno mesto ob hiši. Ob jezeru so parkirišča poleti plačljiva, zato je bolje peš (10 minut).","en":"Each apartment has a free parking space by the house. Lakeside parking is paid in summer, so walking (10 minutes) is easier.","de":"Jedes Apartment hat einen kostenlosen Parkplatz am Haus. Am See ist Parken im Sommer kostenpflichtig, zu Fuß sind es 10 Minuten."}},
+    {"id":"pets","k":"pes psa psom pse ljubljencek macka zival dog dogs pet pets cat hund hunde haustier katze",
+     "a":{"sl":"Psi so dobrodošli v Studiu Macesen (10 € na noč), na vrtu je sklednica za vodo. V Bukvi žal ne.","en":"Dogs are welcome in Studio Macesen (€10 per night), and there's a water bowl in the garden. Not in Bukev, sorry.","de":"Hunde sind im Studio Macesen willkommen (10 € pro Nacht), im Garten steht ein Wassernapf. Im Bukev leider nicht."}},
+    {"id":"wifi","k":"wifi internet geslo password wlan passwort",
+     "a":{"sl":"Wi-Fi je brezplačen v obeh apartmajih (okoli 50 Mbit/s). Geslo je v vodiču za goste.","en":"Wi-Fi is free in both apartments (about 50 Mbit/s). The password is in the guest guide.","de":"WLAN ist in beiden Apartments kostenlos (ca. 50 Mbit/s). Das Passwort steht im Gästeführer."}},
+    {"id":"tax","k":"taksa turisticna tax tourist kurtaxe",
+     "a":{"sl":"Turistična taksa je 3,13 € na odraslo osebo na noč, otroci od 7 do 18 let plačajo polovico, mlajši nič.","en":"Tourist tax is €3.13 per adult per night; children aged 7–18 pay half, younger children nothing.","de":"Die Kurtaxe beträgt 3,13 € pro Erwachsenem und Nacht, Kinder von 7 bis 18 zahlen die Hälfte, jüngere nichts."}},
+    {"id":"food","k":"zajtrk hrana restavracija jesti trgovina kruh breakfast food restaurant eat shop grocery bread fruhstuck essen laden einkaufen brot",
+     "a":{"sl":"Zajtrka ne kuhava, vsako jutro pa vam na vrata obesiva kruh iz vaške pekarne. Trgovina je 400 m stran. Za večerjo priporočava Gostilno [ime], kjer imajo domače štruklje.","en":"We don't cook breakfast, but each morning we hang fresh bread from the village bakery on your door. The grocery is 400 m away. For dinner we like Gostilna [name] for its homemade štruklji.","de":"Frühstück kochen wir nicht, aber jeden Morgen hängt Brot aus der Dorfbäckerei an Ihrer Tür. Der Laden ist 400 m entfernt. Zum Abendessen empfehlen wir Gostilna [Name] mit hausgemachten Štruklji."}},
+    {"id":"lake","k":"jezero kopanje plaza dalec voda lake swim swimming beach far water see baden strand weit",
+     "a":{"sl":"Do jezera je 800 m, okoli 10 minut hoje. Najlepše mesto za kopanje je na južni strani, kjer je manj ljudi.","en":"The lake is 800 m away, about a 10-minute walk. The south shore is the nicest place to swim, with fewer people.","de":"Der See ist 800 m entfernt, etwa 10 Minuten zu Fuß. Am schönsten badet man am Südufer, dort ist weniger los."}},
+    {"id":"cancel","k":"odpoved odpovem storno vracilo cancel cancellation refund stornierung absagen",
+     "a":{"sl":"Odpoved je brezplačna do 14 dni pred prihodom, kasneje zaračunava 50 % cene.","en":"Cancellation is free up to 14 days before arrival; after that we charge 50%.","de":"Bis 14 Tage vor Anreise kostenlos stornierbar, danach berechnen wir 50 %."}},
+    {"id":"kids","k":"otrok otroci posteljica dojencek child children kid kids baby cot crib kind kinder babybett",
+     "a":{"sl":"Otroška posteljica in stolček sta v Bukvi brezplačna. Na stopnicah so zaščitna vratca.","en":"A cot and high chair are free in Bukev, and there's a safety gate on the stairs.","de":"Babybett und Hochstuhl sind im Bukev kostenlos, an der Treppe gibt es ein Schutzgitter."}},
+    {"id":"travel","k":"avtobus vlak letalisce prevoz pot pridem bus train airport transfer reach anfahrt zug flughafen",
+     "a":{"sl":"Z avtom iz Ljubljane približno 1 ura in 15 minut. Avtobus iz Ljubljane in z Bleda ustavi 400 m od hiše. Letališče Ljubljana je 55 km stran.","en":"By car from Ljubljana about 1 h 15 min. Buses from Ljubljana and Bled stop 400 m from the house. Ljubljana airport is 55 km away.","de":"Mit dem Auto ab Ljubljana ca. 1 Std. 15 Min. Busse aus Ljubljana und Bled halten 400 m vom Haus. Flughafen Ljubljana 55 km."}},
+    {"id":"pay","k":"placilo placam kartica gotovina nakazilo predplacilo payment pay card cash deposit zahlung karte bar anzahlung",
+     "a":{"sl":"Za potrditev prosiva 30 % predplačila z nakazilom, ostalo plačate ob prihodu z nakazilom ali gotovino.","en":"We ask for a 30% deposit by bank transfer to confirm; the rest is paid on arrival by transfer or cash.","de":"Zur Bestätigung bitten wir um 30 % Anzahlung per Überweisung, den Rest bei Ankunft per Überweisung oder bar."}},
+    {"id":"bikes","k":"kolo kolesa smuci shramba bike bikes ski skis storage fahrrad rad ski",
+     "a":{"sl":"Za kolesa in smuči je zaklenjena drvarnica, kjer jih lahko tudi operete.","en":"Bikes and skis go in the locked woodshed, where you can also hose them down.","de":"Fahrräder und Ski kommen in die abschließbare Holzhütte, dort kann man sie auch abspritzen."}},
+    {"id":"hike","k":"izlet pohod hoja hrib gora savica vogel triglav hike hiking walk trip mountain wandern ausflug berg",
+     "a":{"sl":"Najljubši izleti: zjutraj na Savico (550 stopnic), korita Mostnice (2 km od hiše) in z žičnico na Vogel za razgled na Triglav. Zemljevid je spodaj na strani.","en":"Our favourites: Savica early in the morning (550 steps), the Mostnica gorge (2 km away) and the Vogel cable car for a view of Triglav. There's a map further down the page.","de":"Unsere Favoriten: früh zur Savica (550 Stufen), die Mostnica-Klamm (2 km) und mit der Seilbahn auf den Vogel mit Blick auf den Triglav. Eine Karte finden Sie weiter unten."}},
+    {"id":"smoke","k":"kajenje kadim cigareta smoke smoking rauchen",
+     "a":{"sl":"Kajenje je dovoljeno samo zunaj, na vrtu je pepelnik.","en":"Smoking is outside only; there's an ashtray in the garden.","de":"Rauchen nur draußen, im Garten steht ein Aschenbecher."}},
+    {"id":"heat","k":"klima ogrevanje vroce mraz pec air conditioning heating hot cold klimaanlage heizung",
+     "a":{"sl":"Klime ni, ker so noči v Bohinju sveže. Pozimi greje centralno ogrevanje, v Bukvi tudi lončena peč.","en":"There's no air conditioning because Bohinj nights are cool. In winter there's central heating, plus a tiled stove in Bukev.","de":"Keine Klimaanlage, die Nächte sind kühl. Im Winter gibt es Zentralheizung, im Bukev zusätzlich einen Kachelofen."}}
+  ]
+}
+</script>
+
+<script>
+(function(){
+"use strict";
+var S = JSON.parse(document.getElementById("site-data").textContent);
+var T = {
+ sl:{demo:"Demo stran: izmišljena nastanitev, fotografije so ponazoritev",navUnits:"Apartmaja",navArea:"Okolica",navPrices:"Cene",navInq:"Povpraševanje",ctaCheck:"Preveri prost termin",unitsEyebrow:"Kje boste spali",unitsTitle:"Dva apartmaja, vsak s svojim vhodom",seasonEyebrow:"Kdaj priti",seasonTitle:"Bohinj ima dve zelo različni sezoni",areaEyebrow:"Okolica",areaTitle:"Vse lepo je blizu",pricesEyebrow:"Cene",pricesTitle:"Cena za cel apartma na noč",inqEyebrow:"Povpraševanje",inqTitle:"Napišite nama",inqSub:"Proste termine preveriva sama in odgovoriva v enem dnevu, običajno še isti večer.",fName:"Ime",fEmail:"E-pošta",fFrom:"Prihod",fTo:"Odhod",fUnit:"Apartma",fGuests:"Število oseb",fMsg:"Sporočilo (neobvezno)",fConsent:"Strinjam se, da podatke uporabita samo za odgovor na to povpraševanje.",fSend:"Pošlji povpraševanje",privTitle:"Zasebnost",privText:"Podatke iz obrazca uporabiva samo za odgovor. Stran ne uporablja piškotkov za sledenje.",guideLink:"Vodič za goste",legalT:"Ponudnik",taxT:"Davčna št.",rnoT:"ID obrata",season:"Sezona",from:"od {p} € / noč",pnote:"Najmanj {n} noči. Pri neposredni rezervaciji 10 % popusta. Turistična taksa {t} € na odraslo osebo na noč ni vključena. {r}",askBtn:"Vprašajte Brino",chatSub:"AI pomočnica Hiše Brinje",aiNote:"Brina je AI program in odgovarja iz podatkov gostiteljev. Rezervacijo vedno potrdita Ana in Marko.",send:"Pošlji",need:"Vpišite ime, veljaven e-naslov in označite soglasje.",ready:"Povpraševanje je pripravljeno. Pošljite ga na {e} (besedilo spodaj).",copy:"Kopiraj besedilo",copied:"Kopirano",sent:"Hvala! Odgovoriva v enem dnevu.",
+  hello:"Pozdravljeni, jaz sem Brina, AI pomočnica Ane in Marka. Lahko vam izračunam ceno za vaše datume ali odgovorim na vprašanja o hiši in okolici.",
+  chips:["Cena za moje datume","Kje parkiram?","Ali lahko pride pes?","Kaj početi?","Piši gostiteljema"],
+  askDates:"Za katere datume? Napišite na primer: 12. 7. do 15. 7., 2 osebi.",
+  quoteHead:"{d1} – {d2}, {n} noči, {g} {gw}:",guest1:"oseba",guestN:"osebe",
+  quoteDirect:"z 10 % popustom",quoteTax:"turistična taksa",quoteNote:"Ali je termin prost, preverita Ana in Marko.",
+  tooMany:"Za {g} oseb je primerna samo Bukev (do 5 oseb). Za več oseb nama pišite.",tooManyAll:"Za več kot 5 oseb nimava prostora, žal.",
+  minN:"Najkrajše bivanje so {n} noči.",fill:"Izpolni povpraševanje",mail:"Piši gostiteljema",
+  fallback:"Tega ne vem zagotovo. Najbolje, da vprašate Ano in Marka neposredno, odgovorita v enem dnevu.",
+  mailHint:"Obrazec je spodaj na strani, vpisala sem vam vse, kar sva se pogovarjala.",
+  past:"Ta datum je že mimo. Za katere datume?",
+  months:["jan","feb","mar","apr","maj","jun","jul","avg","sep","okt","nov","dec"]},
+ en:{demo:"Demo site: fictional property, photos are illustrative",navUnits:"Apartments",navArea:"The area",navPrices:"Prices",navInq:"Inquiry",ctaCheck:"Check availability",unitsEyebrow:"Where you'll sleep",unitsTitle:"Two apartments, each with its own entrance",seasonEyebrow:"When to come",seasonTitle:"Bohinj has two very different seasons",areaEyebrow:"The area",areaTitle:"Everything good is close by",pricesEyebrow:"Prices",pricesTitle:"Price per night for the whole apartment",inqEyebrow:"Inquiry",inqTitle:"Write to us",inqSub:"We check availability ourselves and reply within a day, usually the same evening.",fName:"Name",fEmail:"Email",fFrom:"Arrival",fTo:"Departure",fUnit:"Apartment",fGuests:"Guests",fMsg:"Message (optional)",fConsent:"I agree that my details are used only to answer this inquiry.",fSend:"Send inquiry",privTitle:"Privacy",privText:"We use form details only to reply. This site uses no tracking cookies.",guideLink:"Guest guide",legalT:"Provider",taxT:"Tax no.",rnoT:"Property ID",season:"Season",from:"from €{p} / night",pnote:"Minimum {n} nights. 10% off when you book direct. Tourist tax of €{t} per adult per night is not included. {r}",askBtn:"Ask Brina",chatSub:"AI helper at Hiša Brinje",aiNote:"Brina is an AI program and answers from the hosts' information. Ana and Marko always confirm bookings themselves.",send:"Send",need:"Please add your name, a valid email and tick the consent box.",ready:"Your inquiry is ready. Send it to {e} (text below).",copy:"Copy text",copied:"Copied",sent:"Thank you! We'll reply within a day.",
+  hello:"Hi, I'm Brina, Ana and Marko's AI helper. I can work out a price for your dates or answer questions about the house and the area.",
+  chips:["Price for my dates","Where do I park?","Can I bring a dog?","Things to do","Write to the hosts"],
+  askDates:"Which dates? For example: 12 July to 15 July, 2 people.",
+  quoteHead:"{d1} – {d2}, {n} nights, {g} {gw}:",guest1:"guest",guestN:"guests",
+  quoteDirect:"with 10% off",quoteTax:"tourist tax",quoteNote:"Ana and Marko will check whether the dates are free.",
+  tooMany:"For {g} guests only Bukev fits (up to 5). For more, please write to us.",tooManyAll:"Sorry, we can't host more than 5 guests.",
+  minN:"The minimum stay is {n} nights.",fill:"Fill in the inquiry",mail:"Write to the hosts",
+  fallback:"I don't know that for sure. Best to ask Ana and Marko directly; they reply within a day.",
+  mailHint:"The form is further down the page; I've filled in what we talked about.",
+  past:"That date has passed. Which dates do you have in mind?",
+  months:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},
+ de:{demo:"Demo-Seite: fiktive Unterkunft, Fotos dienen zur Veranschaulichung",navUnits:"Apartments",navArea:"Umgebung",navPrices:"Preise",navInq:"Anfrage",ctaCheck:"Verfügbarkeit prüfen",unitsEyebrow:"Wo Sie schlafen",unitsTitle:"Zwei Apartments, jedes mit eigenem Eingang",seasonEyebrow:"Wann kommen",seasonTitle:"Bohinj hat zwei sehr verschiedene Jahreszeiten",areaEyebrow:"Umgebung",areaTitle:"Alles Schöne liegt nah",pricesEyebrow:"Preise",pricesTitle:"Preis pro Nacht für das ganze Apartment",inqEyebrow:"Anfrage",inqTitle:"Schreiben Sie uns",inqSub:"Wir prüfen die Verfügbarkeit selbst und antworten innerhalb eines Tages, meist am selben Abend.",fName:"Name",fEmail:"E-Mail",fFrom:"Anreise",fTo:"Abreise",fUnit:"Apartment",fGuests:"Personen",fMsg:"Nachricht (optional)",fConsent:"Ich bin einverstanden, dass meine Daten nur für diese Anfrage verwendet werden.",fSend:"Anfrage senden",privTitle:"Datenschutz",privText:"Formulardaten nutzen wir nur für die Antwort. Keine Tracking-Cookies.",guideLink:"Gästeführer",legalT:"Anbieter",taxT:"Steuernr.",rnoT:"Unterkunfts-ID",season:"Saison",from:"ab {p} € / Nacht",pnote:"Mindestens {n} Nächte. 10 % Rabatt bei Direktbuchung. Kurtaxe {t} € pro Erwachsenem und Nacht nicht inbegriffen. {r}",askBtn:"Fragen Sie Brina",chatSub:"KI-Helferin im Haus Brinje",aiNote:"Brina ist ein KI-Programm und antwortet aus den Angaben der Gastgeber. Buchungen bestätigen Ana und Marko immer selbst.",send:"Senden",need:"Bitte Name, gültige E-Mail und Einwilligung angeben.",ready:"Ihre Anfrage ist bereit. Senden Sie sie an {e} (Text unten).",copy:"Text kopieren",copied:"Kopiert",sent:"Danke! Wir antworten innerhalb eines Tages.",
+  hello:"Hallo, ich bin Brina, die KI-Helferin von Ana und Marko. Ich kann den Preis für Ihre Daten berechnen oder Fragen zum Haus und zur Umgebung beantworten.",
+  chips:["Preis für meine Daten","Wo parke ich?","Darf der Hund mit?","Ausflüge","Gastgebern schreiben"],
+  askDates:"Für welche Daten? Zum Beispiel: 12. 7. bis 15. 7., 2 Personen.",
+  quoteHead:"{d1} – {d2}, {n} Nächte, {g} {gw}:",guest1:"Person",guestN:"Personen",
+  quoteDirect:"mit 10 % Rabatt",quoteTax:"Kurtaxe",quoteNote:"Ob der Termin frei ist, prüfen Ana und Marko.",
+  tooMany:"Für {g} Personen passt nur das Bukev (bis 5). Für mehr schreiben Sie uns bitte.",tooManyAll:"Mehr als 5 Personen können wir leider nicht unterbringen.",
+  minN:"Der Mindestaufenthalt beträgt {n} Nächte.",fill:"Anfrage ausfüllen",mail:"Gastgebern schreiben",
+  fallback:"Das weiß ich nicht sicher. Fragen Sie am besten Ana und Marko direkt, sie antworten innerhalb eines Tages.",
+  mailHint:"Das Formular ist weiter unten, ich habe eingetragen, worüber wir gesprochen haben.",
+  past:"Dieses Datum ist vorbei. Welche Daten planen Sie?",
+  months:["Jan.","Feb.","März","Apr.","Mai","Juni","Juli","Aug.","Sep.","Okt.","Nov.","Dez."]}
+};
+var lang = "sl";
+try { var sv = localStorage.getItem("lang"); if (sv && T[sv]) lang = sv; else { var nl = (navigator.language||"").slice(0,2); if (T[nl]) lang = nl; } } catch(e) {}
+
+function t(k, v){ var s = T[lang][k]; if (v) for (var x in v) s = s.split("{"+x+"}").join(v[x]); return s; }
+function c(o){ return o ? (o[lang] || o.sl || "") : ""; }
+function el(tag, cls, txt){ var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+function money(n){ return n.toLocaleString(lang === "en" ? "en-GB" : lang === "de" ? "de-DE" : "sl-SI", {minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2}) + " €"; }
+
+/* ---------- photos ---------- */
+var IMG = S.images;
+function fillPh(node, key){
+  var im = IMG[key]; node.textContent = ""; node.classList.remove("empty");
+  if (!im) return;
+  node.setAttribute("data-cap", c(im));
+  if (!im.src){ node.classList.add("empty"); return; }
+  var img = el("img"); img.alt = c(im); img.loading = key === "hero" ? "eager" : "lazy"; img.decoding = "async";
+  img.onerror = function(){ img.remove(); node.classList.add("empty"); if (key === "hero") document.getElementById("top").classList.add("noimg"); };
+  img.src = im.src; node.appendChild(img);
+}
+var lbList = [], lbIdx = 0;
+function photoBtn(key, list){
+  var b = el("button"); b.type = "button"; b.setAttribute("aria-label", c(IMG[key]));
+  var p = el("div", "ph"); b.appendChild(p); fillPh(p, key);
+  b.onclick = function(){ openLb(list, list.indexOf(key)); };
+  return b;
+}
+function openLb(list, i){
+  lbList = list.filter(function(k){ return IMG[k] && IMG[k].src; }); if (!lbList.length) return;
+  lbIdx = Math.max(0, lbList.indexOf(list[i])); showLb(); document.getElementById("lb").hidden = false; document.getElementById("lbX").focus();
+}
+function showLb(){ var k = lbList[lbIdx]; var img = document.getElementById("lbImg"); img.src = IMG[k].src; img.alt = c(IMG[k]); document.getElementById("lbCap").textContent = c(IMG[k]); }
+document.getElementById("lbX").onclick = function(){ document.getElementById("lb").hidden = true; };
+document.getElementById("lbP").onclick = function(){ lbIdx = (lbIdx + lbList.length - 1) % lbList.length; showLb(); };
+document.getElementById("lbN").onclick = function(){ lbIdx = (lbIdx + 1) % lbList.length; showLb(); };
+document.addEventListener("keydown", function(e){ var lb = document.getElementById("lb"); if (lb.hidden) return; if (e.key === "Escape") lb.hidden = true; if (e.key === "ArrowRight") document.getElementById("lbN").click(); if (e.key === "ArrowLeft") document.getElementById("lbP").click(); });
+
+/* ---------- render ---------- */
+function render(){
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-t]").forEach(function(n){ n.textContent = t(n.dataset.t); });
+  document.querySelectorAll("[data-c]").forEach(function(n){ n.textContent = c(S[n.dataset.c]); });
+  document.querySelectorAll(".lang button").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+  document.querySelectorAll("[data-img]").forEach(function(n){ fillPh(n, n.dataset.img); });
+  if (!IMG.hero || !IMG.hero.src) document.getElementById("top").classList.add("noimg");
+
+  var hb = document.getElementById("hostBody"); hb.textContent = ""; (S.hostBody[lang] || S.hostBody.sl).forEach(function(p){ hb.appendChild(el("p", null, p)); });
+  var f = document.getElementById("facts"); f.textContent = "";
+  S.facts.forEach(function(x){ var d = el("div"); d.appendChild(el("b", null, x.v)); d.appendChild(el("span", null, c(x))); f.appendChild(d); });
+
+  var u = document.getElementById("units"); u.textContent = "";
+  var sel = document.getElementById("fUnit"); var prevSel = sel.value; sel.textContent = "";
+  S.units.forEach(function(x, i){
+    var row = el("article", "unit" + (i % 2 ? " flip" : ""));
+    var pics = el("div", "pics"); x.imgs.forEach(function(k){ pics.appendChild(photoBtn(k, x.imgs)); }); row.appendChild(pics);
+    var tx = el("div", "utext");
+    tx.appendChild(el("h3", null, c(x.name)));
+    tx.appendChild(el("p", "story", c(x.story)));
+    var dl = el("dl", "spec"); (x.spec[lang] || x.spec.sl).forEach(function(r){ dl.appendChild(el("dt", null, r[0])); dl.appendChild(el("dd", null, r[1])); }); tx.appendChild(dl);
+    var low = Math.min.apply(null, S.seasonsPrice.map(function(s){ return s[x.id]; }));
+    var fr = el("p", "from"); fr.textContent = t("from", {p: low}); tx.appendChild(fr);
+    row.appendChild(tx); u.appendChild(row);
+    var o = el("option", null, c(x.name)); o.value = x.id; sel.appendChild(o);
+  });
+  if (prevSel) sel.value = prevSel;
+
+  var st = document.getElementById("strip"); st.textContent = "";
+  S.gallery.forEach(function(k){ st.appendChild(photoBtn(k, S.gallery)); });
+
+  var se = document.getElementById("seasons"); se.textContent = "";
+  S.seasons.forEach(function(s){ var d = el("div", "season"); var p = el("div", "ph"); fillPh(p, s.img); d.appendChild(p); d.appendChild(el("h3", null, c(s.t))); var ul = el("ul"); (s.l[lang] || s.l.sl).forEach(function(x){ ul.appendChild(el("li", null, x)); }); d.appendChild(ul); se.appendChild(d); });
+
+  document.getElementById("map").innerHTML = mapSvg();
+  var di = document.getElementById("dist"); di.textContent = "";
+  S.dist.forEach(function(x){ var li = el("li"); li.appendChild(el("b", null, x.v)); li.appendChild(el("span", null, c(x))); di.appendChild(li); });
+
+  var tb = document.getElementById("prices"); tb.textContent = "";
+  var hr = el("tr"); hr.appendChild(el("th", null, t("season"))); S.units.forEach(function(x){ hr.appendChild(el("th", null, c(x.name))); });
+  var th = el("thead"); th.appendChild(hr); tb.appendChild(th);
+  var bd = el("tbody"); S.seasonsPrice.forEach(function(s){ var r = el("tr"); r.appendChild(el("td", null, c(s))); S.units.forEach(function(x){ r.appendChild(el("td", "n", money(s[x.id]))); }); bd.appendChild(r); }); tb.appendChild(bd);
+  document.getElementById("pnote").textContent = t("pnote", {n: S.minNights, t: String(S.tax).replace(".", lang === "en" ? "." : ","), r: c(S.rules)});
+  var kn = document.getElementById("know"); kn.textContent = "";
+  S.know.forEach(function(x){ var p = el("p"); p.appendChild(el("b", null, c(x.b) + " ")); p.appendChild(document.createTextNode(c(x.t))); kn.appendChild(p); });
+
+  var low = Math.min.apply(null, S.seasonsPrice.map(function(s){ return s.studio; }));
+  document.getElementById("barPrice").textContent = t("from", {p: low});
+  document.getElementById("contact").textContent = S.email;
+  var lg = document.getElementById("legal"); lg.textContent = "";
+  lg.appendChild(el("b", null, t("legalT"))); [S.legal.provider, S.legal.address, t("taxT") + " " + S.legal.taxId, t("rnoT") + " " + S.legal.rno].forEach(function(l){ lg.appendChild(el("br")); lg.appendChild(document.createTextNode(l)); });
+
+  var ch = document.getElementById("chips"); ch.textContent = "";
+  T[lang].chips.forEach(function(q, i){ var b = el("button", null, q); b.type = "button"; b.onclick = function(){ i === 0 ? ask(q, "price") : i === 4 ? ask(q, "mail") : ask(q); }; ch.appendChild(b); });
+}
+
+function mapSvg(){
+  var L = {sl:["Bohinjsko jezero","Hiša Brinje","Ribčev Laz","Stara Fužina","Ukanc","Savica","Vogel","Mostnica","Triglav ↑","proti Bledu →"],
+           en:["Lake Bohinj","Hiša Brinje","Ribčev Laz","Stara Fužina","Ukanc","Savica","Vogel","Mostnica","Triglav ↑","to Bled →"],
+           de:["Bohinjer See","Hiša Brinje","Ribčev Laz","Stara Fužina","Ukanc","Savica","Vogel","Mostnica","Triglav ↑","nach Bled →"]}[lang];
+  return '<svg viewBox="0 0 640 360" role="img" aria-label="' + L[0] + '">' +
+    '<rect width="640" height="360" fill="var(--paper-2)"/>' +
+    '<path d="M0 300 Q160 250 320 280 T640 260" fill="none" stroke="var(--rule)" stroke-width="1"/>' +
+    '<path d="M0 90 Q200 60 360 95 T640 70" fill="none" stroke="var(--rule)" stroke-width="1"/>' +
+    '<path d="M110 205 C150 160 260 150 360 165 C430 175 470 190 480 210 C470 232 420 240 340 236 C250 234 150 248 110 205Z" fill="var(--moss)" opacity=".22" stroke="var(--moss)" stroke-width="1.5"/>' +
+    '<text class="big" x="230" y="205">' + L[0] + '</text>' +
+    '<path d="M480 210 C520 205 560 200 640 196" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-dasharray="3 4"/>' +
+    '<circle cx="500" cy="190" r="4" fill="var(--ink-2)"/><text x="508" y="186">' + L[2] + '</text>' +
+    '<circle cx="545" cy="140" r="7" fill="var(--wood)"/><text x="556" y="136" style="font-weight:600;fill:var(--ink)">' + L[1] + '</text>' +
+    '<circle cx="520" cy="110" r="4" fill="var(--ink-2)"/><text x="470" y="100">' + L[3] + '</text>' +
+    '<path d="M530 108 L560 70" stroke="var(--ink-2)" stroke-dasharray="2 4"/><text x="565" y="66">' + L[7] + '</text>' +
+    '<circle cx="95" cy="215" r="4" fill="var(--ink-2)"/><text x="60" y="240">' + L[4] + '</text>' +
+    '<path d="M95 215 L45 195" stroke="var(--ink-2)" stroke-dasharray="2 4"/><circle cx="42" cy="194" r="4" fill="var(--ink-2)"/><text x="18" y="180">' + L[5] + '</text>' +
+    '<path d="M160 300 l18 -32 l18 32Z" fill="none" stroke="var(--ink-2)"/><text x="150" y="320">' + L[6] + '</text>' +
+    '<text x="300" y="40">' + L[8] + '</text>' +
+    '<text x="548" y="226">' + L[9] + '</text>' +
+    '</svg>';
+}
+
+document.querySelectorAll(".lang button").forEach(function(b){ b.addEventListener("click", function(){ lang = b.dataset.lang; try { localStorage.setItem("lang", lang); } catch(e) {} render(); resetChat(); }); });
+
+/* ---------- inquiry form ---------- */
+document.getElementById("inq").addEventListener("submit", function(ev){
+  ev.preventDefault();
+  var out = document.getElementById("inqOut"); out.textContent = ""; out.hidden = false;
+  var name = val("fName"), email = val("fEmail");
+  if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || !document.getElementById("fConsent").checked){ out.appendChild(el("p", null, t("need"))); return; }
+  var us = document.getElementById("fUnit");
+  var text = [t("fName") + ": " + name, t("fEmail") + ": " + email, t("fFrom") + ": " + (val("fFrom") || "-"), t("fTo") + ": " + (val("fTo") || "-"),
+    t("fUnit") + ": " + us.options[us.selectedIndex].text, t("fGuests") + ": " + val("fGuests"), t("fMsg") + ": " + (val("fMsg") || "-")].join("\n");
+  if (S.formEndpoint){
+    fetch(S.formEndpoint, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({text: text, email: email})})
+      .then(function(r){ if (r.ok) out.appendChild(el("p", null, t("sent"))); else manual(out, text); }).catch(function(){ manual(out, text); });
+  } else manual(out, text);
+});
+function val(id){ return document.getElementById(id).value.trim(); }
+function manual(out, text){
+  out.appendChild(el("p", null, t("ready", {e: S.email})));
+  var pre = el("pre", null, text); out.appendChild(pre);
+  var b = el("button", "btn line", t("copy")); b.type = "button";
+  b.onclick = function(){ var ok = function(){ b.textContent = t("copied"); }; if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, function(){ sel(pre); }); else sel(pre); };
+  out.appendChild(b);
+}
+function sel(n){ var r = document.createRange(); r.selectNodeContents(n); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+
+/* ---------- Brina, the guest helper ---------- */
+var chat = document.getElementById("chat"), msgs = document.getElementById("msgs");
+var ctx = {from: null, to: null, guests: null, unit: null}, hist = [];
+function openChat(){ chat.hidden = false; document.getElementById("askBtn").setAttribute("aria-expanded", "true"); if (!msgs.children.length) resetChat(); setTimeout(function(){ document.getElementById("chatIn").focus(); }, 50); }
+function closeChat(){ chat.hidden = true; document.getElementById("askBtn").setAttribute("aria-expanded", "false"); }
+document.getElementById("askBtn").onclick = function(){ chat.hidden ? openChat() : closeChat(); };
+document.getElementById("chatX").onclick = closeChat;
+function me(text){ msgs.appendChild(el("div", "m me", text)); msgs.scrollTop = msgs.scrollHeight; }
+function bot(text, extra, acts){
+  var m = el("div", "m bot"); var tx = el("div", "txt", text); if (extra) tx.appendChild(extra); m.appendChild(tx);
+  if (acts && acts.length){ var a = el("div", "acts"); acts.forEach(function(x){ var b = el("button", null, x[0]); b.type = "button"; b.onclick = x[1]; a.appendChild(b); }); m.appendChild(a); }
+  msgs.appendChild(m); msgs.scrollTop = msgs.scrollHeight; return m;
+}
+function typing(){ var w = el("div", "m bot"); var d = el("div", "typing"); d.innerHTML = "<i></i><i></i><i></i>"; w.appendChild(d); msgs.appendChild(w); msgs.scrollTop = msgs.scrollHeight; return w; }
+function resetChat(){ msgs.textContent = ""; ctx = {from: null, to: null, guests: null, unit: null}; hist = []; bot(t("hello")); }
+
+function norm(s){ return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/ß/g, "ss").replace(/[^a-z0-9.\/\s-]/g, " "); }
+function detectLang(q){
+  var n = " " + norm(q) + " ";
+  if (/[äöüß]/i.test(q) || /\s(ich|wir|der|die|das|und|ist|kann|hund|gibt|wann|wie|preis|nacht)\s/.test(n)) return "de";
+  if (/[čšž]/i.test(q) || /\s(je|ali|kje|kako|koliko|lahko|in|za|imate|cena|noc|pes)\s/.test(n)) return "sl";
+  if (/\s(the|is|can|do|you|we|where|how|much|price|dog|night|what|there)\s/.test(n)) return "en";
+  return null;
+}
+var MONTHS = [["jan","januar","january","janner","jän"],["feb","februar","february"],["mar","marec","marca","march","marz","mär"],["apr","april","aprila"],["maj","maja","may","mai"],["jun","junij","junija","june","juni"],["jul","julij","julija","july","juli"],["avg","avgust","avgusta","aug","august"],["sep","sept","september","septembra"],["okt","oct","oktober","oktobra","october"],["nov","november","novembra"],["dec","dez","december","decembra","dezember"]];
+function monthOf(w){ w = norm(w).replace(/\./g, ""); for (var i = 0; i < 12; i++) if (MONTHS[i].some(function(m){ return w === m || (w.length >= 3 && m.indexOf(w) === 0); })) return i + 1; return 0; }
+function mkDate(d, m){
+  var now = new Date(); var y = now.getFullYear();
+  var dt = new Date(Date.UTC(y, m - 1, d));
+  var today = Date.UTC(y, now.getMonth(), now.getDate());
+  if (dt.getTime() < today - 86400000 * 1) dt = new Date(Date.UTC(y + 1, m - 1, d));
+  return (dt.getUTCMonth() === m - 1 && dt.getUTCDate() === d) ? dt : null;
+}
+function parse(q){
+  var r = {}; var n = norm(q);
+  // 12.7. - 15.7. / 12/7 to 15/7 / 12. 7. do 15. 7.
+  var nums = []; var re = /(\d{1,2})\s*[.\/]\s*(\d{1,2})\.?/g, mm;
+  while ((mm = re.exec(n))) nums.push([+mm[1], +mm[2]]);
+  if (nums.length >= 2){ r.from = mkDate(nums[0][0], nums[0][1]); r.to = mkDate(nums[1][0], nums[1][1]); if (r.from && r.to && r.to <= r.from) r.to = new Date(Date.UTC(r.from.getUTCFullYear() + (nums[1][1] < nums[0][1] ? 1 : 0), nums[1][1] - 1, nums[1][0])); }
+  else {
+    // 12-15 july / 12. do 15. julija / 28 jul - 2 aug
+    var w = n.split(/\s+/), ds = [], ms = [];
+    w.forEach(function(x, i){ var d = x.match(/^(\d{1,2})\.?$/); var range = x.match(/^(\d{1,2})\.?-(\d{1,2})\.?$/); var mo = monthOf(x);
+      if (range){ ds.push(+range[1], +range[2]); } else if (d && +d[1] <= 31 && !/^(oseb|osebe|osebi|people|persons|guests|personen|noci|nocitve|nights|nachte|odrasl|adults|erwachs)/.test(w[i+1] || "")) ds.push(+d[1]); else if (mo) ms.push({m: mo, at: ds.length}); });
+    if (ds.length >= 2 && ms.length){
+      var m1 = ms[0].at >= 2 ? ms[0].m : ms[0].m, m2 = ms.length > 1 ? ms[1].m : ms[0].m;
+      if (ms.length > 1 && ms[0].at === 1) { m1 = ms[0].m; }
+      r.from = mkDate(ds[0], m1); r.to = mkDate(ds[1], m2);
+      if (r.from && r.to && r.to <= r.from && m1 === m2) r.to = null;
+    }
+  }
+  var g = n.match(/(\d{1,2})\s*(oseb|osebe|osebi|odrasl|ljudi|people|persons|guests|adults|of us|personen|erwachsene|leute)/);
+  if (g) r.guests = +g[1];
+  else if (/\b(dva|dve|two|zwei|par|couple|paar)\b/.test(n) && /(oseb|odrasl|people|guests|personen|par|couple|paar|nas|us|wir)/.test(n)) r.guests = 2;
+  var nn = n.match(/(\d{1,2})\s*(noci|nocitve|nights|nachte|nacht)/); if (nn) r.nights = +nn[1];
+  if (/macesen|studio/.test(n)) r.unit = "studio"; if (/bukev|druzin|family|familie/.test(n)) r.unit = "druzinski";
+  r.priceIntent = /(cena|cene|kolik|stane|price|cost|how much|rate|preis|kosten|wieviel|was kostet|prost|termin|available|availability|frei|verfugbar|book|rezerv|buchen)/.test(n);
+  r.mailIntent = /(pisi|piši|napis|kontakt|gostitelj|host|contact|email|e-mail|schreib|gastgeber)/.test(n);
+  return r;
+}
+function seasonPrice(d, unit){ var m = d.getUTCMonth() + 1; var s = S.seasonsPrice.filter(function(x){ return x.months.indexOf(m) >= 0; })[0]; return s[unit]; }
+function fmt(d){ return d.getUTCDate() + ". " + T[lang].months[d.getUTCMonth()]; }
+function quote(){
+  var nights = Math.round((ctx.to - ctx.from) / 86400000);
+  var g = ctx.guests || 2;
+  var box = el("div", "quote");
+  var units = S.units.filter(function(u){ return (!ctx.unit || u.id === ctx.unit) && u.guests >= g; });
+  if (!units.length) units = S.units.filter(function(u){ return u.guests >= g; });
+  var head = t("quoteHead", {d1: fmt(ctx.from), d2: fmt(ctx.to), n: nights, g: g, gw: g === 1 ? t("guest1") : t("guestN")});
+  if (g > 5) return {text: t("tooManyAll")};
+  var lines = [];
+  units.forEach(function(u){
+    var sum = 0; for (var i = 0; i < nights; i++) sum += seasonPrice(new Date(ctx.from.getTime() + i * 86400000), u.id);
+    var disc = Math.round(sum * (1 - S.directDiscount) * 100) / 100;
+    var row = el("div"); row.appendChild(el("span", null, c(u.name) + " (" + t("quoteDirect") + ")")); row.appendChild(el("b", null, money(disc))); box.appendChild(row);
+    lines.push(c(u.name) + ": " + money(disc));
+  });
+  var tax = Math.round(S.tax * g * nights * 100) / 100;
+  var tr = el("div"); tr.appendChild(el("span", null, t("quoteTax"))); tr.appendChild(el("span", null, money(tax))); box.appendChild(tr);
+  var extra = nights < S.minNights ? " " + t("minN", {n: S.minNights}) : "";
+  if (g > 2 && !ctx.unit) extra += " " + t("tooMany", {g: g});
+  return {text: head + extra, box: box, note: t("quoteNote")};
+}
+function fillForm(note){
+  if (ctx.from) document.getElementById("fFrom").value = ctx.from.toISOString().slice(0, 10);
+  if (ctx.to) document.getElementById("fTo").value = ctx.to.toISOString().slice(0, 10);
+  if (ctx.guests) document.getElementById("fGuests").value = ctx.guests;
+  var unit = ctx.unit || (ctx.guests > 2 ? "druzinski" : null); if (unit) document.getElementById("fUnit").value = unit;
+  if (typeof note === "string" && note && !val("fMsg")) document.getElementById("fMsg").value = note;
+  if (matchMedia("(max-width:760px)").matches) closeChat();
+  document.getElementById("povprasevanje").scrollIntoView();
+  setTimeout(function(){ document.getElementById("fName").focus({preventScroll: true}); }, 400);
+}
+function faqMatches(q){
+  var words = norm(q).split(/\s+/).filter(function(w){ return w.length >= 3; });
+  var scored = S.faq.map(function(f){
+    var keys = f.k.split(" "), s = 0;
+    words.forEach(function(w){ keys.forEach(function(k){ if (w === k || (w.length >= 4 && k.length >= 4 && (w.indexOf(k) === 0 || k.indexOf(w) === 0))) s++; }); });
+    return {f: f, s: s};
+  }).filter(function(x){ return x.s > 0; }).sort(function(a, b){ return b.s - a.s; });
+  return scored.slice(0, 2).filter(function(x, i, a){ return i === 0 || x.s >= a[0].s; }).map(function(x){ return x.f; });
+}
+var fillAct = function(){ return [t("fill"), function(){ fillForm(); }]; };
+function localReply(q, forced){
+  var p = parse(q);
+  if (p.from) ctx.from = p.from; if (p.to) ctx.to = p.to; if (p.guests) ctx.guests = p.guests; if (p.unit) ctx.unit = p.unit;
+  if (p.from && !p.to && p.nights) ctx.to = new Date(p.from.getTime() + p.nights * 86400000);
+  if (forced === "mail" || (p.mailIntent && !p.priceIntent)){ fillForm(); return {text: t("mailHint")}; }
+  var hasDates = ctx.from && ctx.to && ctx.to > ctx.from;
+  if (p.from && ctx.from < new Date(Date.now() - 86400000)) return {text: t("past")};
+  if (forced === "price" || p.priceIntent || p.from){
+    if (!hasDates) return {text: t("askDates")};
+    var qt = quote(); return {text: qt.text, box: qt.box, note: qt.note, acts: [fillAct()]};
+  }
+  if (p.guests && hasDates){ var q2 = quote(); return {text: q2.text, box: q2.box, note: q2.note, acts: [fillAct()]}; }
+  var m = faqMatches(q);
+  if (m.length) return {text: m.map(function(f){ return c(f.a); }).join("\n\n")};
+  return {text: t("fallback"), acts: [[t("mail"), function(){ fillForm(q); }]]};
+}
+function ask(q, forced){
+  q = (q || "").trim(); if (!q) return;
+  var dl = detectLang(q); if (dl && dl !== lang && !forced){ lang = dl; try { localStorage.setItem("lang", lang); } catch(e) {} render(); }
+  me(q); hist.push({role: "user", content: q});
+  var w = typing();
+  var finish = function(r){
+    w.remove();
+    var extra = null;
+    if (r.box){ extra = r.box; if (r.note){ var n = el("div"); n.style.marginTop = "6px"; n.style.color = "var(--ink-2)"; n.textContent = r.note; extra.appendChild(n); } }
+    bot(r.text, extra, r.acts); hist.push({role: "assistant", content: r.text});
+  };
+  var local = localReply(q, forced);
+  var useAi = S.aiEndpoint && !local.box && local.text === t("fallback");
+  if (useAi){
+    fetch(S.aiEndpoint, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({lang: lang, messages: hist.slice(-10)})})
+      .then(function(r){ return r.ok ? r.json() : Promise.reject(r.status); })
+      .then(function(d){ finish({text: d.answer, acts: [[t("mail"), fillForm]]}); })
+      .catch(function(){ finish(local); });
+  } else setTimeout(function(){ finish(local); }, 450 + Math.min(700, local.text.length * 4));
+}
+document.getElementById("chatForm").addEventListener("submit", function(e){ e.preventDefault(); var i = document.getElementById("chatIn"); ask(i.value); i.value = ""; });
+
+render();
+})();
+</script>
+</body>
+</html>

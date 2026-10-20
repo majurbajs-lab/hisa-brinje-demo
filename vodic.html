@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vodič za goste Hiša Brinje</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: phone-first single column guide, opened from a QR code in the apartment; same look as index.html (paper, serif headings, moss accent) */
+:root{
+  --paper:#f7f7f3;--paper-2:#eceee7;--ink:#1c2b27;--ink-2:#4d5c57;--moss:#3f6b4f;--moss-ink:#ffffff;--wood:#9a6a3a;--rule:#d6dbd2;
+  --display:"Newsreader","Iowan Old Style",Palatino,Georgia,serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#141a18;--paper-2:#1b2320;--ink:#e8ece6;--ink-2:#a9b5ae;--moss:#8fbf9c;--moss-ink:#10241a;--wood:#cf9a63;--rule:#2c3632;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#141a18;--paper-2:#1b2320;--ink:#e8ece6;--ink-2:#a9b5ae;--moss:#8fbf9c;--moss-ink:#10241a;--wood:#cf9a63;--rule:#2c3632;color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));padding-block:28px 56px}
+h1,h2{font-family:var(--display);font-weight:400;line-height:1.1;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.2rem,8vw,3rem)}
+h2{font-size:1.45rem;margin-bottom:10px}
+p,ul{margin:0}
+.demo{background:var(--ink);color:var(--paper);font-size:.8rem;text-align:center;padding:6px 16px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.top p{color:var(--ink-2);margin-top:8px}
+.lang{display:flex;gap:2px}
+.lang button{border:0;background:none;color:var(--ink-2);padding:4px 7px;font:500 .8rem var(--body);letter-spacing:.08em;cursor:pointer;border-bottom:1px solid transparent}
+.lang button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.quick{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin-bottom:28px;border-top:1px solid var(--rule)}
+.quick div{padding:12px 0;border-bottom:1px solid var(--rule);display:grid;gap:2px}
+.quick div:nth-child(odd){padding-right:12px}
+.quick span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.quick b{font-family:var(--display);font-weight:400;font-size:1.25rem;font-variant-numeric:tabular-nums;word-break:break-word}
+section{padding-block:22px;border-top:1px solid var(--rule)}
+ul{padding-left:0;list-style:none;display:grid;gap:6px}
+ul li{padding-left:1.1em;position:relative}
+ul li::before{content:"";position:absolute;left:0;top:.8em;width:.5em;height:1px;background:var(--wood)}
+.bins{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.bins li{display:flex;gap:10px;align-items:center;padding-left:0}
+.bins li::before{display:none}
+.dot{width:14px;height:14px;border-radius:50%;flex:none;border:1px solid var(--rule)}
+.sos{font-variant-numeric:tabular-nums}
+.sos b{display:inline-block;min-width:3.5em;font-family:var(--display);font-weight:500}
+:focus-visible{outline:2px solid var(--moss);outline-offset:3px}
+#sections section:first-child{border-top:0}
+@media (max-width:380px){.quick{grid-template-columns:1fr}.quick div:nth-child(odd){padding-right:0}}
+</style>
+</head>
+<body>
+<div class="demo" data-t="demo"></div>
+<div class="wrap">
+  <div class="top">
+    <div><h1 data-t="title"></h1><p data-t="sub"></p></div>
+    <div class="lang" role="group" aria-label="Jezik / Language">
+      <button type="button" data-lang="sl">SL</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button>
+    </div>
+  </div>
+  <div class="quick">
+    <div><span>Wi-Fi</span><b>HisaBrinje</b></div>
+    <div><span data-t="pw"></span><b>[geslo]</b></div>
+    <div><span data-t="out"></span><b>10:00</b></div>
+    <div><span data-t="host"></span><b>info@primer-hisa-brinje.si</b></div>
+  </div>
+  <div id="sections"></div>
+</div>
+<script>
+(function(){
+"use strict";
+var G = {
+  sl:{demo:"DEMO: vodič za izmišljeno nastanitev",title:"Dobrodošli v Hiši Brinje",sub:"Vse, kar potrebujete med bivanjem, na enem mestu.",pw:"Geslo",out:"Odhod do",host:"Ana in Marko",
+    s:[["Prihod in ključ",["Ključ je v skrinjici s kodo levo od vhoda. Kodo dobite dan pred prihodom.","Parkirate lahko na označenem mestu ob hiši.","Ob prihodu potrebujemo osebni dokument vseh gostov za prijavo (zakonska obveznost)."]],
+       ["Odhod",["Odhod do 10:00. Ključ vrnite v skrinjico.","Posodo pustite pomito, smeti odnesite v zabojnike.","Če želite oditi kasneje, nam pišite dan prej."]],
+       ["Ločevanje odpadkov",null],
+       ["V hiši",["Ogrevanje: termostat je na steni v dnevni sobi.","Pralni stroj je v kopalnici družinskega apartmaja.","Prosimo, ne kadite v notranjosti."]],
+       ["Izleti",["Bohinjsko jezero: 10 minut peš. Parkirišča ob jezeru so v sezoni plačljiva.","Slap Savica: okoli 550 stopnic do razgledišča.","Korita Mostnice: lahek sprehod ob reki.","Vogel: žičnica nad jezerom, poleti razgled, pozimi smučanje."]],
+       ["Hrana in trgovina",["Trgovina: 5 minut hoje [ime in ura odprtja vpiše gostitelj].","Priporočene restavracije: [vpiše gostitelj].","Lokalni sir Mohant in bohinjski kruh poskusite na kmetijah v okolici."]],
+       ["Nujni primeri",null]],
+    bins:[["#e9c23b","embalaža (plastika, pločevinke)"],["#3a6fd0","papir in karton"],["#2f8a4c","steklo"],["#7a4d2b","biološki odpadki"],["#555b5e","ostali odpadki"]],
+    sos:[["112","reševalci, gasilci"],["113","policija"],["1987","pomoč na cesti (AMZS)"]]},
+  en:{demo:"DEMO: guide for a fictional property",title:"Welcome to Hiša Brinje",sub:"Everything you need during your stay, in one place.",pw:"Password",out:"Check-out by",host:"Ana and Marko",
+    s:[["Arrival and key",["The key is in the code box to the left of the entrance. You get the code the day before arrival.","Park in the marked space next to the house.","On arrival we need an ID for every guest for registration (required by law)."]],
+       ["Departure",["Check-out by 10:00. Put the key back in the box.","Please leave dishes washed and take rubbish to the bins.","If you'd like to leave later, message us the day before."]],
+       ["Sorting rubbish",null],
+       ["In the house",["Heating: the thermostat is on the living-room wall.","The washing machine is in the family apartment's bathroom.","Please don't smoke indoors."]],
+       ["Trips",["Lake Bohinj: a 10-minute walk. Lakeside parking is paid in season.","Savica waterfall: about 550 steps to the viewpoint.","Mostnica gorge: an easy walk along the river.","Vogel: cable car above the lake, views in summer, skiing in winter."]],
+       ["Food and shops",["Grocery shop: a 5-minute walk [host adds name and hours].","Recommended restaurants: [host adds].","Try local Mohant cheese and Bohinj bread at nearby farms."]],
+       ["Emergencies",null]],
+    bins:[["#e9c23b","packaging (plastic, cans)"],["#3a6fd0","paper and cardboard"],["#2f8a4c","glass"],["#7a4d2b","food waste"],["#555b5e","everything else"]],
+    sos:[["112","ambulance, fire"],["113","police"],["1987","roadside help (AMZS)"]]},
+  de:{demo:"DEMO: Gästeführer für eine fiktive Unterkunft",title:"Willkommen im Haus Brinje",sub:"Alles für Ihren Aufenthalt an einem Ort.",pw:"Passwort",out:"Abreise bis",host:"Ana und Marko",
+    s:[["Anreise und Schlüssel",["Der Schlüssel liegt in der Schlüsselbox links vom Eingang. Den Code erhalten Sie am Vortag.","Parken Sie auf dem markierten Platz am Haus.","Bei Ankunft benötigen wir einen Ausweis aller Gäste zur Anmeldung (gesetzlich vorgeschrieben)."]],
+       ["Abreise",["Abreise bis 10:00. Schlüssel zurück in die Box.","Bitte Geschirr gespült lassen und Müll in die Container bringen.","Spätere Abreise bitte am Vortag anfragen."]],
+       ["Mülltrennung",null],
+       ["Im Haus",["Heizung: Thermostat an der Wand im Wohnzimmer.","Die Waschmaschine ist im Bad des Familienapartments.","Bitte nicht im Haus rauchen."]],
+       ["Ausflüge",["Bohinjer See: 10 Gehminuten. Parkplätze am See sind in der Saison kostenpflichtig.","Savica-Wasserfall: ca. 550 Stufen zum Aussichtspunkt.","Mostnica-Klamm: leichter Spaziergang am Fluss.","Vogel: Seilbahn über dem See, im Sommer Aussicht, im Winter Skifahren."]],
+       ["Essen und Einkaufen",["Lebensmittelladen: 5 Gehminuten [Gastgeber ergänzt Name und Zeiten].","Empfohlene Restaurants: [Gastgeber ergänzt].","Probieren Sie den lokalen Mohant-Käse und Bohinjer Brot auf Bauernhöfen."]],
+       ["Notfälle",null]],
+    bins:[["#e9c23b","Verpackungen (Plastik, Dosen)"],["#3a6fd0","Papier und Karton"],["#2f8a4c","Glas"],["#7a4d2b","Bioabfall"],["#555b5e","Restmüll"]],
+    sos:[["112","Rettung, Feuerwehr"],["113","Polizei"],["1987","Pannenhilfe (AMZS)"]]}
+};
+var lang = (navigator.language||"sl").slice(0,2); if (!G[lang]) lang = "sl";
+try { var s = localStorage.getItem("lang"); if (s && G[s]) lang = s; } catch(e) {}
+function el(t, c, x){ var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+function render(){
+  var d = G[lang]; document.documentElement.lang = lang;
+  document.querySelectorAll("[data-t]").forEach(function(n){ n.textContent = d[n.dataset.t]; });
+  document.querySelectorAll(".lang button").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.lang === lang); });
+  var box = document.getElementById("sections"); box.textContent = "";
+  d.s.forEach(function(sec, i){
+    var s = el("section"); s.appendChild(el("h2", null, sec[0]));
+    if (sec[1]) { var ul = el("ul"); sec[1].forEach(function(x){ ul.appendChild(el("li", null, x)); }); s.appendChild(ul); }
+    else if (i === 2) { var b = el("ul", "bins"); d.bins.forEach(function(x){ var li = el("li"); var dot = el("span", "dot"); dot.style.background = x[0]; li.appendChild(dot); li.appendChild(el("span", null, x[1])); b.appendChild(li); }); s.appendChild(b); }
+    else { var u2 = el("ul", "sos"); u2.style.listStyle = "none"; u2.style.padding = "0"; d.sos.forEach(function(x){ var li = el("li"); li.appendChild(el("b", null, x[0])); li.appendChild(document.createTextNode(" " + x[1])); u2.appendChild(li); }); s.appendChild(u2); }
+    box.appendChild(s);
+  });
+}
+document.querySelectorAll(".lang button").forEach(function(b){ b.onclick = function(){ lang = b.dataset.lang; try { localStorage.setItem("lang", lang); } catch(e) {} render(); }; });
+render();
+})();
+</script>
+</body>
+</html>
