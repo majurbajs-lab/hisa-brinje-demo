@@ -1,1349 +1,365 @@
 <!doctype html>
 <html lang="sl">
 <head>
-<meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Na Kluk' · Govejk pri Idriji</title>
-<meta name="description" content="Prenočišča Na Kluk' v vasi Govejk, 10 minut vožnje od Idrije. Predlog strani.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Na Kluk' · prenočišča z zajtrkom, Govejk pri Idriji</title>
+<meta name="description" content="Družinsko prenočišče z zajtrkom v vasi Govejk, 10 minut od Idrije in 5 minut od Žirov.">
+<meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* Layout: photo-led editorial page */
 :root{
-  --paper:#f7f7f3;       
-  --paper-2:#eceee7;
-  --ink:#1c2b27;         /* spruce shadow */
-  --ink-2:#4d5c57;
-  --moss:#3f6b4f;        /* accent */
-  --moss-ink:#ffffff;
-  --wood:#9a6a3a;        /* larch, used only for small marks */
-  --rule:#d6dbd2;
-  --ph-a:#c9d3cb; --ph-b:#aebdb2;
-  --display:"Newsreader","Iowan Old Style",Palatino,Georgia,serif;
-  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --papir:#f3eee4; --papir2:#e9e2d4; --crnilo:#2a2521; --sivo:#6d645b;
+  --gozd:#3e4a36; --opeka:#8f4a2b; --crta:#cfc5b3;
+  --serif:"EB Garamond",Garamond,Georgia,serif; --sans:"Work Sans",system-ui,sans-serif;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#141a18;--paper-2:#1b2320;--ink:#e8ece6;--ink-2:#a9b5ae;--moss:#8fbf9c;--moss-ink:#10241a;--wood:#cf9a63;--rule:#2c3632;--ph-a:#26322d;--ph-b:#31403a;color-scheme:dark}}
-:root[data-theme="dark"]{
-  --paper:#141a18;--paper-2:#1b2320;--ink:#e8ece6;--ink-2:#a9b5ae;--moss:#8fbf9c;--moss-ink:#10241a;--wood:#cf9a63;--rule:#2c3632;--ph-a:#26322d;--ph-b:#31403a;color-scheme:dark}
 *{box-sizing:border-box}
-[hidden]{display:none!important}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 var(--body);-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-.g{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
-h2{font-size:clamp(2rem,4.4vw,3.2rem)}
-h3{font-size:clamp(1.6rem,3vw,2.1rem)}
-p{margin:0}
+body{margin:0;background:var(--papir);color:var(--crnilo);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--moss);outline-offset:3px}
-.eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);font-weight:500}
-.btn{display:inline-flex;align-items:center;gap:.5em;border:0;border-radius:2px;padding:.85em 1.35em;font:500 .95rem var(--body);cursor:pointer;text-decoration:none;background:var(--moss);color:var(--moss-ink)}
-.btn.line{background:transparent;color:inherit;box-shadow:inset 0 0 0 1px currentColor}
-.demo-note{font-size:.8rem;text-align:center;padding:6px 16px;background:var(--ink);color:var(--paper)}
+.pas{background:var(--crnilo);color:#e9e2d4;font-size:12.5px;text-align:center;padding:6px 16px;letter-spacing:.02em}
 
-/* photo slots */
-.ph{position:relative;background:linear-gradient(135deg,var(--ph-a),var(--ph-b));overflow:hidden}
-.ph img{width:100%;height:100%;object-fit:cover}
-.ph.empty::after{content:attr(data-cap);position:absolute;left:12px;bottom:10px;right:12px;font:italic .9rem var(--display);color:var(--ink-2)}
+/* glava */
+header{border-bottom:1px solid var(--crta)}
+.glava{max-width:1200px;margin:0 auto;padding:18px 24px 0;display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:16px}
+.glava small{font-size:12.5px;color:var(--sivo);line-height:1.5}
+.znak{text-align:center;text-decoration:none}
+.znak b{display:block;font:400 44px/1 var(--serif);letter-spacing:.01em}
+.znak span{display:block;font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--sivo);margin-top:6px}
+.desno{text-align:right}
+.jezik{margin-top:4px}
+.jezik button{background:none;border:0;font:500 12px var(--sans);letter-spacing:.08em;color:var(--sivo);cursor:pointer;padding:2px 4px}
+.jezik button[aria-pressed=true]{color:var(--crnilo);text-decoration:underline;text-underline-offset:4px}
+nav{max-width:1200px;margin:0 auto;padding:14px 24px 12px;display:flex;justify-content:center;gap:30px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase}
+nav a{text-decoration:none}
+nav a:hover{color:var(--opeka)}
+nav .gumb{color:var(--opeka)}
 
-/* hero */
-.hero{position:relative;min-height:min(88vh,820px);display:grid;align-items:end;color:#fff;isolation:isolate}
-.hero .ph{position:absolute;inset:0;z-index:-2}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,20,16,.45) 0%,rgba(10,20,16,0) 28%,rgba(10,20,16,0) 50%,rgba(10,20,16,.62) 100%)}
-.hero.noimg{color:var(--ink)}
-.hero.noimg::before{display:none}
-.topbar{position:absolute;top:0;left:0;right:0;padding-top:calc(14px + env(safe-area-inset-top,0px))}
-.topbar .g{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.mark{font-family:var(--display);font-size:1.35rem;text-decoration:none}
-nav.links{display:flex;gap:22px;font-size:.92rem}
-nav.links a{text-decoration:none;opacity:.92}
-nav.links a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
-.lang{display:flex;gap:2px;font-size:.8rem}
-.lang button{background:none;border:0;color:inherit;font:500 .8rem var(--body);padding:4px 6px;cursor:pointer;opacity:.7;letter-spacing:.08em}
-.lang button[aria-pressed="true"]{opacity:1;text-decoration:underline;text-underline-offset:4px}
-.hero-copy{padding-block:0 clamp(28px,6vh,64px);display:grid;gap:18px;max-width:720px}
-.hero h1{font-size:clamp(3.2rem,9vw,6.6rem);line-height:.95}
-.hero .sub{font-size:1.12rem;max-width:34em}
-.hero:not(.noimg) .eyebrow{color:rgba(255,255,255,.92)}
-.hero:not(.noimg) .hero-copy{text-shadow:0 1px 14px rgba(0,0,0,.45)}
-.hero .btn.line{color:inherit}
-@media (max-width:760px){nav.links{display:none}}
+/* uvodna slika */
+.naslovna{position:relative;height:min(76vh,720px);min-height:420px;overflow:hidden;background:#59614d}
+.naslovna img{width:100%;height:100%;object-fit:cover}
+.naslovna .besedilo{position:absolute;left:0;right:0;bottom:0;padding:0 24px 40px;background:linear-gradient(to top,rgba(20,18,15,.55),rgba(20,18,15,0) 70%);color:#fbf8f2}
+.naslovna .besedilo div{max-width:1200px;margin:0 auto}
+.naslovna h1{font:400 clamp(34px,5vw,60px)/1.08 var(--serif);margin:0 0 14px;max-width:16ch}
+.naslovna p{margin:0;font-size:15px;max-width:46ch;opacity:.92}
+.podpis{position:absolute;right:14px;top:12px;font:italic 13px var(--serif);color:#fbf8f2;opacity:.85}
 
-/* host intro */
-.intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,6vw,90px);padding-block:clamp(56px,9vw,120px);align-items:start}
-.intro .lead{font-family:var(--display);font-size:clamp(1.45rem,2.6vw,1.95rem);line-height:1.35}
-.intro .body{display:grid;gap:14px;color:var(--ink-2);max-width:34em}
-.sig{font-family:var(--display);font-style:italic;font-size:1.3rem;color:var(--ink)}
-.intro .ph{aspect-ratio:4/5}
-.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.facts div{padding:18px 16px 18px 0;display:grid;gap:2px}
-.facts b{font-family:var(--display);font-weight:400;font-size:1.9rem;font-variant-numeric:tabular-nums;line-height:1.1}
-.facts span{font-size:.88rem;color:var(--ink-2)}
-@media (max-width:760px){.intro{grid-template-columns:1fr}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.facts div:nth-child(-n+2){border-bottom:1px solid var(--rule)}}
+/* splošno */
+.ovoj{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+.oznaka{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--opeka);margin:0 0 18px}
+h2{font:400 clamp(30px,3.6vw,44px)/1.12 var(--serif);margin:0 0 22px}
+h3{font:500 22px/1.25 var(--serif);margin:0 0 6px}
 
-/* units */
-section.block{padding-block:clamp(56px,8vw,110px)}
-.head{display:grid;gap:10px;margin-bottom:clamp(28px,4vw,48px);max-width:640px}
-.head p{color:var(--ink-2)}
-.unit{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:start}
-.unit + .unit{margin-top:clamp(56px,8vw,96px)}
-.unit.flip .pics{order:2}
-.pics{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:8px;aspect-ratio:3/2}
-.pics > :first-child{grid-row:1/3}
-.pics button .ph{width:100%;height:100%}
-.pics button{all:unset;cursor:zoom-in;display:block}
-.pics button:focus-visible{outline:2px solid var(--moss);outline-offset:2px}
-.utext{display:grid;gap:16px;padding-top:6px}
-.utext .story{color:var(--ink-2)}
-dl.spec{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0;font-size:.95rem}
-dl.spec dt{color:var(--ink-2)}
-dl.spec dd{margin:0}
-.from{font-family:var(--display);font-size:1.4rem}
-.from small{font-family:var(--body);font-size:.85rem;color:var(--ink-2)}
-@media (max-width:760px){.unit,.unit.flip{grid-template-columns:1fr}.unit.flip .pics{order:0}}
+/* uvod */
+.uvod{display:grid;grid-template-columns:7fr 5fr;gap:72px;align-items:start}
+.uvod .velik{font:400 clamp(24px,2.6vw,32px)/1.38 var(--serif);margin:0}
+.uvod .velik em{color:var(--gozd)}
+.seznam{list-style:none;margin:28px 0 0;padding:0;font-size:15px}
+.seznam li{display:flex;gap:10px;align-items:baseline;padding:7px 0}
+.seznam li span:nth-child(2){flex:1;border-bottom:1px dotted var(--crta);transform:translateY(-4px)}
+.seznam li span:last-child{text-align:right}
+.vir{font-size:12px;color:var(--sivo);margin-top:10px}
 
-/* gallery strip */
-.strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(240px,32%);gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
-.strip .ph{aspect-ratio:4/5;scroll-snap-align:start}
-.strip button{all:unset;cursor:zoom-in;display:block}
+/* sobe */
+.sobe{background:var(--papir2)}
+.sobe-mreza{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:start}
+.sobe-slika{position:sticky;top:24px}
+.sobe-slika img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.sobe-slika figcaption,.slika figcaption{font:italic 13.5px var(--serif);color:var(--sivo);margin-top:8px}
+.soba{border-top:1px solid var(--crta);padding:22px 0;display:grid;grid-template-columns:1fr auto;gap:6px 24px}
+.soba:last-of-type{border-bottom:1px solid var(--crta)}
+.soba p{margin:0;color:var(--sivo);font-size:14.5px;grid-column:1}
+.soba a{grid-row:1/3;grid-column:2;align-self:center;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--opeka);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+.opomba{font-size:14.5px;margin-top:22px;color:var(--sivo);max-width:52ch}
 
-/* seasons */
-.seasons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,4vw,48px)}
-.season{display:grid;gap:14px}
-.season .ph{aspect-ratio:16/10}
-.season ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
-.season li{padding-left:18px;position:relative;color:var(--ink-2)}
-.season li::before{content:"";position:absolute;left:0;top:.75em;width:8px;height:1px;background:var(--wood)}
-@media (max-width:760px){.seasons{grid-template-columns:1fr}}
+/* zajtrk */
+.zajtrk{display:grid;grid-template-columns:6fr 5fr;gap:72px;align-items:center}
+.zajtrk .slika img{aspect-ratio:5/4;object-fit:cover;width:100%}
+.zajtrk blockquote{margin:28px 0 0;padding-left:18px;border-left:2px solid var(--opeka);font:italic 19px/1.5 var(--serif)}
+.zajtrk blockquote cite{display:block;font:normal 12.5px var(--sans);color:var(--sivo);margin-top:6px}
 
-/* area map */
-.area{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:start}
-.map{background:var(--paper-2);border-radius:2px;overflow-x:auto}
-.map svg{display:block;width:100%;min-width:520px;height:auto}
-.map text{font-family:var(--body);font-size:13px;fill:var(--ink-2)}
-.map .big{font-family:var(--display);font-size:18px;font-style:italic;fill:var(--ink)}
-.dist{margin:0;padding:0;list-style:none}
-.dist li{display:grid;grid-template-columns:5.5em 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--rule)}
-.dist b{font-family:var(--display);font-weight:400;font-size:1.25rem;font-variant-numeric:tabular-nums}
-@media (max-width:760px){.area{grid-template-columns:1fr}}
+/* drobne stvari */
+.drobno{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--crta);border-bottom:1px solid var(--crta)}
+.drobno div{padding:30px 28px 30px 0}
+.drobno div+div{padding-left:28px;border-left:1px solid var(--crta)}
+.drobno p{margin:0;font-size:15px;color:var(--sivo)}
+.drobno-section{padding:0 0 88px}
 
-/* prices */
-.tablebox{overflow-x:auto}
-table.prices{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
-table.prices th,table.prices td{text-align:left;padding:14px 18px 14px 0;border-bottom:1px solid var(--rule);white-space:nowrap}
-table.prices th{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);font-weight:500}
-table.prices td.n{font-family:var(--display);font-size:1.25rem}
-.pnote{color:var(--ink-2);font-size:.92rem;margin-top:14px;max-width:46em}
-.know{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 40px;margin-top:40px}
-.know p{padding:14px 0;border-top:1px solid var(--rule);color:var(--ink-2)}
-.know b{color:var(--ink);font-weight:500}
+/* okolica */
+.okolica{background:var(--gozd);color:#efe9dc}
+.okolica .oznaka{color:#d9b48f}
+.okolica-mreza{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start}
+.okolica .slika img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.okolica .slika figcaption{color:#c9c2b2}
+.kraj{padding:20px 0;border-top:1px solid rgba(239,233,220,.22)}
+.kraj p{margin:0;color:#d7d0c1;font-size:15px}
+.kraj .cas{float:right;font:italic 17px var(--serif);color:#d9b48f}
 
-/* inquiry */
-.inq-wrap > *{align-self:start;align-content:start}
-.inq-wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,72px)}
-form.inq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 18px}
-form.inq label{display:grid;gap:6px;font-size:.85rem;color:var(--ink-2)}
-form.inq .full{grid-column:1/-1}
-input,select,textarea{font:1rem var(--body);padding:11px 0;border:0;border-bottom:1px solid var(--ink-2);background:transparent;color:var(--ink);width:100%;min-width:0;border-radius:0}
-select{padding-right:8px}
-textarea{min-height:86px;resize:vertical}
-input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--moss);box-shadow:0 1px 0 var(--moss)}
-.consent{display:flex!important;gap:10px;align-items:flex-start;font-size:.88rem}
-.consent input{width:auto;margin-top:5px}
-.out{grid-column:1/-1;background:var(--paper-2);padding:14px 16px;display:grid;gap:10px;font-size:.95rem}
-.out pre{white-space:pre-wrap;margin:0;font:.88rem/1.5 ui-monospace,Menlo,Consolas,monospace}
-@media (max-width:760px){.inq-wrap,form.inq{grid-template-columns:1fr}}
+/* mnenja */
+.mnenja{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.mnenja blockquote{margin:0;font:400 22px/1.45 var(--serif)}
+.mnenja cite{display:block;font:normal 13px var(--sans);color:var(--sivo);margin-top:14px;letter-spacing:.04em}
 
-footer{border-top:1px solid var(--rule);padding-block:36px 120px;font-size:.88rem;color:var(--ink-2)}
-footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-footer b{color:var(--ink);font-weight:500}
+/* povpraševanje */
+.kontakt{background:var(--papir2)}
+.kontakt-mreza{display:grid;grid-template-columns:4fr 7fr;gap:72px}
+.kontakt address{font-style:normal;font-size:15px;line-height:1.8;margin-top:8px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sivo);display:grid;gap:6px}
+input,select,textarea{font:16px var(--sans);color:var(--crnilo);background:var(--papir);border:0;border-bottom:1px solid #a99d88;padding:10px 2px;border-radius:0;width:100%}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--opeka)}
+.cela{grid-column:1/-1}
+form button{justify-self:start;background:var(--crnilo);color:var(--papir);border:0;font:500 13px var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:15px 26px;cursor:pointer}
+form button:hover{background:var(--opeka)}
+.sporocilo{grid-column:1/-1;font-size:14.5px;background:var(--papir);padding:14px 16px;border-left:2px solid var(--gozd);display:none}
 
-/* sticky price bar (phones) */
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:15;background:var(--paper);border-top:1px solid var(--rule);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:none;justify-content:space-between;align-items:center;gap:12px}
-.bar span{font-family:var(--display);font-size:1.15rem}
-@media (max-width:760px){.bar{display:flex}}
+footer{padding:40px 0 90px;font-size:13px;color:var(--sivo)}
+footer .ovoj{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.zasluge{font-size:11.5px;max-width:70ch}
+.mobilni{display:none}
 
-/* lightbox */
-.lb{position:fixed;inset:0;z-index:40;background:rgba(8,12,10,.92);display:grid;place-items:center;padding:calc(24px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
-.lb img{max-height:82vh;width:auto;max-width:100%}
-.lb p{color:#e8ece6;font:italic 1rem var(--display);margin-top:10px;text-align:center}
-.lb button{position:absolute;background:none;border:0;color:#fff;font-size:2rem;cursor:pointer;padding:10px}
-.lb .x{top:calc(8px + env(safe-area-inset-top,0px));right:calc(8px + env(safe-area-inset-right,0px))}
-.lb .pv{left:calc(4px + env(safe-area-inset-left,0px));top:50%}
-.lb .nx{right:calc(4px + env(safe-area-inset-right,0px));top:50%}
-
-/* guest helper */
-.ask{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);border:0;border-radius:999px;padding:8px 18px 8px 8px;font:500 .95rem var(--body);cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.2)}
-.ask .av{width:34px;height:34px;border-radius:50%;background:var(--moss);color:var(--moss-ink);display:grid;place-items:center;font:italic 1.1rem var(--display)}
-@media (max-width:760px){.ask{bottom:calc(74px + env(safe-area-inset-bottom,0px))}}
-.chat{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(80px + env(safe-area-inset-bottom,0px));z-index:30;width:min(390px,calc(100vw - 32px));height:min(600px,calc(100vh - 120px));background:var(--paper);border:1px solid var(--rule);box-shadow:0 18px 48px rgba(0,0,0,.25);display:flex;flex-direction:column;overflow:hidden;border-radius:6px}
-@media (max-width:760px){.chat{right:0;left:0;bottom:0;width:auto;height:calc(100% - 40px - env(safe-area-inset-top,0px));border-radius:12px 12px 0 0;padding-bottom:env(safe-area-inset-bottom,0px)}}
-.chat header{display:flex;gap:12px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--rule)}
-.chat header .av{width:40px;height:40px;border-radius:50%;background:var(--moss);color:var(--moss-ink);display:grid;place-items:center;font:italic 1.3rem var(--display);flex:none}
-.chat header div{flex:1;min-width:0}
-.chat header b{font-family:var(--display);font-weight:400;font-size:1.2rem;display:block;line-height:1.2}
-.chat header small{color:var(--ink-2);font-size:.78rem}
-.chat .x{background:none;border:0;color:var(--ink-2);font-size:1.6rem;cursor:pointer;line-height:1}
-.msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
-.m{max-width:88%;font-size:.95rem;line-height:1.5;white-space:pre-line}
-.m.bot{align-self:flex-start}
-.m.bot .txt{background:var(--paper-2);padding:10px 13px;border-radius:2px 14px 14px 14px}
-.m.me{align-self:flex-end;background:var(--moss);color:var(--moss-ink);padding:9px 13px;border-radius:14px 2px 14px 14px}
-.m .acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.m .acts button{background:none;border:1px solid var(--moss);color:var(--moss);border-radius:999px;padding:5px 12px;font:500 .82rem var(--body);cursor:pointer}
-.quote{margin-top:8px;border-top:1px solid var(--rule);padding-top:8px;display:grid;gap:3px;font-variant-numeric:tabular-nums}
-.quote div{display:flex;justify-content:space-between;gap:12px}
-.typing{display:inline-flex;gap:4px;padding:12px 14px;background:var(--paper-2);border-radius:2px 14px 14px 14px}
-.typing i{width:6px;height:6px;border-radius:50%;background:var(--ink-2);opacity:.4}
-@media (prefers-reduced-motion:no-preference){.typing i{animation:bl 1s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}@keyframes bl{50%{opacity:1}}}
-.chips{display:flex;gap:6px;overflow-x:auto;padding:0 16px 10px}
-.chips button{flex:none;background:var(--paper-2);border:0;color:var(--ink);border-radius:999px;padding:7px 12px;font:.84rem var(--body);cursor:pointer}
-.chat form{display:flex;gap:8px;padding:10px 12px 12px;border-top:1px solid var(--rule)}
-.chat form input{border:1px solid var(--rule);border-radius:999px;padding:10px 14px;background:var(--paper)}
-.chat form button{background:var(--moss);color:var(--moss-ink);border:0;border-radius:999px;padding:0 16px;font:500 .9rem var(--body);cursor:pointer}
-.ainote{font-size:.72rem;color:var(--ink-2);padding:0 16px 8px}
-.ask,.chat{display:none!important}
+@media (max-width:860px){
+  .glava{grid-template-columns:1fr auto;padding-top:14px}
+  .glava>small{display:none}
+  .znak{text-align:left}
+  .znak b{font-size:34px}
+  .desno small{display:none}
+  nav{display:none}
+  section{padding:60px 0}
+  .uvod,.sobe-mreza,.zajtrk,.okolica-mreza,.mnenja,.kontakt-mreza{grid-template-columns:1fr;gap:36px}
+  .sobe-slika{position:static}
+  .sobe-slika img{aspect-ratio:4/3}
+  .okolica .slika img{aspect-ratio:4/3}
+  .drobno{grid-template-columns:1fr}
+  .drobno div,.drobno div+div{padding:22px 0;border-left:0}
+  .drobno div+div{border-top:1px solid var(--crta)}
+  .drobno-section{padding:0 0 60px}
+  form{grid-template-columns:1fr}
+  .naslovna{height:68vh;min-height:380px}
+  .mobilni{display:block;position:fixed;left:0;right:0;bottom:0;background:var(--crnilo);color:var(--papir);text-align:center;padding:14px;font:500 13px var(--sans);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;z-index:5}
+}
 </style>
 </head>
 <body>
+<div class="pas" data-t="pas">Predlog strani za Na Kluk' · fotografije so ponazoritev</div>
 
-<div class="demo-note" data-t="demo"></div>
-
-<header class="hero" id="top">
-  <div class="ph" data-img="hero"></div>
-  <div class="topbar"><div class="g">
-    <a class="mark" href="#top" data-c="name"></a>
-    <nav class="links" aria-label="Navigacija">
-      <a href="#apartmaji" data-t="navUnits"></a><a href="#okolica" data-t="navArea"></a><a href="#cene" data-t="navPrices"></a><a href="#povprasevanje" data-t="navInq"></a>
-    </nav>
-    <div class="lang" role="group" aria-label="Jezik / Language"><button type="button" data-lang="sl">SL</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button></div>
-  </div></div>
-  <div class="g"><div class="hero-copy">
-    <p class="eyebrow" data-c="place"></p>
-    <h1 data-c="name"></h1>
-    <p class="sub" data-c="tagline"></p>
-    <div><a class="btn" href="#povprasevanje" data-t="ctaCheck"></a></div>
-  </div></div>
+<header>
+  <div class="glava">
+    <small>Govejk 14/c<br>5281 Spodnja Idrija</small>
+    <a class="znak" href="#"><b>Na Kluk'</b><span data-t="znak">prenočišča · zajtrk</span></a>
+    <div class="desno">
+      <small><a href="tel:+38651435497">+386 51 43 54 97</a></small>
+      <div class="jezik" role="group" aria-label="Jezik">
+        <button data-l="sl" aria-pressed="true">SL</button><button data-l="en" aria-pressed="false">EN</button><button data-l="de" aria-pressed="false">DE</button>
+      </div>
+    </div>
+  </div>
+  <nav>
+    <a href="#sobe" data-t="n1">Sobe</a>
+    <a href="#zajtrk" data-t="n2">Zajtrk</a>
+    <a href="#okolica" data-t="n3">Okolica</a>
+    <a href="#mnenja" data-t="n4">Mnenja</a>
+    <a href="#kontakt" class="gumb" data-t="n5">Povpraševanje</a>
+  </nav>
 </header>
 
-<main>
-  <div class="g">
-    <section class="intro">
-      <div style="display:grid;gap:22px">
-        <p class="lead" data-c="hostLead"></p>
-        <div class="body" id="hostBody"></div>
-        <p class="sig" data-c="hostSig"></p>
-      </div>
-      <div class="ph" data-img="hosts"></div>
-    </section>
-    <div class="facts" id="facts"></div>
-  </div>
+<div class="naslovna">
+  <img src="slike/naslovna.jpg" alt="" data-ta="naslovnaAlt">
+  <span class="podpis" data-t="naslovnaPodpis">Hribi okoli Idrije</span>
+  <div class="besedilo"><div>
+    <h1 data-t="h1">Mirno prenočišče v hribih nad Idrijo</h1>
+    <p data-t="h1p">Družinska hiša z zajtrkom v vasi Govejk. Do Idrije je deset minut vožnje, do Žirov pet.</p>
+  </div></div>
+</div>
 
-  <section class="block" id="apartmaji"><div class="g">
-    <div class="head"><p class="eyebrow" data-t="unitsEyebrow"></p><h2 data-t="unitsTitle"></h2></div>
-    <div id="units"></div>
-  </div></section>
-
-  <section class="block" style="padding-top:0"><div class="g">
-    <div class="strip" id="strip" aria-label="Galerija"></div>
-  </div></section>
-
-  <section class="block" style="background:var(--paper-2)"><div class="g">
-    <div class="head"><p class="eyebrow" data-t="seasonEyebrow"></p><h2 data-t="seasonTitle"></h2></div>
-    <div class="seasons" id="seasons"></div>
-  </div></section>
-
-  <section class="block" id="okolica"><div class="g">
-    <div class="head"><p class="eyebrow" data-t="areaEyebrow"></p><h2 data-t="areaTitle"></h2><p data-c="areaIntro"></p></div>
-    <div class="area">
-      <div class="map" id="map"></div>
-      <ul class="dist" id="dist"></ul>
+<section>
+  <div class="ovoj uvod">
+    <div>
+      <p class="oznaka" data-t="u0">Pri nas</p>
+      <p class="velik" data-t="u1">Sobe so preproste in čiste, zjutraj je na mizi zajtrk, zvečer pa se lahko usedete na <em>teraso pri baru</em> in poslušate, kako je v vasi tiho.</p>
     </div>
-  </div></section>
+    <div>
+      <p data-t="u2">Vse sobe imajo mizo, TV in brezplačen Wi-Fi, večina tudi lastno kopalnico. Večerjo skuhamo, če nam to sporočite vnaprej. Parkirišče pri hiši je brezplačno.</p>
+      <ul class="seznam">
+        <li><span data-t="s1">Ocena gostov</span><span></span><span data-t="s1v">9,1 / 10 (134 mnenj)</span></li>
+        <li><span data-t="s2">Prijaznost osebja</span><span></span><span>9,9 / 10</span></li>
+        <li><span data-t="s3">Prijava</span><span></span><span>14:00–20:00</span></li>
+        <li><span data-t="s4">Odjava</span><span></span><span data-t="s4v">do 10:00</span></li>
+        <li><span data-t="s5">Hišni ljubljenčki</span><span></span><span data-t="s5v">žal ne</span></li>
+      </ul>
+      <p class="vir" data-t="vir">Ocene so z Bookinga, oktober 2026.</p>
+    </div>
+  </div>
+</section>
 
-  <section class="block" id="cene" style="padding-top:0"><div class="g">
-    <div class="head"><p class="eyebrow" data-t="pricesEyebrow"></p><h2 data-t="pricesTitle"></h2></div>
-    <div class="tablebox" hidden><table class="prices" id="prices"></table></div>
-    <p class="pnote" id="pnote"></p>
-    <div class="know" id="know"></div>
-  </div></section>
+<section class="sobe" id="sobe">
+  <div class="ovoj sobe-mreza">
+    <figure class="sobe-slika" style="margin:0">
+      <img src="slike/soba.jpg" alt="" data-ta="sobaAlt">
+      <figcaption data-t="sobaPodpis">Fotografija za ponazoritev. Tu bodo vaše sobe.</figcaption>
+    </figure>
+    <div>
+      <p class="oznaka" data-t="so0">Sobe</p>
+      <h2 data-t="so1">Pet vrst sob, od enoposteljne do sobe za osem</h2>
+      <div class="soba"><h3 data-t="r1">Dvoposteljna soba</h3><p data-t="r1p">Za dva · zakonska postelja</p><a href="#kontakt" data-soba="1" data-t="vpr">Povprašaj</a></div>
+      <div class="soba"><h3 data-t="r2">Dvoposteljna soba z ločenima posteljama</h3><p data-t="r2p">Za dva · dve enojni postelji</p><a href="#kontakt" data-soba="2" data-t="vpr">Povprašaj</a></div>
+      <div class="soba"><h3 data-t="r3">Enoposteljna soba</h3><p data-t="r3p">Za enega</p><a href="#kontakt" data-soba="3" data-t="vpr">Povprašaj</a></div>
+      <div class="soba"><h3 data-t="r4">Štiriposteljna soba s kopalnico</h3><p data-t="r4p">Do štiri osebe · velika zakonska in dve enojni postelji · lastna kopalnica</p><a href="#kontakt" data-soba="4" data-t="vpr">Povprašaj</a></div>
+      <div class="soba"><h3 data-t="r5">Družinska soba s kopalnico</h3><p data-t="r5p">Do osem oseb · osem enojnih postelj · lastna kopalnica</p><a href="#kontakt" data-soba="5" data-t="vpr">Povprašaj</a></div>
+      <p class="opomba" data-t="so2">Cene so odvisne od termina in števila gostov. Pošljite povpraševanje in odgovorimo s točno ceno.</p>
+    </div>
+  </div>
+</section>
 
-  <section class="block" id="povprasevanje" style="background:var(--paper-2)"><div class="g inq-wrap">
-    <div class="head" style="margin:0"><p class="eyebrow" data-t="inqEyebrow"></p><h2 data-t="inqTitle"></h2><p data-t="inqSub"></p></div>
-    <form class="inq" id="inq" novalidate>
-      <label><span data-t="fName"></span><input id="fName" autocomplete="name"></label>
-      <label><span data-t="fEmail"></span><input id="fEmail" type="email" autocomplete="email"></label>
-      <label><span data-t="fFrom"></span><input id="fFrom" type="date"></label>
-      <label><span data-t="fTo"></span><input id="fTo" type="date"></label>
-      <label><span data-t="fUnit"></span><select id="fUnit"></select></label>
-      <label><span data-t="fGuests"></span><input id="fGuests" type="number" min="1" max="8" value="2"></label>
-      <label class="full"><span data-t="fMsg"></span><textarea id="fMsg"></textarea></label>
-      <label class="full consent"><input id="fConsent" type="checkbox"><span data-t="fConsent"></span></label>
-      <div class="full"><button class="btn" type="submit" data-t="fSend"></button></div>
-      <div class="out" id="inqOut" hidden></div>
+<section id="zajtrk">
+  <div class="ovoj zajtrk">
+    <figure class="slika" style="margin:0">
+      <img src="slike/zajtrk.jpg" alt="" data-ta="zajtrkAlt">
+      <figcaption data-t="zajtrkPodpis">Fotografija za ponazoritev</figcaption>
+    </figure>
+    <div>
+      <p class="oznaka" data-t="z0">Zajtrk in večerja</p>
+      <h2 data-t="z1">Zjutraj nekaj domačega</h2>
+      <p data-t="z2">Zajtrk je vsak dan. Če greste zgodaj na pot, vam ga pripravimo za s seboj. Pripravimo tudi vegetarijanskega ali brez glutena, samo povejte prej. Večerjo skuhamo po dogovoru.</p>
+      <blockquote><span data-t="z3">»Za zajtrk smo dobili celo domač topel zavitek.«</span><cite data-t="z3c">Oliver, Avstrija</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<div class="drobno-section">
+  <div class="ovoj drobno">
+    <div><h3 data-t="d1">Motoristi dobrodošli</h3><p data-t="d1p">Motorji prespijo na varnem in suhem.</p></div>
+    <div><h3 data-t="d2">Brez prahu</h3><p data-t="d2p">Sobe čistimo s sesalnikom Hyla, ki prah ujame v vodo.</p></div>
+    <div><h3 data-t="d3">Bar s teraso</h3><p data-t="d3p">Velika terasa za večer po izletu.</p></div>
+  </div>
+</div>
+
+<section class="okolica" id="okolica">
+  <div class="ovoj okolica-mreza">
+    <figure class="slika" style="margin:0">
+      <img src="slike/idrija.jpg" alt="" data-ta="idrijaAlt">
+      <figcaption data-t="idrijaPodpis">Idrija</figcaption>
+    </figure>
+    <div>
+      <p class="oznaka" data-t="o0">Okolica</p>
+      <h2 data-t="o1">Kaj je blizu</h2>
+      <div class="kraj"><span class="cas" data-t="o2c">10 min</span><h3>Idrija</h3><p data-t="o2">Mesto živega srebra na Unescovem seznamu svetovne dediščine. Ob obisku poskusite idrijske žlikrofe in poglejte idrijsko čipko.</p></div>
+      <div class="kraj"><span class="cas" data-t="o3c">5 min</span><h3>Žiri</h3><p data-t="o3">Najbližji kraj, če prihajate z Gorenjske.</p></div>
+      <div class="kraj"><span class="cas" data-t="o4c">v gozdu</span><h3 data-t="o4h">Tomaževa miza</h3><p data-t="o4">Skala, težka okoli 30 ton, ki se drži v ravnotežju sredi gozda. Povemo vam, kako pridete do nje.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="mnenja">
+  <div class="ovoj">
+    <p class="oznaka" data-t="m0">Gostje o nas</p>
+    <div class="mnenja">
+      <blockquote><span data-t="m1">»Družinsko vodeno prenočišče je bilo najboljše na vsem našem potovanju. Za vse naše želje so poskrbeli zelo pozorno in prijazno.«</span><cite data-t="m1c">Nicole, Slovenija</cite></blockquote>
+      <blockquote><span data-t="m2">»Vsi so bili zelo prijazni in zgovorni. Sobe so bile čiste in udobne. Hiša stoji v majhni vasi v hribih, do Idrije je okoli deset minut po ovinkasti cesti.«</span><cite data-t="m2c">Oliver, Avstrija</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="ovoj kontakt-mreza">
+    <div>
+      <p class="oznaka" data-t="k0">Povpraševanje</p>
+      <h2 data-t="k1">Pišite nam ali pokličite</h2>
+      <address>
+        Govejk 14/c<br>5281 Spodnja Idrija<br>
+        <a href="tel:+38651435497">+386 51 43 54 97</a><br>
+        <a href="mailto:info@nakluk.si">info@nakluk.si</a>
+      </address>
+    </div>
+    <form id="obrazec" novalidate>
+      <label><span data-t="f1">Prihod</span><input type="date" name="prihod"></label>
+      <label><span data-t="f2">Odhod</span><input type="date" name="odhod"></label>
+      <label><span data-t="f3">Število oseb</span><input type="number" name="osebe" min="1" max="20" value="2"></label>
+      <label><span data-t="f4">Soba</span>
+        <select name="soba" id="izbira">
+          <option value="0" data-t="f4a">Vseeno</option>
+          <option value="1" data-t="r1">Dvoposteljna soba</option>
+          <option value="2" data-t="r2">Dvoposteljna soba z ločenima posteljama</option>
+          <option value="3" data-t="r3">Enoposteljna soba</option>
+          <option value="4" data-t="r4">Štiriposteljna soba s kopalnico</option>
+          <option value="5" data-t="r5">Družinska soba s kopalnico</option>
+        </select></label>
+      <label><span data-t="f5">Ime</span><input name="ime" autocomplete="name"></label>
+      <label><span data-t="f6">E-pošta</span><input type="email" name="email" autocomplete="email"></label>
+      <label class="cela"><span data-t="f7">Sporočilo</span><textarea name="sporocilo"></textarea></label>
+      <button type="submit" data-t="f8">Pošlji povpraševanje</button>
+      <p class="sporocilo" id="odziv" data-t="f9">To je samo predlog strani, zato se povpraševanje zdaj ne pošlje. Na pravi strani pride naravnost na info@nakluk.si.</p>
     </form>
-  </div></section>
-</main>
+  </div>
+</section>
 
-<footer><div class="g cols">
-  <div><b data-c="name"></b><br><span data-c="place"></span><br><span id="contact"></span></div>
-  <div id="legal"></div>
-  <div><b data-t="privTitle"></b><br><span data-t="privText"></span></div>
-</div></footer>
+<footer>
+  <div class="ovoj">
+    <span>GO-COMMERCE d.o.o. · Govejk 14/c, 5281 Spodnja Idrija</span>
+    <span class="zasluge" id="zasluge"></span>
+  </div>
+</footer>
 
-<div class="bar"><span id="barPrice"></span><a class="btn" href="#povprasevanje" data-t="ctaCheck"></a></div>
-
-<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Fotografija">
-  <button class="x" type="button" id="lbX" aria-label="Zapri">×</button>
-  <button class="pv" type="button" id="lbP" aria-label="Prejšnja">‹</button>
-  <figure style="margin:0"><img id="lbImg" alt=""><p id="lbCap"></p></figure>
-  <button class="nx" type="button" id="lbN" aria-label="Naslednja">›</button>
-</div>
-
-<button class="ask" type="button" id="askBtn" aria-expanded="false" aria-controls="chat"><span class="av">?</span><span data-t="askBtn"></span></button>
-<div class="chat" id="chat" role="dialog" aria-label="Pomočnik" hidden>
-  <header><span class="av">?</span><div><b>Pomočnik</b><small data-t="chatSub"></small></div><button class="x" type="button" id="chatX" aria-label="Zapri">×</button></header>
-  <div class="msgs" id="msgs" aria-live="polite"></div>
-  <div class="chips" id="chips"></div>
-  <p class="ainote" data-t="aiNote"></p>
-  <form id="chatForm"><input id="chatIn" autocomplete="off" aria-label="Vprašanje"><button type="submit" data-t="send"></button></form>
-</div>
-
-<script id="site-data" type="application/json">
-{
- "aiEndpoint": "",
- "formEndpoint": "",
- "email": "info@nakluk.si",
- "name": {
-  "sl": "Na Kluk'",
-  "en": "Na Kluk'",
-  "de": "Na Kluk'"
- },
- "place": {
-  "sl": "Prenočišča z zajtrkom · Govejk pri Idriji",
-  "en": "Bed & breakfast · Govejk near Idrija",
-  "de": "Pension mit Frühstück · Govejk bei Idrija"
- },
- "tagline": {
-  "sl": "Mirno prenočišče v vasi Govejk, 10 minut vožnje od Idrije in 5 minut od Žirov.",
-  "en": "A peaceful place to stay in the village of Govejk, a 10-minute drive from Idrija and 5 minutes from Žiri.",
-  "de": "Eine ruhige Unterkunft im Dorf Govejk, 10 Autominuten von Idrija und 5 Minuten von Žiri."
- },
- "hostLead": {
-  "sl": "Družinsko prenočišče z zajtrkom v majhni vasi v hribih blizu Idrije.",
-  "en": "A family-run bed and breakfast in a small village in the hills near Idrija.",
-  "de": "Eine familiengeführte Pension mit Frühstück in einem kleinen Dorf in den Hügeln bei Idrija."
- },
- "hostBody": {
-  "sl": [
-   "Vse sobe imajo mizo in TV, večina tudi lastno kopalnico. Zjutraj vas čaka zajtrk, večerjo pa pripravimo, če nam to sporočite vnaprej. Pri hiši sta bar z veliko teraso in brezplačno parkirišče.",
-   "»Družinsko vodeno prenočišče je bilo najboljše na vsem našem potovanju. Za vse naše želje so poskrbeli zelo pozorno in prijazno.« Nicole, Slovenija",
-   "»Vsi so bili zelo prijazni in zgovorni. Sobe so bile čiste in udobne, za zajtrk smo dobili celo domač topel zavitek.« Oliver, Avstrija"
-  ],
-  "en": [
-   "Every room has a desk and a TV, and most have a private bathroom too. Breakfast is served in the morning, and we can cook dinner if you let us know in advance. There's a bar with a big terrace and free parking by the house.",
-   "“The family run B&B was the best place we have stayed at of our whole trip. The manager catered to all our needs in a very attentive and friendly manner.” Nicole, Slovenia",
-   "“The business is family run, everyone was very nice and talkative. The rooms were clean and comfortable, for breakfast we even got some home-made hot strudel.” Oliver, Austria"
-  ],
-  "de": [
-   "Alle Zimmer haben einen Schreibtisch und einen Fernseher, die meisten auch ein eigenes Bad. Morgens gibt es Frühstück, Abendessen kochen wir auf Vorbestellung. Am Haus gibt es eine Bar mit großer Terrasse und kostenlose Parkplätze.",
-   "„Die familiengeführte Pension war die beste Unterkunft unserer ganzen Reise. Man hat sich sehr aufmerksam und freundlich um alle unsere Wünsche gekümmert.“ Nicole, Slowenien",
-   "„Alle waren sehr nett und gesprächig. Die Zimmer waren sauber und bequem, zum Frühstück gab es sogar warmen hausgemachten Strudel.“ Oliver, Österreich"
-  ]
- },
- "hostSig": {
-  "sl": "Družina Na Kluk'",
-  "en": "The Na Kluk' family",
-  "de": "Familie Na Kluk'"
- },
- "facts": [
-  {
-   "v": "10 min",
-   "sl": "vožnje do Idrije",
-   "en": "drive to Idrija",
-   "de": "Fahrt nach Idrija"
-  },
-  {
-   "v": "5 min",
-   "sl": "vožnje do Žirov",
-   "en": "drive to Žiri",
-   "de": "Fahrt nach Žiri"
-  },
-  {
-   "v": "9,1",
-   "sl": "ocena na Bookingu, 134 mnenj",
-   "en": "Booking.com score, 134 reviews",
-   "de": "Booking.com-Bewertung, 134 Bewertungen"
-  },
-  {
-   "v": "9,9",
-   "sl": "ocena za osebje na Bookingu",
-   "en": "Booking.com score for staff",
-   "de": "Booking.com-Bewertung für das Personal"
-  }
- ],
- "units": [
-  {
-   "id": "dvoposteljna",
-   "name": {
-    "sl": "Dvoposteljna soba",
-    "en": "Double room",
-    "de": "Doppelzimmer"
-   },
-   "story": {
-    "sl": "Soba za dva z zakonsko posteljo.",
-    "en": "A room for two with a double bed.",
-    "de": "Ein Zimmer für zwei mit Doppelbett."
-   },
-   "spec": {
-    "sl": [
-     [
-      "Postelje",
-      "zakonska postelja (queen)"
-     ],
-     [
-      "Oprema",
-      "miza, TV, brezplačen Wi-Fi"
-     ]
-    ],
-    "en": [
-     [
-      "Beds",
-      "1 queen bed"
-     ],
-     [
-      "In the room",
-      "desk, TV, free Wi-Fi"
-     ]
-    ],
-    "de": [
-     [
-      "Betten",
-      "1 Queensize-Bett"
-     ],
-     [
-      "Ausstattung",
-      "Schreibtisch, TV, kostenloses WLAN"
-     ]
-    ]
-   },
-   "guests": 2,
-   "imgs": [
-    "s1a",
-    "s1b",
-    "s1c"
-   ]
-  },
-  {
-   "id": "enoposteljna",
-   "name": {
-    "sl": "Enoposteljna soba",
-    "en": "Single room",
-    "de": "Einzelzimmer"
-   },
-   "story": {
-    "sl": "Soba za eno osebo.",
-    "en": "A room for one.",
-    "de": "Ein Zimmer für eine Person."
-   },
-   "spec": {
-    "sl": [
-     [
-      "Postelje",
-      "ena postelja"
-     ],
-     [
-      "Oprema",
-      "miza, TV, brezplačen Wi-Fi"
-     ]
-    ],
-    "en": [
-     [
-      "Beds",
-      "1 single bed"
-     ],
-     [
-      "In the room",
-      "desk, TV, free Wi-Fi"
-     ]
-    ],
-    "de": [
-     [
-      "Betten",
-      "1 Einzelbett"
-     ],
-     [
-      "Ausstattung",
-      "Schreibtisch, TV, kostenloses WLAN"
-     ]
-    ]
-   },
-   "guests": 1,
-   "imgs": [
-    "s2a",
-    "s2b",
-    "s2c"
-   ]
-  },
-  {
-   "id": "stiriposteljna",
-   "name": {
-    "sl": "Štiriposteljna soba s kopalnico",
-    "en": "Quadruple room with private bathroom",
-    "de": "Vierbettzimmer mit eigenem Bad"
-   },
-   "story": {
-    "sl": "Soba za štiri osebe z lastno kopalnico.",
-    "en": "A room for four with its own bathroom.",
-    "de": "Ein Zimmer für vier mit eigenem Bad."
-   },
-   "spec": {
-    "sl": [
-     [
-      "Postelje",
-      "velika zakonska (king) in dve enojni"
-     ],
-     [
-      "Oprema",
-      "miza, TV, brezplačen Wi-Fi"
-     ],
-     [
-      "Kopalnica",
-      "lastna"
-     ]
-    ],
-    "en": [
-     [
-      "Beds",
-      "1 king bed and 2 single beds"
-     ],
-     [
-      "In the room",
-      "desk, TV, free Wi-Fi"
-     ],
-     [
-      "Bathroom",
-      "private"
-     ]
-    ],
-    "de": [
-     [
-      "Betten",
-      "1 Kingsize-Bett und 2 Einzelbetten"
-     ],
-     [
-      "Ausstattung",
-      "Schreibtisch, TV, kostenloses WLAN"
-     ],
-     [
-      "Bad",
-      "eigenes"
-     ]
-    ]
-   },
-   "guests": 4,
-   "imgs": [
-    "s3a",
-    "s3b",
-    "s3c"
-   ]
-  },
-  {
-   "id": "locene",
-   "name": {
-    "sl": "Dvoposteljna soba z ločenima posteljama",
-    "en": "Twin room",
-    "de": "Zweibettzimmer"
-   },
-   "story": {
-    "sl": "Soba za dva z dvema ločenima posteljama.",
-    "en": "A room for two with two separate beds.",
-    "de": "Ein Zimmer für zwei mit zwei getrennten Betten."
-   },
-   "spec": {
-    "sl": [
-     [
-      "Postelje",
-      "dve enojni postelji"
-     ],
-     [
-      "Oprema",
-      "miza, TV, brezplačen Wi-Fi"
-     ]
-    ],
-    "en": [
-     [
-      "Beds",
-      "2 single beds"
-     ],
-     [
-      "In the room",
-      "desk, TV, free Wi-Fi"
-     ]
-    ],
-    "de": [
-     [
-      "Betten",
-      "2 Einzelbetten"
-     ],
-     [
-      "Ausstattung",
-      "Schreibtisch, TV, kostenloses WLAN"
-     ]
-    ]
-   },
-   "guests": 2,
-   "imgs": [
-    "s4a",
-    "s4b",
-    "s4c"
-   ]
-  },
-  {
-   "id": "druzinska",
-   "name": {
-    "sl": "Družinska soba s kopalnico",
-    "en": "Family room with private bathroom",
-    "de": "Familienzimmer mit eigenem Bad"
-   },
-   "story": {
-    "sl": "Največja soba, z osmimi posteljami in lastno kopalnico.",
-    "en": "The largest room, with eight beds and its own bathroom.",
-    "de": "Das größte Zimmer, mit acht Betten und eigenem Bad."
-   },
-   "spec": {
-    "sl": [
-     [
-      "Postelje",
-      "osem enojnih postelj"
-     ],
-     [
-      "Oprema",
-      "miza, TV, brezplačen Wi-Fi"
-     ],
-     [
-      "Kopalnica",
-      "lastna"
-     ]
-    ],
-    "en": [
-     [
-      "Beds",
-      "8 single beds"
-     ],
-     [
-      "In the room",
-      "desk, TV, free Wi-Fi"
-     ],
-     [
-      "Bathroom",
-      "private"
-     ]
-    ],
-    "de": [
-     [
-      "Betten",
-      "8 Einzelbetten"
-     ],
-     [
-      "Ausstattung",
-      "Schreibtisch, TV, kostenloses WLAN"
-     ],
-     [
-      "Bad",
-      "eigenes"
-     ]
-    ]
-   },
-   "guests": 8,
-   "imgs": [
-    "s5a",
-    "s5b",
-    "s5c"
-   ]
-  }
- ],
- "gallery": [
-  "g1",
-  "g2",
-  "g3",
-  "g4",
-  "g5"
- ],
- "seasons": [
-  {
-   "img": "idrija",
-   "t": {
-    "sl": "Idrija",
-    "en": "Idrija",
-    "de": "Idrija"
-   },
-   "l": {
-    "sl": [
-     "mesto na Unescovem seznamu svetovne dediščine",
-     "res posebno mesto, ki ga je vredno obiskati",
-     "10 minut z avtom po ovinkasti cesti skozi hribe"
-    ],
-    "en": [
-     "a town on the UNESCO World Heritage list",
-     "a truly unique place to visit",
-     "10 minutes by car on a winding hill road"
-    ],
-    "de": [
-     "eine Stadt auf der UNESCO-Welterbeliste",
-     "ein wirklich besonderes Ausflugsziel",
-     "10 Autominuten über eine kurvige Bergstraße"
-    ]
-   }
-  },
-  {
-   "img": "narava",
-   "t": {
-    "sl": "Narava okoli vasi",
-    "en": "Nature around the village",
-    "de": "Natur rund ums Dorf"
-   },
-   "l": {
-    "sl": [
-     "Tomaževa miza: 30-tonska skala, ki stoji v ravnotežju globoko v gozdu",
-     "mir majhne vasi v hribih",
-     "motoristi so dobrodošli, vozila hranimo na varnem in suhem"
-    ],
-    "en": [
-     "Tomaž table: a 30-ton rock balancing deep in the woods",
-     "the quiet of a small village in the hills",
-     "bikers welcome: we keep your rides safe and dry"
-    ],
-    "de": [
-     "Tomaž-Tisch: ein 30 Tonnen schwerer Fels, der tief im Wald im Gleichgewicht steht",
-     "die Ruhe eines kleinen Dorfes in den Hügeln",
-     "Motorradfahrer willkommen: Ihre Maschinen stehen bei uns sicher und trocken"
-    ]
-   }
-  }
- ],
- "areaIntro": {
-  "sl": "Shematski prikaz, ni v merilu. Časi veljajo za vožnjo z avtom od hiše.",
-  "en": "Schematic map, not to scale. Times are by car from the house.",
-  "de": "Schematische Karte, nicht maßstabsgetreu. Fahrzeiten mit dem Auto ab Haus."
- },
- "dist": [
-  {
-   "v": "10 min",
-   "sl": "Idrija, mesto na Unescovem seznamu",
-   "en": "Idrija, a UNESCO-listed town",
-   "de": "Idrija, UNESCO-Welterbe"
-  },
-  {
-   "v": "5 min",
-   "sl": "Žiri, če prihajate z Gorenjske",
-   "en": "Žiri, if you're coming from the Gorenjska region",
-   "de": "Žiri, wenn Sie aus Gorenjska (Oberkrain) kommen"
-  }
- ],
- "seasonsPrice": [],
- "minNights": 1,
- "directDiscount": 0,
- "tax": 0,
- "know": [
-  {
-   "b": {
-    "sl": "Večerja na željo.",
-    "en": "Dinner on request.",
-    "de": "Abendessen auf Wunsch."
-   },
-   "t": {
-    "sl": "Večerjo pripravimo, če jo naročite vnaprej.",
-    "en": "We serve dinner if you ask for it in advance.",
-    "de": "Abendessen gibt es, wenn Sie es vorher bestellen."
-   }
-  },
-  {
-   "b": {
-    "sl": "Motoristi dobrodošli.",
-    "en": "Bikers welcome.",
-    "de": "Motorradfahrer willkommen."
-   },
-   "t": {
-    "sl": "Vaša vozila hranimo na varnem in suhem.",
-    "en": "We keep your rides safe and dry.",
-    "de": "Ihre Maschinen stehen bei uns sicher und trocken."
-   }
-  },
-  {
-   "b": {
-    "sl": "Brez prahu.",
-    "en": "Dust be gone.",
-    "de": "Kein Staub."
-   },
-   "t": {
-    "sl": "Sobe čistimo s sistemom Hyla, da ostanejo čiste in brez prahu.",
-    "en": "We use the Hyla cleaning system to keep our rooms clean and dust-free.",
-    "de": "Wir reinigen die Zimmer mit dem Hyla-System, damit sie sauber und staubfrei bleiben."
-   }
-  },
-  {
-   "b": {
-    "sl": "Za najmlajše.",
-    "en": "For little ones.",
-    "de": "Für die Kleinsten."
-   },
-   "t": {
-    "sl": "Otroško posteljico za otroke do 3 let dobite brezplačno na željo, če je prosta. Dodatnih postelj ni.",
-    "en": "A cot for children up to 3 is free on request, subject to availability. There are no extra beds.",
-    "de": "Ein Babybett für Kinder bis 3 Jahre gibt es auf Wunsch kostenlos, solange verfügbar. Zustellbetten gibt es nicht."
-   }
-  },
-  {
-   "b": {
-    "sl": "Brez hišnih ljubljenčkov.",
-    "en": "No pets.",
-    "de": "Keine Haustiere."
-   },
-   "t": {
-    "sl": "Hišni ljubljenčki pri nas žal niso dovoljeni.",
-    "en": "Sorry, pets are not allowed.",
-    "de": "Haustiere sind leider nicht erlaubt."
-   }
-  }
- ],
- "rules": {
-  "sl": "Prijava od 14:00 do 20:00, odjava od 6:00 do 10:00. Ob prijavi potrebujemo osebni dokument s fotografijo. Kajenje ni dovoljeno.",
-  "en": "Check-in 14:00 to 20:00, check-out 6:00 to 10:00. Please bring a photo ID for check-in. Smoking is not allowed.",
-  "de": "Anreise 14:00 bis 20:00, Abreise 6:00 bis 10:00. Bitte bringen Sie zur Anreise einen Lichtbildausweis mit. Rauchen ist nicht erlaubt."
- },
- "legal": {
-  "provider": "GO-COMMERCE d.o.o.",
-  "address": "Govejk 14/c, 5281 Idrija",
-  "taxId": "",
-  "rno": ""
- },
- "images": {
-  "hero": {
-   "src": "slike/hisa.jpg",
-   "sl": "Hiša na podeželju (ponazoritev)",
-   "en": "A country house (illustrative)",
-   "de": "Landhaus (Beispielfoto)"
-  },
-  "hosts": {
-   "src": "slike/zajtrk.jpg",
-   "sl": "Zajtrk (ponazoritev)",
-   "en": "Breakfast (illustrative)",
-   "de": "Frühstück (Beispielfoto)"
-  },
-  "s1a": {
-   "src": "slike/soba-1.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "s1b": {
-   "src": "slike/soba-2.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "s1c": {
-   "src": "slike/soba-4.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "s2a": {
-   "src": "slike/soba-2.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "s2b": {
-   "src": "slike/soba-5.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "s2c": {
-   "src": "slike/soba-1.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "s3a": {
-   "src": "slike/soba-4.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "s3b": {
-   "src": "slike/soba-3.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "s3c": {
-   "src": "slike/soba-5.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "s4a": {
-   "src": "slike/soba-3.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "s4b": {
-   "src": "slike/soba-1.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "s4c": {
-   "src": "slike/soba-4.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "s5a": {
-   "src": "slike/soba-5.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "s5b": {
-   "src": "slike/soba-3.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "s5c": {
-   "src": "slike/soba-2.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "g1": {
-   "src": "slike/narava-1.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "g2": {
-   "src": "slike/narava-3.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "g3": {
-   "src": "slike/narava-4.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "g4": {
-   "src": "slike/zajtrk.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "g5": {
-   "src": "slike/hisa.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "idrija": {
-   "src": "slike/narava-2.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  },
-  "narava": {
-   "src": "slike/narava-3.jpg",
-   "sl": "Fotografija za ponazoritev",
-   "en": "Illustrative photo",
-   "de": "Beispielfoto"
-  }
- },
- "faq": [
-  {
-   "id": "checkin",
-   "k": "prihod odhod check in out ura kdaj prijava arrive arrival leave anreise abreise uhrzeit",
-   "a": {
-    "sl": "Prijava je od 14:00 do 20:00, odjava od 6:00 do 10:00.",
-    "en": "Check-in is 14:00 to 20:00, check-out 6:00 to 10:00.",
-    "de": "Anreise 14:00 bis 20:00, Abreise 6:00 bis 10:00."
-   }
-  },
-  {
-   "id": "parking",
-   "k": "parkiranje parkirisce avto parking park car parken parkplatz auto",
-   "a": {
-    "sl": "Parkirišče pri hiši je brezplačno.",
-    "en": "Parking at the house is free.",
-    "de": "Parken am Haus ist kostenlos."
-   }
-  },
-  {
-   "id": "pets",
-   "k": "pes psa psom pse ljubljencek macka zival dog dogs pet pets cat hund hunde haustier katze",
-   "a": {
-    "sl": "Hišni ljubljenčki žal niso dovoljeni.",
-    "en": "Sorry, pets are not allowed.",
-    "de": "Haustiere sind leider nicht erlaubt."
-   }
-  },
-  {
-   "id": "food",
-   "k": "zajtrk vecerja hrana jesti breakfast dinner food eat fruhstuck abendessen essen",
-   "a": {
-    "sl": "Zajtrk je vsako jutro. Večerjo pripravimo, če jo naročite vnaprej.",
-    "en": "Breakfast is served every morning. We cook dinner if you ask in advance.",
-    "de": "Frühstück gibt es jeden Morgen, Abendessen auf Vorbestellung."
-   }
-  },
-  {
-   "id": "bikes",
-   "k": "motor motorji kolo kolesa bike bikes motorbike motorrad fahrrad",
-   "a": {
-    "sl": "Motoristi so dobrodošli, vozila hranimo na varnem in suhem.",
-    "en": "Bikers welcome: we keep your rides safe and dry.",
-    "de": "Motorradfahrer willkommen: Ihre Maschinen stehen sicher und trocken."
-   }
-  }
- ]
-}
-</script>
+<a class="mobilni" href="#kontakt" data-t="n5">Povpraševanje</a>
 
 <script>
-(function(){
-"use strict";
-var S = JSON.parse(document.getElementById("site-data").textContent);
-var T = {
- sl:{demo:"Predlog strani za Na Kluk' · fotografije so ponazoritev",navUnits:"Sobe",navArea:"Okolica",navPrices:"Cene",navInq:"Povpraševanje",ctaCheck:"Preveri prost termin",unitsEyebrow:"Kje boste spali",unitsTitle:"Pet vrst sob, od enoposteljne do družinske za osem",seasonEyebrow:"Kaj početi",seasonTitle:"Idrija in gozdovi okoli vasi",areaEyebrow:"Okolica",areaTitle:"Mirna vas blizu Idrije",pricesEyebrow:"Cene",pricesTitle:"Cene na povpraševanje",inqEyebrow:"Povpraševanje",inqTitle:"Pišite nam",inqSub:"Pošljite nam datume in število oseb, pa vam sporočimo, kaj je prosto in koliko stane.",fName:"Ime",fEmail:"E-pošta",fFrom:"Prihod",fTo:"Odhod",fUnit:"Soba",fGuests:"Število oseb",fMsg:"Sporočilo (neobvezno)",fConsent:"Strinjam se, da podatke uporabite samo za odgovor na to povpraševanje.",fSend:"Pošlji povpraševanje",privTitle:"Zasebnost",privText:"Podatke iz obrazca uporabimo samo za odgovor. Stran ne uporablja piškotkov za sledenje.",guideLink:"Vodič za goste",legalT:"Ponudnik",taxT:"Davčna št.",rnoT:"ID obrata",season:"Sezona",from:"Cena na povpraševanje",pnote:"Ceno za vaše datume vam sporočimo na povpraševanje. Rezervirate lahko tudi prek Bookinga. {r}",askBtn:"Vprašajte",chatSub:"Pomočnik za goste",aiNote:"Rezervacijo vedno potrdijo gostitelji.",send:"Pošlji",need:"Vpišite ime, veljaven e-naslov in označite soglasje.",ready:"Povpraševanje je pripravljeno. Pošljite ga na {e} (besedilo spodaj).",copy:"Kopiraj besedilo",copied:"Kopirano",sent:"Hvala! Odgovorimo vam čim prej.",
-  hello:"Pozdravljeni. Kaj vas zanima o sobah ali okolici?",
-  chips:["Kje parkiram?", "Ali lahko pride pes?", "Zajtrk in večerja", "Kdaj je prijava?", "Pišite gostiteljem"],
-  askDates:"Za katere datume? Napišite na primer: 12. 7. do 15. 7., 2 osebi.",
-  quoteHead:"{d1} do {d2}, {n} noči, {g} {gw}:",guest1:"oseba",guestN:"osebe",
-  quoteDirect:"cena",quoteTax:"turistična taksa",quoteNote:"Ali je termin prost, preverijo gostitelji.",
-  tooMany:"Za {g} oseb nam prosim pišite.",tooManyAll:"Za {g} oseb nam prosim pišite.",
-  minN:"Najkrajše bivanje so {n} noči.",fill:"Izpolni povpraševanje",mail:"Pišite gostiteljem",
-  fallback:"Tega ne vem zagotovo. Najbolje, da vprašate gostitelje neposredno.",
-  mailHint:"Obrazec je spodaj na strani.",
-  past:"Ta datum je že mimo. Za katere datume?",
-  months:["jan","feb","mar","apr","maj","jun","jul","avg","sep","okt","nov","dec"]},
- en:{demo:"Website proposal for Na Kluk' · photos are illustrative",navUnits:"Rooms",navArea:"The area",navPrices:"Prices",navInq:"Inquiry",ctaCheck:"Check availability",unitsEyebrow:"Where you'll sleep",unitsTitle:"Five room types, from a single to a family room for eight",seasonEyebrow:"Things to see & do",seasonTitle:"Idrija and the woods around the village",areaEyebrow:"The area",areaTitle:"A quiet village near Idrija",pricesEyebrow:"Prices",pricesTitle:"Prices on request",inqEyebrow:"Inquiry",inqTitle:"Write to us",inqSub:"Send us your dates and the number of guests, and we'll tell you what's free and what it costs.",fName:"Name",fEmail:"Email",fFrom:"Arrival",fTo:"Departure",fUnit:"Room",fGuests:"Guests",fMsg:"Message (optional)",fConsent:"I agree that my details are used only to answer this inquiry.",fSend:"Send inquiry",privTitle:"Privacy",privText:"We use form details only to reply. This site uses no tracking cookies.",guideLink:"Guest guide",legalT:"Provider",taxT:"Tax no.",rnoT:"Property ID",season:"Season",from:"Price on request",pnote:"We'll send you the price for your dates on request. You can also book through Booking.com. {r}",askBtn:"Ask",chatSub:"Guest helper",aiNote:"The hosts always confirm bookings themselves.",send:"Send",need:"Please add your name, a valid email and tick the consent box.",ready:"Your inquiry is ready. Send it to {e} (text below).",copy:"Copy text",copied:"Copied",sent:"Thank you! We'll reply as soon as we can.",
-  hello:"Hello. What would you like to know about the rooms or the area?",
-  chips:["Where do I park?", "Can I bring a dog?", "Breakfast and dinner", "Check-in time?", "Write to the hosts"],
-  askDates:"Which dates? For example: 12 July to 15 July, 2 people.",
-  quoteHead:"{d1} to {d2}, {n} nights, {g} {gw}:",guest1:"guest",guestN:"guests",
-  quoteDirect:"price",quoteTax:"tourist tax",quoteNote:"The hosts will check whether the dates are free.",
-  tooMany:"For {g} guests, please write to us.",tooManyAll:"For {g} guests, please write to us.",
-  minN:"The minimum stay is {n} nights.",fill:"Fill in the inquiry",mail:"Write to the hosts",
-  fallback:"I don't know that for sure. Best to ask the hosts directly.",
-  mailHint:"The form is further down the page.",
-  past:"That date has passed. Which dates do you have in mind?",
-  months:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},
- de:{demo:"Website-Vorschlag für Na Kluk' · Fotos dienen zur Veranschaulichung",navUnits:"Zimmer",navArea:"Umgebung",navPrices:"Preise",navInq:"Anfrage",ctaCheck:"Verfügbarkeit prüfen",unitsEyebrow:"Wo Sie schlafen",unitsTitle:"Fünf Zimmertypen, vom Einzelzimmer bis zum Familienzimmer für acht",seasonEyebrow:"Was unternehmen",seasonTitle:"Idrija und die Wälder rund ums Dorf",areaEyebrow:"Umgebung",areaTitle:"Ein ruhiges Dorf bei Idrija",pricesEyebrow:"Preise",pricesTitle:"Preise auf Anfrage",inqEyebrow:"Anfrage",inqTitle:"Schreiben Sie uns",inqSub:"Schicken Sie uns Ihre Daten und die Personenzahl, wir sagen Ihnen, was frei ist und was es kostet.",fName:"Name",fEmail:"E-Mail",fFrom:"Anreise",fTo:"Abreise",fUnit:"Zimmer",fGuests:"Personen",fMsg:"Nachricht (optional)",fConsent:"Ich bin einverstanden, dass meine Daten nur für diese Anfrage verwendet werden.",fSend:"Anfrage senden",privTitle:"Datenschutz",privText:"Formulardaten nutzen wir nur für die Antwort. Keine Tracking-Cookies.",guideLink:"Gästeführer",legalT:"Anbieter",taxT:"Steuernr.",rnoT:"Unterkunfts-ID",season:"Saison",from:"Preis auf Anfrage",pnote:"Den Preis für Ihre Daten nennen wir Ihnen auf Anfrage. Sie können auch über Booking.com buchen. {r}",askBtn:"Fragen",chatSub:"Gästehelfer",aiNote:"Buchungen bestätigen immer die Gastgeber selbst.",send:"Senden",need:"Bitte Name, gültige E-Mail und Einwilligung angeben.",ready:"Ihre Anfrage ist bereit. Senden Sie sie an {e} (Text unten).",copy:"Text kopieren",copied:"Kopiert",sent:"Danke! Wir antworten so bald wie möglich.",
-  hello:"Hallo. Was möchten Sie über die Zimmer oder die Umgebung wissen?",
-  chips:["Wo parke ich?", "Darf der Hund mit?", "Frühstück und Abendessen", "Wann ist Anreise?", "Gastgebern schreiben"],
-  askDates:"Für welche Daten? Zum Beispiel: 12. 7. bis 15. 7., 2 Personen.",
-  quoteHead:"{d1} bis {d2}, {n} Nächte, {g} {gw}:",guest1:"Person",guestN:"Personen",
-  quoteDirect:"Preis",quoteTax:"Kurtaxe",quoteNote:"Ob der Termin frei ist, prüfen die Gastgeber.",
-  tooMany:"Für {g} Personen schreiben Sie uns bitte.",tooManyAll:"Für {g} Personen schreiben Sie uns bitte.",
-  minN:"Der Mindestaufenthalt beträgt {n} Nächte.",fill:"Anfrage ausfüllen",mail:"Gastgebern schreiben",
-  fallback:"Das weiß ich nicht sicher. Fragen Sie am besten direkt die Gastgeber.",
-  mailHint:"Das Formular ist weiter unten.",
-  past:"Dieses Datum ist vorbei. Welche Daten planen Sie?",
-  months:["Jan.","Feb.","März","Apr.","Mai","Juni","Juli","Aug.","Sep.","Okt.","Nov.","Dez."]}
+const ZASLUGE="Fotografije okolice: <a href=\"https://commons.wikimedia.org/wiki/File:Jeli%C4%8Dni_Vrh,_Idrija.jpg\">Jelični Vrh</a>, Andrej Jakobčič, CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Idrija-pogled.jpg\">Idrija</a>, Jani Peternelj, CC BY-SA 3.0 · sobe in zajtrk: Pexels";
+const T={
+en:{pas:"Website proposal for Na Kluk' · photos are placeholders",znak:"rooms · breakfast",n1:"Rooms",n2:"Breakfast",n3:"Around",n4:"Reviews",n5:"Enquiry",
+naslovnaPodpis:"The hills around Idrija",h1:"A quiet place to stay in the hills above Idrija",h1p:"A family house with breakfast in the village of Govejk. Idrija is a ten-minute drive, Žiri five.",
+u0:"About us",u1:"The rooms are simple and clean, breakfast is on the table in the morning, and in the evening you can sit on the <em>terrace by the bar</em> and listen to how quiet the village is.",
+u2:"Every room has a desk, a TV and free Wi-Fi, and most have a private bathroom. We cook dinner if you let us know in advance. Parking at the house is free.",
+s1:"Guest rating",s1v:"9.1 / 10 (134 reviews)",s2:"Staff",s3:"Check-in",s4:"Check-out",s4v:"until 10:00",s5:"Pets",s5v:"sorry, no",vir:"Ratings from Booking.com, October 2026.",
+sobaPodpis:"Placeholder photo. Your rooms will go here.",so0:"Rooms",so1:"Five kinds of rooms, from a single to a room for eight",
+r1:"Double room",r1p:"For two · double bed",r2:"Twin room",r2p:"For two · two single beds",r3:"Single room",r3p:"For one",r4:"Quadruple room with bathroom",r4p:"Up to four · king bed and two singles · private bathroom",r5:"Family room with bathroom",r5p:"Up to eight · eight single beds · private bathroom",vpr:"Ask",
+so2:"Prices depend on the dates and the number of guests. Send an enquiry and we reply with the exact price.",
+zajtrkPodpis:"Placeholder photo",z0:"Breakfast and dinner",z1:"Something homemade in the morning",z2:"Breakfast is served every day. If you leave early, we pack it for you to take along. We can also make it vegetarian or gluten-free, just tell us beforehand. Dinner is cooked on request.",
+z3:"“For breakfast we even got some home-made hot strudel.”",z3c:"Oliver, Austria",
+d1:"Bikers welcome",d1p:"Your bikes sleep safe and dry.",d2:"No dust",d2p:"We clean the rooms with a Hyla system that traps dust in water.",d3:"Bar with a terrace",d3p:"A big terrace for the evening after a day out.",
+idrijaPodpis:"Idrija",o0:"Around",o1:"What's nearby",o2c:"10 min",o2:"The mercury town on the UNESCO World Heritage list. Try Idrija žlikrofi while you're there and have a look at Idrija lace.",
+o3c:"5 min",o3:"The nearest town if you're coming from the Gorenjska region.",o4c:"in the woods",o4h:"Tomaž's Table",o4:"A rock of about 30 tons balancing in the middle of the forest. We'll tell you how to find it.",
+m0:"What guests say",m1:"“The family run B&B was the best place we have stayed at of our whole trip. The manager catered to all our needs in a very attentive and friendly manner.”",m1c:"Nicole, Slovenia",
+m2:"“Everyone was very nice and talkative. The rooms were clean and comfortable. The house is in a very small town in the hills, about 10 minutes from Idrija on a curvy road.”",m2c:"Oliver, Austria",
+k0:"Enquiry",k1:"Write to us or give us a call",f1:"Arrival",f2:"Departure",f3:"Guests",f4:"Room",f4a:"Any",f5:"Name",f6:"Email",f7:"Message",f8:"Send enquiry",
+f9:"This is only a website proposal, so the enquiry isn't sent now. On the real site it goes straight to info@nakluk.si.",
+naslovnaAlt:"Green hills near Idrija",sobaAlt:"A guest room (placeholder)",zajtrkAlt:"Breakfast (placeholder)",idrijaAlt:"Idrija"},
+de:{pas:"Website-Vorschlag für Na Kluk' · Fotos sind Beispielbilder",znak:"Zimmer · Frühstück",n1:"Zimmer",n2:"Frühstück",n3:"Umgebung",n4:"Bewertungen",n5:"Anfrage",
+naslovnaPodpis:"Die Hügel rund um Idrija",h1:"Eine ruhige Unterkunft in den Hügeln über Idrija",h1p:"Ein Familienhaus mit Frühstück im Dorf Govejk. Nach Idrija sind es zehn Autominuten, nach Žiri fünf.",
+u0:"Bei uns",u1:"Die Zimmer sind einfach und sauber, morgens steht das Frühstück auf dem Tisch, und abends sitzen Sie auf der <em>Terrasse an der Bar</em> und hören, wie still das Dorf ist.",
+u2:"Alle Zimmer haben Schreibtisch, TV und kostenloses WLAN, die meisten auch ein eigenes Bad. Abendessen kochen wir, wenn Sie uns vorher Bescheid geben. Parken am Haus ist kostenlos.",
+s1:"Gästebewertung",s1v:"9,1 / 10 (134 Bewertungen)",s2:"Personal",s3:"Anreise",s4:"Abreise",s4v:"bis 10:00",s5:"Haustiere",s5v:"leider nicht",vir:"Bewertungen von Booking.com, Oktober 2026.",
+sobaPodpis:"Beispielfoto. Hier kommen Ihre Zimmer hin.",so0:"Zimmer",so1:"Fünf Zimmerarten, vom Einzelzimmer bis zum Zimmer für acht",
+r1:"Doppelzimmer",r1p:"Für zwei · Doppelbett",r2:"Zweibettzimmer",r2p:"Für zwei · zwei Einzelbetten",r3:"Einzelzimmer",r3p:"Für eine Person",r4:"Vierbettzimmer mit Bad",r4p:"Bis zu vier · Kingsize-Bett und zwei Einzelbetten · eigenes Bad",r5:"Familienzimmer mit Bad",r5p:"Bis zu acht · acht Einzelbetten · eigenes Bad",vpr:"Anfragen",
+so2:"Die Preise hängen vom Termin und der Zahl der Gäste ab. Schicken Sie eine Anfrage, wir antworten mit dem genauen Preis.",
+zajtrkPodpis:"Beispielfoto",z0:"Frühstück und Abendessen",z1:"Morgens etwas Hausgemachtes",z2:"Frühstück gibt es jeden Tag. Wenn Sie früh losfahren, packen wir es Ihnen zum Mitnehmen ein. Auch vegetarisch oder glutenfrei, sagen Sie es uns einfach vorher. Abendessen kochen wir auf Wunsch.",
+z3:"„Zum Frühstück gab es sogar warmen hausgemachten Strudel.“",z3c:"Oliver, Österreich",
+d1:"Motorradfahrer willkommen",d1p:"Ihre Maschinen stehen sicher und trocken.",d2:"Kein Staub",d2p:"Wir reinigen die Zimmer mit einem Hyla-System, das den Staub im Wasser bindet.",d3:"Bar mit Terrasse",d3p:"Eine große Terrasse für den Abend nach dem Ausflug.",
+idrijaPodpis:"Idrija",o0:"Umgebung",o1:"Was in der Nähe ist",o2c:"10 Min.",o2:"Die Quecksilberstadt auf der UNESCO-Welterbeliste. Probieren Sie Idrijski žlikrofi und schauen Sie sich die Idrija-Klöppelspitze an.",
+o3c:"5 Min.",o3:"Der nächste Ort, wenn Sie aus Gorenjska (Oberkrain) kommen.",o4c:"im Wald",o4h:"Tomaž-Tisch",o4:"Ein etwa 30 Tonnen schwerer Felsen, der mitten im Wald im Gleichgewicht steht. Wir erklären Ihnen den Weg.",
+m0:"Das sagen Gäste",m1:"„Die familiengeführte Pension war die beste Unterkunft unserer ganzen Reise. Man hat sich sehr aufmerksam und freundlich um alle unsere Wünsche gekümmert.“",m1c:"Nicole, Slowenien",
+m2:"„Alle waren sehr nett und gesprächig. Die Zimmer waren sauber und bequem. Das Haus liegt in einem kleinen Dorf in den Hügeln, etwa 10 Minuten von Idrija über eine kurvige Straße.“",m2c:"Oliver, Österreich",
+k0:"Anfrage",k1:"Schreiben Sie uns oder rufen Sie an",f1:"Anreise",f2:"Abreise",f3:"Personen",f4:"Zimmer",f4a:"Egal",f5:"Name",f6:"E-Mail",f7:"Nachricht",f8:"Anfrage senden",
+f9:"Das ist nur ein Website-Vorschlag, daher wird die Anfrage jetzt nicht gesendet. Auf der echten Seite geht sie direkt an info@nakluk.si.",
+naslovnaAlt:"Grüne Hügel bei Idrija",sobaAlt:"Ein Gästezimmer (Beispielfoto)",zajtrkAlt:"Frühstück (Beispielfoto)",idrijaAlt:"Idrija"}
 };
-var lang = "sl";
-try { var sv = localStorage.getItem("lang"); if (sv && T[sv]) lang = sv; else { var nl = (navigator.language||"").slice(0,2); if (T[nl]) lang = nl; } } catch(e) {}
-
-function t(k, v){ var s = T[lang][k]; if (v) for (var x in v) s = s.split("{"+x+"}").join(v[x]); return s; }
-function c(o){ return o ? (o[lang] || o.sl || "") : ""; }
-function el(tag, cls, txt){ var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
-function money(n){ return n.toLocaleString(lang === "en" ? "en-GB" : lang === "de" ? "de-DE" : "sl-SI", {minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2}) + " €"; }
-
-/* ---------- photos ---------- */
-var IMG = S.images;
-function fillPh(node, key){
-  var im = IMG[key]; node.textContent = ""; node.classList.remove("empty");
-  if (!im) return;
-  node.setAttribute("data-cap", c(im));
-  if (!im.src){ node.classList.add("empty"); return; }
-  var img = el("img"); img.alt = c(im); img.loading = key === "hero" ? "eager" : "lazy"; img.decoding = "async";
-  img.onerror = function(){ img.remove(); node.classList.add("empty"); if (key === "hero") document.getElementById("top").classList.add("noimg"); };
-  img.src = im.src; node.appendChild(img);
-}
-var lbList = [], lbIdx = 0;
-function photoBtn(key, list){
-  var b = el("button"); b.type = "button"; b.setAttribute("aria-label", c(IMG[key]));
-  var p = el("div", "ph"); b.appendChild(p); fillPh(p, key);
-  b.onclick = function(){ openLb(list, list.indexOf(key)); };
-  return b;
-}
-function openLb(list, i){
-  lbList = list.filter(function(k){ return IMG[k] && IMG[k].src; }); if (!lbList.length) return;
-  lbIdx = Math.max(0, lbList.indexOf(list[i])); showLb(); document.getElementById("lb").hidden = false; document.getElementById("lbX").focus();
-}
-function showLb(){ var k = lbList[lbIdx]; var img = document.getElementById("lbImg"); img.src = IMG[k].src; img.alt = c(IMG[k]); document.getElementById("lbCap").textContent = c(IMG[k]); }
-document.getElementById("lbX").onclick = function(){ document.getElementById("lb").hidden = true; };
-document.getElementById("lbP").onclick = function(){ lbIdx = (lbIdx + lbList.length - 1) % lbList.length; showLb(); };
-document.getElementById("lbN").onclick = function(){ lbIdx = (lbIdx + 1) % lbList.length; showLb(); };
-document.addEventListener("keydown", function(e){ var lb = document.getElementById("lb"); if (lb.hidden) return; if (e.key === "Escape") lb.hidden = true; if (e.key === "ArrowRight") document.getElementById("lbN").click(); if (e.key === "ArrowLeft") document.getElementById("lbP").click(); });
-
-/* ---------- render ---------- */
-function render(){
-  document.documentElement.lang = lang;
-  document.querySelectorAll("[data-t]").forEach(function(n){ n.textContent = t(n.dataset.t); });
-  document.querySelectorAll("[data-c]").forEach(function(n){ n.textContent = c(S[n.dataset.c]); });
-  document.querySelectorAll(".lang button").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
-  document.querySelectorAll("[data-img]").forEach(function(n){ fillPh(n, n.dataset.img); });
-  if (!IMG.hero || !IMG.hero.src) document.getElementById("top").classList.add("noimg");
-
-  var hb = document.getElementById("hostBody"); hb.textContent = ""; (S.hostBody[lang] || S.hostBody.sl).forEach(function(p){ hb.appendChild(el("p", null, p)); });
-  var f = document.getElementById("facts"); f.textContent = "";
-  S.facts.forEach(function(x){ var d = el("div"); d.appendChild(el("b", null, x.v)); d.appendChild(el("span", null, c(x))); f.appendChild(d); });
-
-  var u = document.getElementById("units"); u.textContent = "";
-  var sel = document.getElementById("fUnit"); var prevSel = sel.value; sel.textContent = "";
-  S.units.forEach(function(x, i){
-    var row = el("article", "unit" + (i % 2 ? " flip" : ""));
-    var pics = el("div", "pics"); x.imgs.forEach(function(k){ pics.appendChild(photoBtn(k, x.imgs)); }); row.appendChild(pics);
-    var tx = el("div", "utext");
-    tx.appendChild(el("h3", null, c(x.name)));
-    tx.appendChild(el("p", "story", c(x.story)));
-    var dl = el("dl", "spec"); (x.spec[lang] || x.spec.sl).forEach(function(r){ dl.appendChild(el("dt", null, r[0])); dl.appendChild(el("dd", null, r[1])); }); tx.appendChild(dl);
-    var low = Math.min.apply(null, S.seasonsPrice.map(function(s){ return s[x.id]; }));
-    var fr = el("p", "from"); fr.textContent = t("from", {p: low}); tx.appendChild(fr);
-    row.appendChild(tx); u.appendChild(row);
-    var o = el("option", null, c(x.name)); o.value = x.id; sel.appendChild(o);
-  });
-  if (prevSel) sel.value = prevSel;
-
-  var st = document.getElementById("strip"); st.textContent = "";
-  S.gallery.forEach(function(k){ st.appendChild(photoBtn(k, S.gallery)); });
-
-  var se = document.getElementById("seasons"); se.textContent = "";
-  S.seasons.forEach(function(s){ var d = el("div", "season"); var p = el("div", "ph"); fillPh(p, s.img); d.appendChild(p); d.appendChild(el("h3", null, c(s.t))); var ul = el("ul"); (s.l[lang] || s.l.sl).forEach(function(x){ ul.appendChild(el("li", null, x)); }); d.appendChild(ul); se.appendChild(d); });
-
-  document.getElementById("map").innerHTML = mapSvg();
-  var di = document.getElementById("dist"); di.textContent = "";
-  S.dist.forEach(function(x){ var li = el("li"); li.appendChild(el("b", null, x.v)); li.appendChild(el("span", null, c(x))); di.appendChild(li); });
-
-  var tb = document.getElementById("prices"); tb.textContent = "";
-  var hr = el("tr"); hr.appendChild(el("th", null, t("season"))); S.units.forEach(function(x){ hr.appendChild(el("th", null, c(x.name))); });
-  var th = el("thead"); th.appendChild(hr); tb.appendChild(th);
-  var bd = el("tbody"); S.seasonsPrice.forEach(function(s){ var r = el("tr"); r.appendChild(el("td", null, c(s))); S.units.forEach(function(x){ r.appendChild(el("td", "n", money(s[x.id]))); }); bd.appendChild(r); }); tb.appendChild(bd);
-  document.getElementById("pnote").textContent = t("pnote", {n: S.minNights, t: String(S.tax).replace(".", lang === "en" ? "." : ","), r: c(S.rules)});
-  var kn = document.getElementById("know"); kn.textContent = "";
-  S.know.forEach(function(x){ var p = el("p"); p.appendChild(el("b", null, c(x.b) + " ")); p.appendChild(document.createTextNode(c(x.t))); kn.appendChild(p); });
-
-  var low = Math.min.apply(null, S.seasonsPrice.map(function(s){ return s.studio; }));
-  document.getElementById("barPrice").textContent = t("from", {p: low});
-  document.getElementById("contact").textContent = S.email + " · +386 51 43 54 97";
-  var lg = document.getElementById("legal"); lg.textContent = "";
-  lg.appendChild(el("b", null, t("legalT"))); [S.legal.provider, S.legal.address, S.legal.taxId && t("taxT") + " " + S.legal.taxId, S.legal.rno && t("rnoT") + " " + S.legal.rno].filter(Boolean).forEach(function(l){ lg.appendChild(el("br")); lg.appendChild(document.createTextNode(l)); });
-
-  var ch = document.getElementById("chips"); ch.textContent = "";
-  T[lang].chips.forEach(function(q, i){ var b = el("button", null, q); b.type = "button"; b.onclick = function(){ i === 0 ? ask(q, "price") : i === 4 ? ask(q, "mail") : ask(q); }; ch.appendChild(b); });
-}
-
-function mapSvg(){
-  var L = {sl:["Govejk","Idrija","Žiri","10 min","5 min","proti Gorenjski →","Na Kluk'"],
-           en:["Govejk","Idrija","Žiri","10 min","5 min","to Gorenjska →","Na Kluk'"],
-           de:["Govejk","Idrija","Žiri","10 Min.","5 Min.","nach Gorenjska →","Na Kluk'"]}[lang];
-  return '<svg viewBox="0 0 640 360" role="img" aria-label="' + L[0] + ', ' + L[1] + ', ' + L[2] + '">' +
-    '<rect width="640" height="360" fill="var(--paper-2)"/>' +
-    '<path d="M0 300 Q160 250 320 280 T640 260" fill="none" stroke="var(--rule)" stroke-width="1"/>' +
-    '<path d="M0 90 Q200 60 360 95 T640 70" fill="none" stroke="var(--rule)" stroke-width="1"/>' +
-    '<path d="M0 200 Q180 150 330 180 T640 150" fill="none" stroke="var(--rule)" stroke-width="1"/>' +
-    '<path d="M140 270 C200 250 230 220 260 230 C290 240 300 200 330 185" fill="none" stroke="var(--moss)" stroke-width="2" stroke-dasharray="4 5"/>' +
-    '<path d="M330 185 C380 160 420 150 470 120" fill="none" stroke="var(--moss)" stroke-width="2" stroke-dasharray="4 5"/>' +
-    '<circle cx="140" cy="270" r="5" fill="var(--ink-2)"/><text class="big" x="70" y="305">' + L[1] + '</text>' +
-    '<circle cx="470" cy="120" r="5" fill="var(--ink-2)"/><text class="big" x="485" y="115">' + L[2] + '</text>' +
-    '<circle cx="330" cy="185" r="8" fill="var(--wood)"/><text x="345" y="212" style="font-weight:600;fill:var(--ink)">' + L[6] + '</text><text x="345" y="230">' + L[0] + '</text>' +
-    '<text x="190" y="225">' + L[3] + '</text>' +
-    '<text x="395" y="175">' + L[4] + '</text>' +
-    '<text x="500" y="60">' + L[5] + '</text>' +
-    '</svg>';
-}
-
-document.querySelectorAll(".lang button").forEach(function(b){ b.addEventListener("click", function(){ lang = b.dataset.lang; try { localStorage.setItem("lang", lang); } catch(e) {} render(); resetChat(); }); });
-
-/* ---------- inquiry form ---------- */
-document.getElementById("inq").addEventListener("submit", function(ev){
-  ev.preventDefault();
-  var out = document.getElementById("inqOut"); out.textContent = ""; out.hidden = false;
-  var name = val("fName"), email = val("fEmail");
-  if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || !document.getElementById("fConsent").checked){ out.appendChild(el("p", null, t("need"))); return; }
-  var us = document.getElementById("fUnit");
-  var text = [t("fName") + ": " + name, t("fEmail") + ": " + email, t("fFrom") + ": " + (val("fFrom") || "-"), t("fTo") + ": " + (val("fTo") || "-"),
-    t("fUnit") + ": " + us.options[us.selectedIndex].text, t("fGuests") + ": " + val("fGuests"), t("fMsg") + ": " + (val("fMsg") || "-")].join("\n");
-  if (S.formEndpoint){
-    fetch(S.formEndpoint, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({text: text, email: email})})
-      .then(function(r){ if (r.ok) out.appendChild(el("p", null, t("sent"))); else manual(out, text); }).catch(function(){ manual(out, text); });
-  } else manual(out, text);
-});
-function val(id){ return document.getElementById(id).value.trim(); }
-function manual(out, text){
-  out.appendChild(el("p", null, t("ready", {e: S.email})));
-  var pre = el("pre", null, text); out.appendChild(pre);
-  var b = el("button", "btn line", t("copy")); b.type = "button";
-  b.onclick = function(){ var ok = function(){ b.textContent = t("copied"); }; if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, function(){ sel(pre); }); else sel(pre); };
-  out.appendChild(b);
-}
-function sel(n){ var r = document.createRange(); r.selectNodeContents(n); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
-
-/* ---------- guest helper ---------- */
-var chat = document.getElementById("chat"), msgs = document.getElementById("msgs");
-var ctx = {from: null, to: null, guests: null, unit: null}, hist = [];
-function openChat(){ chat.hidden = false; document.getElementById("askBtn").setAttribute("aria-expanded", "true"); if (!msgs.children.length) resetChat(); setTimeout(function(){ document.getElementById("chatIn").focus(); }, 50); }
-function closeChat(){ chat.hidden = true; document.getElementById("askBtn").setAttribute("aria-expanded", "false"); }
-document.getElementById("askBtn").onclick = function(){ chat.hidden ? openChat() : closeChat(); };
-document.getElementById("chatX").onclick = closeChat;
-function me(text){ msgs.appendChild(el("div", "m me", text)); msgs.scrollTop = msgs.scrollHeight; }
-function bot(text, extra, acts){
-  var m = el("div", "m bot"); var tx = el("div", "txt", text); if (extra) tx.appendChild(extra); m.appendChild(tx);
-  if (acts && acts.length){ var a = el("div", "acts"); acts.forEach(function(x){ var b = el("button", null, x[0]); b.type = "button"; b.onclick = x[1]; a.appendChild(b); }); m.appendChild(a); }
-  msgs.appendChild(m); msgs.scrollTop = msgs.scrollHeight; return m;
-}
-function typing(){ var w = el("div", "m bot"); var d = el("div", "typing"); d.innerHTML = "<i></i><i></i><i></i>"; w.appendChild(d); msgs.appendChild(w); msgs.scrollTop = msgs.scrollHeight; return w; }
-function resetChat(){ msgs.textContent = ""; ctx = {from: null, to: null, guests: null, unit: null}; hist = []; bot(t("hello")); }
-
-function norm(s){ return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/ß/g, "ss").replace(/[^a-z0-9.\/\s-]/g, " "); }
-function detectLang(q){
-  var n = " " + norm(q) + " ";
-  if (/[äöüß]/i.test(q) || /\s(ich|wir|der|die|das|und|ist|kann|hund|gibt|wann|wie|preis|nacht)\s/.test(n)) return "de";
-  if (/[čšž]/i.test(q) || /\s(je|ali|kje|kako|koliko|lahko|in|za|imate|cena|noc|pes)\s/.test(n)) return "sl";
-  if (/\s(the|is|can|do|you|we|where|how|much|price|dog|night|what|there)\s/.test(n)) return "en";
-  return null;
-}
-var MONTHS = [["jan","januar","january","janner","jän"],["feb","februar","february"],["mar","marec","marca","march","marz","mär"],["apr","april","aprila"],["maj","maja","may","mai"],["jun","junij","junija","june","juni"],["jul","julij","julija","july","juli"],["avg","avgust","avgusta","aug","august"],["sep","sept","september","septembra"],["okt","oct","oktober","oktobra","october"],["nov","november","novembra"],["dec","dez","december","decembra","dezember"]];
-function monthOf(w){ w = norm(w).replace(/\./g, ""); for (var i = 0; i < 12; i++) if (MONTHS[i].some(function(m){ return w === m || (w.length >= 3 && m.indexOf(w) === 0); })) return i + 1; return 0; }
-function mkDate(d, m){
-  var now = new Date(); var y = now.getFullYear();
-  var dt = new Date(Date.UTC(y, m - 1, d));
-  var today = Date.UTC(y, now.getMonth(), now.getDate());
-  if (dt.getTime() < today - 86400000 * 1) dt = new Date(Date.UTC(y + 1, m - 1, d));
-  return (dt.getUTCMonth() === m - 1 && dt.getUTCDate() === d) ? dt : null;
-}
-function parse(q){
-  var r = {}; var n = norm(q);
-  // 12.7. - 15.7. / 12/7 to 15/7 / 12. 7. do 15. 7.
-  var nums = []; var re = /(\d{1,2})\s*[.\/]\s*(\d{1,2})\.?/g, mm;
-  while ((mm = re.exec(n))) nums.push([+mm[1], +mm[2]]);
-  if (nums.length >= 2){ r.from = mkDate(nums[0][0], nums[0][1]); r.to = mkDate(nums[1][0], nums[1][1]); if (r.from && r.to && r.to <= r.from) r.to = new Date(Date.UTC(r.from.getUTCFullYear() + (nums[1][1] < nums[0][1] ? 1 : 0), nums[1][1] - 1, nums[1][0])); }
-  else {
-    // 12-15 july / 12. do 15. julija / 28 jul - 2 aug
-    var w = n.split(/\s+/), ds = [], ms = [];
-    w.forEach(function(x, i){ var d = x.match(/^(\d{1,2})\.?$/); var range = x.match(/^(\d{1,2})\.?-(\d{1,2})\.?$/); var mo = monthOf(x);
-      if (range){ ds.push(+range[1], +range[2]); } else if (d && +d[1] <= 31 && !/^(oseb|osebe|osebi|people|persons|guests|personen|noci|nocitve|nights|nachte|odrasl|adults|erwachs)/.test(w[i+1] || "")) ds.push(+d[1]); else if (mo) ms.push({m: mo, at: ds.length}); });
-    if (ds.length >= 2 && ms.length){
-      var m1 = ms[0].at >= 2 ? ms[0].m : ms[0].m, m2 = ms.length > 1 ? ms[1].m : ms[0].m;
-      if (ms.length > 1 && ms[0].at === 1) { m1 = ms[0].m; }
-      r.from = mkDate(ds[0], m1); r.to = mkDate(ds[1], m2);
-      if (r.from && r.to && r.to <= r.from && m1 === m2) r.to = null;
-    }
-  }
-  var g = n.match(/(\d{1,2})\s*(oseb|osebe|osebi|odrasl|ljudi|people|persons|guests|adults|of us|personen|erwachsene|leute)/);
-  if (g) r.guests = +g[1];
-  else if (/\b(dva|dve|two|zwei|par|couple|paar)\b/.test(n) && /(oseb|odrasl|people|guests|personen|par|couple|paar|nas|us|wir)/.test(n)) r.guests = 2;
-  var nn = n.match(/(\d{1,2})\s*(noci|nocitve|nights|nachte|nacht)/); if (nn) r.nights = +nn[1];
-  if (/enoposteljn|single|einzel/.test(n)) r.unit = "enoposteljna"; if (/druzin|family|familie/.test(n)) r.unit = "druzinska";
-  r.priceIntent = /(cena|cene|kolik|stane|price|cost|how much|rate|preis|kosten|wieviel|was kostet|prost|termin|available|availability|frei|verfugbar|book|rezerv|buchen)/.test(n);
-  r.mailIntent = /(pisi|piši|napis|kontakt|gostitelj|host|contact|email|e-mail|schreib|gastgeber)/.test(n);
-  return r;
-}
-function seasonPrice(d, unit){ var m = d.getUTCMonth() + 1; var s = S.seasonsPrice.filter(function(x){ return x.months.indexOf(m) >= 0; })[0]; return s[unit]; }
-function fmt(d){ return d.getUTCDate() + ". " + T[lang].months[d.getUTCMonth()]; }
-function quote(){
-  var nights = Math.round((ctx.to - ctx.from) / 86400000);
-  var g = ctx.guests || 2;
-  var box = el("div", "quote");
-  var units = S.units.filter(function(u){ return (!ctx.unit || u.id === ctx.unit) && u.guests >= g; });
-  if (!units.length) units = S.units.filter(function(u){ return u.guests >= g; });
-  var head = t("quoteHead", {d1: fmt(ctx.from), d2: fmt(ctx.to), n: nights, g: g, gw: g === 1 ? t("guest1") : t("guestN")});
-  if (g > 5) return {text: t("tooManyAll")};
-  var lines = [];
-  units.forEach(function(u){
-    var sum = 0; for (var i = 0; i < nights; i++) sum += seasonPrice(new Date(ctx.from.getTime() + i * 86400000), u.id);
-    var disc = Math.round(sum * (1 - S.directDiscount) * 100) / 100;
-    var row = el("div"); row.appendChild(el("span", null, c(u.name) + " (" + t("quoteDirect") + ")")); row.appendChild(el("b", null, money(disc))); box.appendChild(row);
-    lines.push(c(u.name) + ": " + money(disc));
-  });
-  var tax = Math.round(S.tax * g * nights * 100) / 100;
-  var tr = el("div"); tr.appendChild(el("span", null, t("quoteTax"))); tr.appendChild(el("span", null, money(tax))); box.appendChild(tr);
-  var extra = nights < S.minNights ? " " + t("minN", {n: S.minNights}) : "";
-  if (g > 2 && !ctx.unit) extra += " " + t("tooMany", {g: g});
-  return {text: head + extra, box: box, note: t("quoteNote")};
-}
-function fillForm(note){
-  if (ctx.from) document.getElementById("fFrom").value = ctx.from.toISOString().slice(0, 10);
-  if (ctx.to) document.getElementById("fTo").value = ctx.to.toISOString().slice(0, 10);
-  if (ctx.guests) document.getElementById("fGuests").value = ctx.guests;
-  var unit = ctx.unit || (ctx.guests > 4 ? "druzinska" : null); if (unit) document.getElementById("fUnit").value = unit;
-  if (typeof note === "string" && note && !val("fMsg")) document.getElementById("fMsg").value = note;
-  if (matchMedia("(max-width:760px)").matches) closeChat();
-  document.getElementById("povprasevanje").scrollIntoView();
-  setTimeout(function(){ document.getElementById("fName").focus({preventScroll: true}); }, 400);
-}
-function faqMatches(q){
-  var words = norm(q).split(/\s+/).filter(function(w){ return w.length >= 3; });
-  var scored = S.faq.map(function(f){
-    var keys = f.k.split(" "), s = 0;
-    words.forEach(function(w){ keys.forEach(function(k){ if (w === k || (w.length >= 4 && k.length >= 4 && (w.indexOf(k) === 0 || k.indexOf(w) === 0))) s++; }); });
-    return {f: f, s: s};
-  }).filter(function(x){ return x.s > 0; }).sort(function(a, b){ return b.s - a.s; });
-  return scored.slice(0, 2).filter(function(x, i, a){ return i === 0 || x.s >= a[0].s; }).map(function(x){ return x.f; });
-}
-var fillAct = function(){ return [t("fill"), function(){ fillForm(); }]; };
-function localReply(q, forced){
-  var p = parse(q);
-  if (p.from) ctx.from = p.from; if (p.to) ctx.to = p.to; if (p.guests) ctx.guests = p.guests; if (p.unit) ctx.unit = p.unit;
-  if (p.from && !p.to && p.nights) ctx.to = new Date(p.from.getTime() + p.nights * 86400000);
-  if (forced === "mail" || (p.mailIntent && !p.priceIntent)){ fillForm(); return {text: t("mailHint")}; }
-  var hasDates = ctx.from && ctx.to && ctx.to > ctx.from;
-  if (p.from && ctx.from < new Date(Date.now() - 86400000)) return {text: t("past")};
-  if (!S.seasonsPrice.length && (forced === "price" || p.priceIntent || p.from)) return {text: t("fallback"), acts: [[t("mail"), function(){ fillForm(q); }]]};
-  if (forced === "price" || p.priceIntent || p.from){
-    if (!hasDates) return {text: t("askDates")};
-    var qt = quote(); return {text: qt.text, box: qt.box, note: qt.note, acts: [fillAct()]};
-  }
-  if (p.guests && hasDates){ var q2 = quote(); return {text: q2.text, box: q2.box, note: q2.note, acts: [fillAct()]}; }
-  var m = faqMatches(q);
-  if (m.length) return {text: m.map(function(f){ return c(f.a); }).join("\n\n")};
-  return {text: t("fallback"), acts: [[t("mail"), function(){ fillForm(q); }]]};
-}
-function ask(q, forced){
-  q = (q || "").trim(); if (!q) return;
-  var dl = detectLang(q); if (dl && dl !== lang && !forced){ lang = dl; try { localStorage.setItem("lang", lang); } catch(e) {} render(); }
-  me(q); hist.push({role: "user", content: q});
-  var w = typing();
-  var finish = function(r){
-    w.remove();
-    var extra = null;
-    if (r.box){ extra = r.box; if (r.note){ var n = el("div"); n.style.marginTop = "6px"; n.style.color = "var(--ink-2)"; n.textContent = r.note; extra.appendChild(n); } }
-    bot(r.text, extra, r.acts); hist.push({role: "assistant", content: r.text});
-  };
-  var local = localReply(q, forced);
-  var useAi = S.aiEndpoint && !local.box && local.text === t("fallback");
-  if (useAi){
-    fetch(S.aiEndpoint, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({lang: lang, messages: hist.slice(-10)})})
-      .then(function(r){ return r.ok ? r.json() : Promise.reject(r.status); })
-      .then(function(d){ finish({text: d.answer, acts: [[t("mail"), fillForm]]}); })
-      .catch(function(){ finish(local); });
-  } else setTimeout(function(){ finish(local); }, 450 + Math.min(700, local.text.length * 4));
-}
-document.getElementById("chatForm").addEventListener("submit", function(e){ e.preventDefault(); var i = document.getElementById("chatIn"); ask(i.value); i.value = ""; });
-
-render();
-})();
+const SL={};document.querySelectorAll('[data-t]').forEach(e=>{SL[e.dataset.t]=e.innerHTML});
+SL.naslovnaAlt="Zeleni hribi pri Idriji";SL.sobaAlt="Soba za goste (ponazoritev)";SL.zajtrkAlt="Zajtrk (ponazoritev)";SL.idrijaAlt="Idrija";T.sl=SL;
+function jezik(l){const d=T[l];document.documentElement.lang=l;
+  document.querySelectorAll('[data-t]').forEach(e=>{if(d[e.dataset.t]!=null)e.innerHTML=d[e.dataset.t]});
+  document.querySelectorAll('[data-ta]').forEach(e=>{e.alt=d[e.dataset.ta]||''});
+  document.querySelectorAll('.jezik button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
+  try{localStorage.setItem('nk-jezik',l)}catch(e){}}
+document.querySelectorAll('.jezik button').forEach(b=>b.onclick=()=>jezik(b.dataset.l));
+let z='sl';try{z=localStorage.getItem('nk-jezik')||(navigator.language||'sl').slice(0,2)}catch(e){}
+if(T[z]&&z!=='sl')jezik(z);
+document.querySelectorAll('[data-soba]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('izbira').value=a.dataset.soba}));
+document.getElementById('obrazec').addEventListener('submit',e=>{e.preventDefault();document.getElementById('odziv').style.display='block'});
+document.getElementById('zasluge').innerHTML=ZASLUGE;
 </script>
 </body>
 </html>
