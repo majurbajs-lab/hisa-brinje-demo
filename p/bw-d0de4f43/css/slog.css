@@ -190,7 +190,7 @@ input[aria-invalid="true"] { border-color: var(--napaka); border-width: 2px; }
 }
 /* na ozkih zaslonih levo poravnano, da ni lukenj med besedami */
 @media (max-width: 700px) {
-  .besedilo > p, .blok > p, .sobe-vrste > p, .poudarek { text-align: left; }
+  .besedilo > p:not(.gumbi):not(.opomba-gumbi), .blok > p, .sobe-vrste > p:not(.gumbi):not(.opomba-gumbi), .poudarek { text-align: left; }
 }
 
 /* ---------- drsnik fotografij ---------- */
