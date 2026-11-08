@@ -1,4 +1,4 @@
-/* B&W Križ – predogled: mobilni meni, video ob kliku, obrazec za povpraševanje. Brez knjižnic. */
+/* B&W Križ – predogled: mobilni meni, izbran razdelek, drsniki fotografij, video ob kliku, obrazec za povpraševanje. Brez knjižnic. */
 (function () {
   'use strict';
 
@@ -25,6 +25,65 @@
       }
     });
   }
+
+  /* ---------- izbran razdelek v meniju (zelena) ---------- */
+  var povezave = Array.prototype.slice.call(document.querySelectorAll('.meni a[href^="#"]'));
+  var razdelki = povezave.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+  function oznaciAktivno(i) {
+    povezave.forEach(function (a, j) {
+      if (j === i) a.setAttribute('aria-current', 'location');
+      else a.removeAttribute('aria-current');
+    });
+  }
+  var cakam = false;
+  function posodobiAktivno() {
+    cakam = false;
+    var glava = document.querySelector('.glava');
+    var meja = (glava ? glava.getBoundingClientRect().bottom : 0) + 40;
+    var izbran = 0;
+    razdelki.forEach(function (r, i) {
+      if (r && r.getBoundingClientRect().top <= meja) izbran = i;
+    });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) izbran = razdelki.length - 1;
+    oznaciAktivno(izbran);
+  }
+  if (povezave.length) {
+    window.addEventListener('scroll', function () {
+      if (!cakam) { cakam = true; window.requestAnimationFrame(posodobiAktivno); }
+    }, { passive: true });
+    window.addEventListener('resize', posodobiAktivno);
+    posodobiAktivno();
+  }
+
+  /* ---------- drsniki fotografij: gumba, tipke ←/→, podrsanje; brez samodejnega predvajanja ---------- */
+  document.querySelectorAll('.drsnik').forEach(function (d) {
+    var slike = Array.prototype.slice.call(d.querySelectorAll('.drsnik-slika'));
+    var stevec = d.querySelector('.drsnik-trenutna');
+    var trak = d.querySelector('.drsnik-trak');
+    var i = 0;
+    function pokazi(n) {
+      i = (n + slike.length) % slike.length;
+      slike.forEach(function (s, j) { s.hidden = j !== i; });
+      if (stevec) stevec.textContent = String(i + 1);
+    }
+    d.querySelector('.drsnik-nazaj').addEventListener('click', function () { pokazi(i - 1); });
+    d.querySelector('.drsnik-naprej').addEventListener('click', function () { pokazi(i + 1); });
+    d.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { pokazi(i - 1); e.preventDefault(); }
+      else if (e.key === 'ArrowRight') { pokazi(i + 1); e.preventDefault(); }
+    });
+    var x0 = null, y0 = null;
+    trak.addEventListener('touchstart', function (e) {
+      x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+    }, { passive: true });
+    trak.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) pokazi(dx < 0 ? i + 1 : i - 1);
+      x0 = null;
+    });
+    pokazi(0);
+  });
 
   /* ---------- video: naloži se šele po kliku ---------- */
   document.querySelectorAll('.video').forEach(function (ovoj) {

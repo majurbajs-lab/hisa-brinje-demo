@@ -19,7 +19,7 @@
 
 <header class="glava">
   <div class="ovoj glava-vrstica">
-    <a class="znak" href="#domov" aria-label="B&amp;W Križ – na začetek strani">B&amp;W Križ</a>
+    <a class="znak" href="#domov"><img src="slike/logo-bw-kriz.png" width="366" height="120" alt="B&amp;W Križ"></a>
 
     <button class="meni-gumb" type="button" aria-expanded="false" aria-controls="glavni-meni">
       <span class="meni-crte" aria-hidden="true"></span>
@@ -28,7 +28,7 @@
 
     <nav class="navigacija" aria-label="Glavni meni">
       <ul id="glavni-meni" class="meni">
-        <li><a href="#domov">Domov</a></li>
+        <li><a href="#domov" aria-current="location">Domov</a></li>
         <li><a href="#sobe">Sobe in zajtrk</a></li>
         <li><a href="#vipavski-kriz">Vipavski Križ in okolica</a></li>
         <li><a href="#o-nas">O nas</a></li>
@@ -42,11 +42,6 @@
 
   <!-- ============ 1 DOMOV ============ -->
   <section id="domov" class="uvod" aria-labelledby="naslov-domov">
-    <div class="ovoj">
-      <h1 id="naslov-domov">B&amp;W Križ</h1>
-      <p class="podnaslov">Sodobno udobje v srednjeveškem Vipavskem Križu</p>
-    </div>
-
     <figure class="velika-slika">
       <img src="slike/terasa.jpg"
            srcset="slike/terasa-800.jpg 800w, slike/terasa.jpg 1600w"
@@ -54,9 +49,14 @@
            alt="Terasa B&amp;W Križ z mizo in dvema stoloma; v ozadju razgled na Vipavsko dolino, vasi in gore.">
     </figure>
 
+    <div class="ovoj">
+      <h1 id="naslov-domov">B&amp;W Križ</h1>
+      <p class="podnaslov">Sodobno udobje v srednjeveškem Vipavskem Križu</p>
+    </div>
+
     <div class="ovoj dva-stolpca">
       <div class="besedilo">
-        <p class="poudarek">B&amp;W Križ se nahaja znotraj obzidja Vipavskega Križa, enega najbolje ohranjenih srednjeveških naselij v Sloveniji. V osrčju Vipavske doline ponuja miren oddih v edinstvenem zgodovinskem okolju.</p>
+        <p class="poudarek">B&amp;W Križ je del zgodovinskega obzidja Vipavskega Križa, enega najbolje ohranjenih srednjeveških naselij v Sloveniji. V osrčju Vipavske doline ponuja mirno in udobno nastanitev, primerno za poslovne popotnike ter goste, ki si želijo počitka in odmika od vsakdanjega vrveža.</p>
       </div>
       <div class="besedilo">
         <p>Naša skrbno obnovljena zgodovinska hiša združuje značaj preteklosti s sodobno arhitekturo in udobjem. Sedem sodobno urejenih sob, v katerih se prepletajo beton, črna kovina in les, ponuja prijetno okolje za sproščeno bivanje.</p>
@@ -105,15 +105,47 @@
       <div class="dva-stolpca">
         <div class="besedilo">
           <h2 id="naslov-sobe">Sobe in skupni prostori</h2>
-          <p>Sedem sob v prenovljeni zgodovinski hiši združuje sodobno arhitekturno zasnovo in udobje bivanja. Kombinacija betona, črne kovine in lesa daje prostorom prepoznaven sodoben značaj, ki se dopolnjuje z zgodovinskim značajem hiše.</p>
-          <p>B&amp;W Križ ponuja sedem sob z lastno kopalnico. Sobe se razlikujejo po velikosti in razgledu, vse pa zagotavljajo zasebnost in udobje za prijetno bivanje.</p>
+          <p>Sedem sob v prenovljeni zgodovinski hiši združuje sodobno arhitekturno zasnovo in udobje bivanja. Kombinacija betona, črne kovine in lesa daje prostorom prepoznaven sodoben značaj, ki se dopolnjuje z zgodovinskim značajem hiše. Sobe se razlikujejo po velikosti in razgledu, vse pa zagotavljajo zasebnost in udobje za prijetno bivanje.</p>
         </div>
-        <figure>
-          <img src="slike/soba-140-800.jpg"
-               srcset="slike/soba-140-800.jpg 800w, slike/soba-140.jpg 1600w"
-               sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="899" loading="lazy"
-               alt="Soba z betonskim tlakom: postelja s kovinskim vzglavjem, odprta garderoba iz črne kovine in lesa, stol in mizica; skozi stekleno drsno steno se vidi kopalnica z umivalnikom.">
-        </figure>
+        <div class="drsnik" role="region" aria-roledescription="drsnik" aria-label="Fotografije sob">
+      <ul class="drsnik-trak">
+        <li class="drsnik-slika" role="group" aria-roledescription="fotografija" aria-label="1 od 6">
+          <img src="slike/soba-1-800.jpg" srcset="slike/soba-1-800.jpg 800w, slike/soba-1.jpg 1198w"
+               sizes="(min-width: 900px) 50vw, 100vw" width="1198" height="899" loading="lazy"
+               alt="Soba z betonskim tlakom: postelja s kovinskim vzglavjem, odprta garderoba iz črne kovine in lesa, temno zelen stol in steklena mizica; skozi odprta steklena drsna vrata se vidi kopalnica z umivalnikom in ogledalom.">
+        </li>
+        <li class="drsnik-slika" role="group" aria-roledescription="fotografija" aria-label="2 od 6">
+          <img src="slike/soba-2-800.jpg" srcset="slike/soba-2-800.jpg 800w, slike/soba-2.jpg 1600w"
+               sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="1200" loading="lazy"
+               alt="Zakonska postelja s črnim kovinskim vzglavjem in belo posteljnino, ob njej steklena nočna omarica; desno za stekleno steno kopalnica s keramiko v sivem vzorcu in stranišče.">
+        </li>
+        <li class="drsnik-slika" role="group" aria-roledescription="fotografija" aria-label="3 od 6">
+          <img src="slike/soba-3-800.jpg" srcset="slike/soba-3-800.jpg 800w, slike/soba-3.jpg 1600w"
+               sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="1200" loading="lazy"
+               alt="Soba s kovinsko garderobo z obešalniki, dvema temno modrima foteljema in mizico; levo matirana steklena drsna vrata kopalnice, spredaj del postelje.">
+        </li>
+        <li class="drsnik-slika" role="group" aria-roledescription="fotografija" aria-label="4 od 6">
+          <img src="slike/soba-4-800.jpg" srcset="slike/soba-4-800.jpg 800w, slike/soba-4.jpg 1600w"
+               sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="1200" loading="lazy"
+               alt="Postelja z belo posteljnino pod poševnim stropom, ob njej steklena mizica; zadaj matirana steklena stena kopalnice s straniščem.">
+        </li>
+        <li class="drsnik-slika" role="group" aria-roledescription="fotografija" aria-label="5 od 6">
+          <img src="slike/soba-5-800.jpg" srcset="slike/soba-5-800.jpg 800w, slike/soba-5.jpg 1600w"
+               sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="1200" loading="lazy"
+               alt="Zakonska postelja s črnim kovinskim vzglavjem in belo posteljnino, levo lesena vrata in odprta garderoba iz črne kovine.">
+        </li>
+        <li class="drsnik-slika" role="group" aria-roledescription="fotografija" aria-label="6 od 6">
+          <img src="slike/soba-6-800.jpg" srcset="slike/soba-6-800.jpg 800w, slike/soba-6.jpg 1600w"
+               sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="1200" loading="lazy"
+               alt="Kopalnica s stenskimi ploščicami v črno-belo-sivem vzorcu, lesen pult z umivalnikom, kozarci in črno pipo.">
+        </li>
+      </ul>
+      <div class="drsnik-kontrole">
+        <button type="button" class="drsnik-gumb drsnik-nazaj" aria-label="Prejšnja fotografija (sobe)"><span aria-hidden="true">&#8249;</span></button>
+        <p class="drsnik-stevec" aria-live="polite">Fotografija <span class="drsnik-trenutna">1</span> od 6</p>
+        <button type="button" class="drsnik-gumb drsnik-naprej" aria-label="Naslednja fotografija (sobe)"><span aria-hidden="true">&#8250;</span></button>
+      </div>
+    </div>
       </div>
 
       <div class="sobe-vrste">
@@ -133,7 +165,6 @@
         <div class="besedilo">
           <h2>Zajtrk</h2>
           <p>Dan pri nas začnemo z zajtrkom, pripravljenim predvsem iz lokalnih sestavin. Ob lepem vremenu lahko zajtrkujete na terasi z razgledom na Vipavsko dolino, sicer pa v skupnem prostoru.</p>
-          <p><a class="gumb" href="#kontakt">Pošljite povpraševanje</a></p>
         </div>
       </div>
     </div>
@@ -148,15 +179,33 @@
           <h2 id="naslov-kriz">Vipavski Križ</h2>
           <p>Vipavski Križ je mnogo več kot slikovita srednjeveška vas. Njegova zgodovina sega v predrimski čas, v pisnih virih pa je prvič omenjen leta 1252 kot <span lang="la">Villa Crucis</span>. Ob koncu 15. stoletja je bil utrjen z obzidjem, leta 1507 je pridobil tržne pravice, leta 1532 pa postal mesto.</p>
           <p>Danes na njegovo bogato preteklost spominjajo ozke kamnite ulice, ostanki gradu, mestno obzidje in kapucinski samostan, v katerem je deloval znameniti pridigar Janez Svetokriški. Sprehod po Vipavskem Križu je tako tudi sprehod skozi stoletja zgodovine.</p>
-          <p>Za obzidjem se odpira Vipavska dolina s svojo kulinariko, vinogradniško tradicijo, naravo in številnimi možnostmi za raziskovanje.</p>
+          <p>Vipavski Križ je tudi odlično izhodišče za odkrivanje Vipavske doline, njene kulinarike, vinogradniške tradicije ter naravnih in kulturnih znamenitosti.</p>
           <p class="osnutek">Več o zgodovini in znamenitostih Vipavskega Križa – povezavo na uradno stran dodamo, ko potrdimo naslov.</p>
         </div>
-        <figure>
-          <img src="slike/hisa-800.jpg"
-               srcset="slike/hisa-800.jpg 800w, slike/hisa.jpg 1600w"
+        <div class="drsnik" role="region" aria-roledescription="drsnik" aria-label="Fotografije hiše in Vipavskega Križa">
+      <ul class="drsnik-trak">
+        <li class="drsnik-slika" role="group" aria-roledescription="fotografija" aria-label="1 od 3">
+          <img src="slike/kriz-1-800.jpg" srcset="slike/kriz-1-800.jpg 800w, slike/kriz-1.jpg 1600w"
                sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="1200" loading="lazy"
                alt="Prenovljena bela hiša B&amp;W Križ s kamnitimi okenskimi okvirji, pred njo zid iz temnega klesanega kamna ob ulici.">
-        </figure>
+        </li>
+        <li class="drsnik-slika" role="group" aria-roledescription="fotografija" aria-label="2 od 3">
+          <img src="slike/kriz-2-800.jpg" srcset="slike/kriz-2-800.jpg 800w, slike/kriz-2.jpg 1389w"
+               sizes="(min-width: 900px) 50vw, 100vw" width="1389" height="1041" loading="lazy"
+               alt="Bela fasada hiše B&amp;W Križ s kamnitimi okenskimi okvirji in zelenimi vhodnimi vrati, pred njimi terasa z mizo in stoli za kamnitim zidom.">
+        </li>
+        <li class="drsnik-slika" role="group" aria-roledescription="fotografija" aria-label="3 od 3">
+          <img src="slike/kriz-3-800.jpg" srcset="slike/kriz-3-800.jpg 800w, slike/kriz-3.jpg 1198w"
+               sizes="(min-width: 900px) 50vw, 100vw" width="1198" height="899" loading="lazy"
+               alt="Pogled iz zraka na Vipavsko dolino: na gozdnati vzpetini sredi polj in vinogradov strnjeno naselje z belo cerkvijo, v ozadju vasi in gorski greben.">
+        </li>
+      </ul>
+      <div class="drsnik-kontrole">
+        <button type="button" class="drsnik-gumb drsnik-nazaj" aria-label="Prejšnja fotografija (hiša in kraj)"><span aria-hidden="true">&#8249;</span></button>
+        <p class="drsnik-stevec" aria-live="polite">Fotografija <span class="drsnik-trenutna">1</span> od 3</p>
+        <button type="button" class="drsnik-gumb drsnik-naprej" aria-label="Naslednja fotografija (hiša in kraj)"><span aria-hidden="true">&#8250;</span></button>
+      </div>
+    </div>
       </div>
 
       <div id="okolica" class="okolica">
@@ -170,7 +219,7 @@
           </div>
           <div class="besedilo">
             <h3>Vipavska dolina</h3>
-            <p>Vipavska dolina je prostor raznolikih pokrajin, krajev, okusov in doživetij. Naj bo B&amp;W Križ vaše izhodišče za njeno raziskovanje.</p>
+            <p>Med Alpami, Krasom in Jadranom se razprostira Vipavska dolina, ki povezuje raznoliko naravo, bogato kulturno dediščino in dolgo vinogradniško tradicijo. Spoznajte jo skozi kraje, ljudi in lokalne okuse.</p>
           </div>
         </div>
 
@@ -201,12 +250,45 @@
           <p>Prenova je zajela tudi notranjo opremo. Poseben arhitekturni element je odprto osrednje stopnišče, ki povezuje skupni prostor s sobami v nadstropju. Njegova nova umestitev je obenem omogočila lepši pogled na Čaven in Goro.</p>
           <p class="opomba">Arhitekturna zasnova in notranja oprema: Vladimir Slamič, arhitekt.</p>
         </div>
-        <figure>
-          <img src="slike/prostor-800.jpg"
-               srcset="slike/prostor-800.jpg 800w, slike/prostor.jpg 1600w"
-               sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="1600" loading="lazy"
-               alt="Skupni prostor z ohranjenim kamnitim obokom, betonskim tlakom, lesenimi mizami, črnimi barskimi stoli, lesenim sodom in lesenimi policami.">
-        </figure>
+        <div class="drsnik" role="region" aria-roledescription="drsnik" aria-label="Fotografije skupnih prostorov">
+      <ul class="drsnik-trak">
+        <li class="drsnik-slika" role="group" aria-roledescription="fotografija" aria-label="1 od 6">
+          <img src="slike/prostor-1-800.jpg" srcset="slike/prostor-1-800.jpg 800w, slike/prostor-1.jpg 1600w"
+               sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="1200" loading="lazy"
+               alt="Skupni prostor z ohranjenim kamnitim obokom, betonskim tlakom, visokimi lesenimi mizami s črnimi barskimi stoli, lesenim sodom in lesenimi policami; zadaj zelena vrata.">
+        </li>
+        <li class="drsnik-slika" role="group" aria-roledescription="fotografija" aria-label="2 od 6">
+          <img src="slike/prostor-2-800.jpg" srcset="slike/prostor-2-800.jpg 800w, slike/prostor-2.jpg 1600w"
+               sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="1200" loading="lazy"
+               alt="Skupni prostor z lesenimi mizami, modrimi in belimi stoli ter črnimi visečimi svetilkami; levo del kamnitega oboka.">
+        </li>
+        <li class="drsnik-slika" role="group" aria-roledescription="fotografija" aria-label="3 od 6">
+          <img src="slike/prostor-3-800.jpg" srcset="slike/prostor-3-800.jpg 800w, slike/prostor-3.jpg 1600w"
+               sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="1200" loading="lazy"
+               alt="Visoke lesene mize s črnimi barskimi stoli, desno lesene police in vitrina z vini, levo zelena steklena vrata na teraso.">
+        </li>
+        <li class="drsnik-slika" role="group" aria-roledescription="fotografija" aria-label="4 od 6">
+          <img src="slike/prostor-4-800.jpg" srcset="slike/prostor-4-800.jpg 800w, slike/prostor-4.jpg 1600w"
+               sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="1200" loading="lazy"
+               alt="Hodnik z lesenimi podboji, betonskim tlakom in temno modrim stolom; levo lesena komoda s stekleničko in kozarci.">
+        </li>
+        <li class="drsnik-slika" role="group" aria-roledescription="fotografija" aria-label="5 od 6">
+          <img src="slike/prostor-5-800.jpg" srcset="slike/prostor-5-800.jpg 800w, slike/prostor-5.jpg 1600w"
+               sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="1200" loading="lazy"
+               alt="Skupni prostor s kaminom, usnjenimi naslanjači in dolgimi lesenimi mizami pod kamnitim obokom.">
+        </li>
+        <li class="drsnik-slika" role="group" aria-roledescription="fotografija" aria-label="6 od 6">
+          <img src="slike/prostor-6-800.jpg" srcset="slike/prostor-6-800.jpg 800w, slike/prostor-6.jpg 1600w"
+               sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="1200" loading="lazy"
+               alt="Odprto betonsko stopnišče s črno kovinsko ograjo, pod njim lonček z rastlino ob beli steni.">
+        </li>
+      </ul>
+      <div class="drsnik-kontrole">
+        <button type="button" class="drsnik-gumb drsnik-nazaj" aria-label="Prejšnja fotografija (skupni prostori)"><span aria-hidden="true">&#8249;</span></button>
+        <p class="drsnik-stevec" aria-live="polite">Fotografija <span class="drsnik-trenutna">1</span> od 6</p>
+        <button type="button" class="drsnik-gumb drsnik-naprej" aria-label="Naslednja fotografija (skupni prostori)"><span aria-hidden="true">&#8250;</span></button>
+      </div>
+    </div>
       </article>
 
       <article id="vino" class="blok ozko">
