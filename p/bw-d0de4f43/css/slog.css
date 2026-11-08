@@ -188,10 +188,6 @@ input[aria-invalid="true"] { border-color: var(--napaka); border-width: 2px; }
 .besedilo > p:not(.gumbi):not(.opomba-gumbi), .blok > p, .sobe-vrste > p:not(.gumbi):not(.opomba-gumbi), .poudarek {
   text-align: justify; -webkit-hyphens: auto; hyphens: auto; hyphenate-limit-chars: 6 3 3;
 }
-/* na ozkih zaslonih levo poravnano, da ni lukenj med besedami */
-@media (max-width: 700px) {
-  .besedilo > p:not(.gumbi):not(.opomba-gumbi), .blok > p, .sobe-vrste > p:not(.gumbi):not(.opomba-gumbi), .poudarek { text-align: left; }
-}
 
 /* ---------- drsnik fotografij ---------- */
 .drsnik { position: relative; }
